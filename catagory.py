@@ -1,53 +1,61 @@
+from multi_key_dict import multi_key_dict
+import re
+
 catagories = {
-    "Arts & Aesthetics" : ['public', 'art', 'arts', 'aesthetics', 'design', 'picture', 'drawing'],
-    "Basic Needs" : ['poverty', 'food', 'shelter', 'water', 'basic needs'],
-    "Business & Commerce" : ['money', 'cash', 'stock', 'business', 'commerce'],
-    "Communication" : ['information', 'communication', 'talking', 'phones', 'connection'],
-    "Defense" : ['control', 'country', 'national', 'countries'],
-    "Economics" : ['economics', 'banking', 'bank', 'credit', 'credit card'],
-    "Education" : ['education', 'educating', 'educate', 'school', 'learn', 'teach'],
-    "Environment" : ['environment', 'plants', 'trees', 'animals', 'pollution'],
-    "Ethics & Religion" : ['moral', 'right and wrong', 'standards', 'belief', 'religion', 'ethics', 'god'],
-    "Government & Politics" : ['government', 'politics', 'countries', 'senate', 'law', 'house of representatives'],
-    "Law & Justice" : ['law', 'justice', 'court', 'senate', 'judge'],
-    "Misc" : ['dna', 'future', '3d printing', 'ai', ' alien', 'space travel', 'space'],
-    "Physical Health" : ['physical health', 'hospital', 'hospitals', 'injury', 'injuries'],
-    "Psychological Health" : ['counseling', 'therapy', 'phycological', 'health', 'crazy', 'mind', 'mental health'],
-    "Recreation" : ['enjoyment', 'activity', 'pastime', 'relaxation', 'recreation'],
-    "Social Relationships" : ['social', 'relationship', 'individuals', 'agreement'],
-    "Technology" : ['technology', 'computers', 'algorithms', 'innovations', 'electricity',
+    ("Arts & Aesthetics", 1) : ['public', 'art', 'arts', 'aesthetics', 'design', 'picture', 'drawing'],
+    ("Basic Needs", 2) : ['poverty', 'food', 'shelter', 'water', 'basic needs'],
+    ("Business & Commerce", 3) : ['money', 'cash', 'stock', 'business', 'commerce'],
+    ("Communication", 4) : ['information', 'communication', 'talking', 'phones', 'connection'],
+    ("Defense", 5) : ['control', 'country', 'national', 'countries'],
+    ("Economics", 6) : ['economics', 'banking', 'bank', 'credit', 'credit card', 'money'],
+    ("Education", 7) : ['education', 'educating', 'educate', 'school', 'learn', 'teach'],
+    ("Environment", 8) : ['environment', 'plants', 'trees', 'animals', 'pollution'],
+    ("Ethics & Religion", 9) : ['moral', 'right and wrong', 'standards', 'belief', 'religion', 'ethics', 'god'],
+    ("Government & Politics", 10) : ['government', 'politics', 'countries', 'senate', 'law', 'house of representatives'],
+    ("Law & Justice", 11) : ['law', 'justice', 'court', 'senate', 'judge'],
+    ("Misc", 12) : ['dna', 'future', '3d printing', 'ai', ' alien', 'space travel', 'space'],
+    ("Physical Health", 13) : ['physical health', 'hospital', 'hospitals', 'injury', 'injuries'],
+    ("Psychological Health", 14) : ['counseling', 'therapy', 'phycological', 'health', 'crazy', 'mind', 'mental health'],
+    ("Recreation", 15) : ['enjoyment', 'activity', 'pastime', 'relaxation', 'recreation'],
+    ("Social Relationships", 16) : ['social', 'relationship', 'individuals', 'agreement'],
+    ("Technology", 17) : ['technology', 'computers', 'algorithms', 'innovations', 'electricity',
         'machinery', 'dna', 'future', '3d printing', 'ai', ' alien', 'space travel', 'space'],
-    "Transportation" : ['transportation', 'cars', 'trains', 'airplanes', 'movement', 'vehicle']
+    ("Transportation", 18) : ['transportation', 'cars', 'trains', 'airplanes', 'movement', 'vehicle']
 }
 
-def catagorize(text):
-    def takeSecond(elem):
-        return elem[1]
-    if not isinstance(text, list):
-        text = text.split()
+def get_key_from_listval(d, val):
 
-    pos = [(list(sorted(catagories.keys())).index(key))
-            for key in catagories.keys()
-            for i in catagories[key] if i in text]
-    s = sorted(pos, key=pos.count, reverse=True)
-    r = [[i, s.count(i)] for i in list(set(s))]
-        #if s.count(i) >= 1 or len(s) == 1
-    r.sort(key=takeSecond, reverse=True)
-    most = 0
-    for i in r:
-        if i[1] > most:
-            most = i[0]
+    cata = []
+    for l in d.values():
+        if val in l:
+            cata.append(catagories.keys()[catagories.values().index(l)][1])
 
-    other = []
-    for i in r:
-        for j in range(i[1]):
-            other.append(i[0])
-    dic = {
-            "most" : most,
-            "all" : other
-        }
-    return dic
+    return sorted(cata)
 
-def subject(text):
-    if not isinstance(text, list):
-        text = text.split()
+def clean_up(group):
+    if type(group) is str:
+        group.translate(None, "\n")
+    group = re.split("\d+\.", group)
+    for string in group:
+        if string.startswith("#"):
+            group.remove(string)
+
+    return group
+
+catagories = multi_key_dict(catagories)
+# use get_key_from_listval to find cata number
+
+probs = open("Packet/ex_problems.txt")
+sols = open("Packet/ex_solutions.txt")
+
+problems = clean_up(probs.read())
+solutions = clean_up(sols.read())
+
+for idx, p in enumerate(problems):
+    print str(idx + 1) + "." + p
+print "-------------------------------------------------------------------------------------------------------------"
+for idx, s in enumerate(solutions):
+    print str(idx + 1) + "." + s
+
+probs.close()
+sols.close()

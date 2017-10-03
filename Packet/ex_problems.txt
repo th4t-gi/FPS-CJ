@@ -1,0 +1,88 @@
+#qualifying packet
+
+1. (cata: 17) In the year 2043, there may be a problem with unstable materials
+  in space. For example, it's never been tested in space. This could be a problem
+  because you cannot rely on 4D-created materials, such as plastic.
+
+2. (cata: 3, 14) In the year 2043, there may be a problem with the people in
+  control of this situation being reedy. For example, at some point, everybody
+  is greedy. This could be a problem because all the people would care about
+  money and not the safety of the spaceship.
+
+3. (cata: 4) In the year 2043, there may be a problem with not having an astronaut
+  accompany Athena on the mission to Proxima B. For example, we could lose
+  connection with the spaceship. This could be a problem because if they weren't
+  in connection with the spaceship, they would have to start a new mission.
+
+
+4. (cata: 5) In the year 2043, there may be a problem with other countries
+  wanting to get to Proxima B first. Fore example, Russia and the U.S. were
+  competing to get to the moon first. This could be a problem because it could
+  begin another world war.
+
+5. (cata: 3) In the year 2043, there may be a problem with the mission failing,
+  and the SDS losing money rapidly. For example, this company's only chance my
+  be this spaceship – otherwise they would be broke. This could be a problem
+  because then they would not be able to pay off all their dues or not be able
+  to fund this possibly life-changing mission.
+
+6. (cata: 12) In the year 2043, there may be a problem with Proxima B being
+  inhabited already. For example, scientist think that someday, it might be able
+  to support human life, so it might already have another species. This could be
+  a problem because if we didn't get along with them or they messed with our
+  programming.
+
+7. (cata: 2) In the year 2043, there may be a problem with not exporting animals
+  to Proxima B. For example, when humans move to a different planet, they are
+  leaving animals we eat all the time behind. This could be a problem because
+  humans might not have food.
+
+8. (cata: 3) In the year 2043, there may be a problem with people arguing over
+  who has ...(not sure). For example, the government could (not sure) the Athena
+  mission, or other countries will try to butt in or get land for themselves.
+  This could be a  problem because it could cause another world war.
+
+9. (cata: 17) In the year 2043, there may be a problem with the 4D print taking
+  control over the mission and going rogue. For example, since the 4D print
+  adapts to its surroundings, it could think, 'why am I being controlled.'
+  This may be a problem because they're mission could fail.
+
+10. (cata: 17) In the year 2043, there may be a problem with the transition to
+  move. For example, the government might not have enough spaceships to fly
+  everyone to the new planet. This could be a problem because SDS might not have
+  enough spaceships to transport people.
+
+11. (cata: 18, 17) In the year 2043, there may be a problem with the the material
+  of the 4D spaceship being too heavy. For example, if the spaceship is too heavy, it
+  cannot go into space. This cold be a problem because the spaceship would
+  crash and it would waste good material.
+
+12. (cata: P) In the year 2043, there may be a problem with the atmosphere of
+  Proxima B not being safe for humans. For example, since we have not sent
+  anything there, so we can't test it. This may be a problem because we would
+  have to wear spacesuits all the time if we could even land a manned spaceship
+  there.
+
+
+13. (cata: D -> 4) In the year 2043, there may be a problem with sending an
+  unmanned spaceship to go to Proxima b. For example, unmanned spaceships may be
+  harder to control than manned ones. This could be a problem because if the SDS
+  lost the spaceship they may not have the support to try it again.
+
+14. (cata: P) In the year 2043, on Proxima B, there may be a problem with not
+  having enough room for all the people of earth on the new planet. For example,
+  if something happen to Earth, we may all have to move to Proxima B. This could
+  be a problem because if there was not enough room on Proxima B, we would have
+  to decide who goes and who dies.
+
+15. (cata: P) In the year 2043, on Proxima B, there may be a problem with the
+  citizens who move there being unequipped for life there. For example, the
+  climate may be overly hot or cold. This could be a problem because many people
+  may be killed or get sick.
+
+16. (cata: P) In the year 2043, on Proxima B, there may be a problem with people
+  getting new diseases we have never encountered before. For example, many events
+  in history suggest that if people are not exposed to diseases, they get them
+  quickly instead of being immune. This could be a problem because the
+  population could be majorly (not sure) and we would have to devote our time
+  to making antidotes.
