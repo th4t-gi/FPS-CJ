@@ -23,69 +23,81 @@ catagories = {
     ("Transportation", 18) : ['transportation', 'cars', 'trains', 'airplanes', 'movement', 'vehicle']
 }
 
-class FPS_data(type):
-    """Documentation for FPS_data. Core of data used in packet analysis"""
+# class FPS_data(type):
+#     """Documentation for FPS_data. 'Core' of data used in packet analysis"""
+#     def __init__(self, section, text, num=None):
+#         super(FPS_data, self).__init__()
+#         self.sect = section #AP, UP, problem, etc.
+#         self.num = num #This does not apply to UP, AP
+#         self.core = text
+#         self.misc = ["UP", "Criteria", "Apply Criteria", "AP"]
+#
+#         if self.sect in self.misc:
+#             self.core = self.find_section(self.core, self.sect)
+#
+#         if self.sect == "problem" or self.sect == "solution":
+#
+#
+#     def find_section(self, group, section):
+#         name = re.search(r'(?P<name>%s(: \d)?)' % section, group)
+#         sect = re.search(r'(\(%s\)(\n?.+)+)' % name.group("name"), group, re.M)
+#         return sect.group(1)
+
+def pos_cata(f): #f stands for the file
+    pos = re.findall(r"(\d+\.) \(cata\: (?:(\d+)|(\d+)\,\s(\d+)|)\)", f)
+    analysis = [tuple([el for el in tup if el]) for tup in pos]
+    print analysis
+
+    # i = 1
+    # for each_prob in analysis:
+    #     if len(each_prob) == 1:
+    #         each_prob = [item for sublist in each_prob for item in sublist]
+    #     for idx, cata in enumerate(each_prob):
+    #         if len(cata) == 1:
+    #             each_prob[idx] = tuple([item for sublist in cata for item in sublist])
+    #
+    #     each_prob.insert(0, str(i) + '.')
+    #     if len(each_prob) > 1:
+    #         rtrn.append(each_prob)
+    #     i += 1
+    # return rtrn
 
 
 def get_key_from_list(val, dictionary):
-    d = multi_key_dict(dictionary)
-    cata = [d.keys()[d.values().index(l)]
-            for l in d.values() if val in l]
-    return sorted(cata)
+    try:
+        d = multi_key_dict(dictionary)
+        cata = [d.keys()[d.values().index(l)]
+                for l in d.values() if val in l]
+        return sorted(cata)
+    except Exception:
+        print """KeyError: Keys of dictionary must be of type tup not {0}.
+        """.format(type(dictionary).__name__)
+        exit()
 
+# def clean_up(group):
+#     group = group.replace(',', '').replace('.', '')
+#     group = re.split(r'\n\n', group)
+#     for string in group:
+#         if string.startswith("#"):
+#             group.remove(string)
+#
+#     return group
 
-def clean_up(group):
-    group = group.replace(',', '').replace('.', '')
-    group = re.split(r'\n\n', group)
-    for string in group:
-        if string.startswith("#"):
-            group.remove(string)
-
-    return group
-
-def find_section(group, section):
-    go = re.search(r'(?P<name>%s(: \d)?)' % section, group)
-    # sect = []
-    sect = re.search(r'(\(%s\)(\n?.+)+)' % go.group("name"), group, re.M)
-    return sect.group(1)
-
-def pos_cata(f):
-    analysis = []
-    rtrn = []
-    for problem in f:
-        words = []
-        for word in problem.split():
-            cata = get_key_from_list(word, catagories)
-            if cata:
-                words.append(cata)
-        analysis.append(words)
-
-    i = 1
-    for each_prob in analysis:
-        if len(each_prob) == 1:
-            each_prob = [item for sublist in each_prob for item in sublist]
-        for idx, cata in enumerate(each_prob):
-            if len(cata) == 1:
-                each_prob[idx] = tuple([item for sublist in cata for item in sublist])
-
-        each_prob.insert(0, str(i) + '.')
-        if len(each_prob) > 1:
-            rtrn.append(each_prob)
-        i += 1
-    return rtrn
-
-probs = clean_up(open("Packet/ex_problems.txt").read())
-sols = clean_up(open("Packet/ex_solutions.txt").read())
+probs = open("Packet/ex_problems.txt").read()
+# print probs
+# probs = clean_up(probs)
+# print "\n", probs
+# sols = clean_up(open("Packet/ex_solutions.txt").read())
 misc = open("Packet/ex_UP+AP+S_Criteria+A_Criteria.txt").read()
-bla = FPS_data(12)
 # UP = find_section(misc, "UP")
 # AP = find_section(misc, "AP")
 # SC = find_section(misc, "Criteria")
-AC = find_section(misc, "Apply Criteria")
-print AC
+# AC = find_section(misc, "Apply Criteria")
+# print AC
 # for line in AP:
 #     print line
-# prob_cata = pos_cata(probs)
+prob_cata = pos_cata(probs)
+# print "\n", prob_cata
 # sol_cata = pos_cata(sols)
 # for sol in sol_cata:
 #     for item in sol:
