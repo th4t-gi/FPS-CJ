@@ -62,7 +62,7 @@
   have to wear spacesuits all the time if we could even land a manned spaceship
   there.
 
-13. (cata: D -> 4) In the year 2043, there may be a problem with sending an
+13. (cata: D -> 4.) In the year 2043, there may be a problem with sending an
   unmanned spaceship to go to Proxima b. For example, unmanned spaceships may be
   harder to control than manned ones. This could be a problem because if the SDS
   lost the spaceship they may not have the support to try it again.
