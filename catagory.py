@@ -129,22 +129,10 @@ def get_cata_from(val):
 probs = open("Code/Project Folder/FPS/Packet/ex_problems.txt").read()
 sols = open("Code/Project Folder/FPS/Packet/ex_solutions.txt").read()
 misc = open("Code/Project Folder/FPS/Packet/ex_UP+AP+S_Criteria+A_Criteria.txt").read()
-
-prob_cata = [FPS("problem", probs, i) for i in range(1, 17)]
-UP = FPS("UP", misc)
-sol_cata = [FPS("solution", sols, i) for i in range(1, 17)]
-SC = FPS("Criteria", misc)
-AC = FPS("Apply Criteria", misc)
-AP = FPS("AP", misc)
-#
-# for el in prob_cata:
-#     print el.core
-# print UP.core
-# for el in sol_cata:
-#     print el.core
-# print SC.core
-print AC.core
-for item in AC.data:
-    print item
-# print AC.data
-# print AP.core
+# 
+# prob_cata = [FPS("problem", probs, i) for i in range(1, 17)]
+# UP = FPS("UP", misc)
+# sol_cata = [FPS("solution", sols, i) for i in range(1, 17)]
+# SC = FPS("Criteria", misc)
+# AC = FPS("Apply Criteria", misc)
+# AP = FPS("AP", misc)
