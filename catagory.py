@@ -126,10 +126,10 @@ def get_cata_from(val):
     elif len(cata) == 1:
         return cata[0]
 
-probs = open("Code/Project Folder/FPS/Packet/ex_problems.txt").read()
-sols = open("Code/Project Folder/FPS/Packet/ex_solutions.txt").read()
-misc = open("Code/Project Folder/FPS/Packet/ex_UP+AP+S_Criteria+A_Criteria.txt").read()
-# 
+probs = open("Packet/ex_problems.txt").read()
+sols = open("Packet/ex_solutions.txt").read()
+misc = open("Packet/ex_UP+AP+S_Criteria+A_Criteria.txt").read()
+#
 # prob_cata = [FPS("problem", probs, i) for i in range(1, 17)]
 # UP = FPS("UP", misc)
 # sol_cata = [FPS("solution", sols, i) for i in range(1, 17)]
