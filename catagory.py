@@ -27,41 +27,62 @@ catagories = {
 }
 multi_cata = multi_key_dict(catagories)
 
-class FPS_data(object):
-    """Documentation for FPS_data. 'Core' data object used in packet analysis"""
+class FPS(object):
+    """Documentation for FPS data object. 'Core' data object used in packet
+    analysis"""
 
-    def __init__(self, section, text, num=None):
-        super(FPS_data, self).__init__()
+    def __init__(self, section, text, num=0):
+        super(FPS, self).__init__()
         self.sect = section.lower() #UP, problem, Criteria etc.
         self.core = text
         self.num = num #This does not apply to UP, AP
-        self.misc = ["up", "criteria", "apply criteria", "ap"]
-        self.data = None
+        self.misc = {"up": self.pos_cata, "criteria": self._SCedit,
+                    "apply criteria": self._ACedit, "ap": self.pos_cata}
 
-        if self.sect in self.misc:
-            self.core = self.find_section(self.core, self.sect)
-            # self.data =
-
+        if self.sect in self.misc.keys():
+            self.core = self._findSection(self.core,
+                re.compile(r'(\(%s(?:\: \d)?\))' % self.sect, re.I))
+            self.data = self.misc[self.sect](text=self.sect)
 
         if self.sect == "problem" or self.sect == "solution":
-            self.data = self.pos_cata("num", num)
+            self.core = self._findSection(self.core,
+                re.compile(r"%d\. \(cata: (?:\d+|P|D .*?)(?:\, \d+)?\)" % self.num))
+            self.data = self.pos_cata("num")
 
-    def find_section(self, group, section):
-        name = re.search(r'(%s(?:\: (\d))?)' % section, group, flags=re.I)
-        sect = re.search(r'(\(%s\) (\n?.+)+)' % name.group(1), group, flags=re.M)
-        return sect.group(1)
+    def _findSection(self, group, name_pat):
+        name = name_pat.search(group)
+        sect = re.search(r"%s\s?(?:\n?.+)+" % re.escape(name.group()), group)
+        return sect.group()
 
-    def pos_cata(self, mode, para): #f stands for the file; para is the paragraph to find keywords in
-        paragraph_nums = re.findall(r"(\d+)\. \(", self.core)
-        paragraph_nums = [int(num) for num in paragraph_nums]
+    def _SCedit(self, text):
+        data = re.findall(r"(\d+)\. ([A-Z ]+)", self.core, re.I)
+        return [tuple([int(tup[0]), tup[1]]) for tup in data]
+    def _ACedit(self, text):
+        core = self.core.split("\n")[1:]
+        pattern = re.compile(r"sol: (\d+)\, \"([\w\. ]+)\"\)\[((?:\d: \d\,? ?)+)")
+        for i in range(0, len(core)):
+            core[i] = list(pattern.findall(core[i])[0])
+            core[i][0] = int(core[i][0])
+            core[i][2] = re.findall(r"\d: (\d)", core[i][2])
+            core[i][2] = [dict(((idx + 1, val),)) for idx, val in enumerate(core[i][2])]
+        return core
+    def pos_cata(self, mode='num', text=None):
+        if text == "up":
+            prob = re.search(r"\(UP: (\d+)\)", self.core).group(1)
+            # prob_cata[int(prob) - 1].data.insert(0, 'UP')
+            return prob_cata[int(prob) - 1].data
+        elif text == "ap":
+            sol = re.search(r"\(AP: (\d+)\)", self.core).group(1)
+            # sol_cata[int(sol) - 1].data.insert(0, 'AP')
+            return sol_cata[int(sol) - 1].data
 
         if mode == "num": #mode for finding judges decision
-            dup = re.search(r"^{0}\. \(cata: (D) -> (\d+)\.\)".format(para), self.core, re.M)
-            if dup: return [para, {dup.group(1): int(dup.group(2))}]
+            dup = re.search(r"^{0}\. \(cata: (D) -> (\d+)\.\)".format(self.num), self.core, re.M)
+            if dup: return [self.num, {dup.group(1): int(dup.group(2))}]
 
-            pos = re.search(r"{0}\. \(cata: (\d+|P)(?:\, (\d+))?\)".format(para), self.core)
-            if pos.group(2): return [para, get_cata_from([pos.group(1), pos.group(2)])]
-            return [para, get_cata_from(pos.group(1))]
+            pos = re.search(r"\(cata: (\d+|P)(?:\, (\d+))?\)", self.core)
+            if pos.group(2): return [self.num, get_cata_from([pos.group(1), pos.group(2)])]
+            return [self.num, get_cata_from(pos.group(1))]
 
         if mode == "named": #mode for finding keywords from each problem
             paragraphs = re.split(r"\d+\. \(.*?\) ", self.core)
@@ -71,15 +92,16 @@ class FPS_data(object):
             for idx, p in enumerate(paragraphs):
                 p = p.replace(".", '').replace(",", '').split()
                 keywords = [get_cata_from(word) for word in p if get_cata_from(word)]
-                if keywords and not para:
+                if keywords and not self.num:
                     if len(keywords) == 1: keywords = keywords[0]
-                    analysis.append([paragraph_nums[idx], keywords])
+                    analysis.append([idx+1, keywords])
 
-                elif para == idx + 1:
+                elif self.num == idx + 1:
                     keywords = [get_cata_from(word) for word in p if get_cata_from(word)]
                     if not keywords: return "No keywords found"
                     return keywords
             return analysis
+
 
 def get_cata_from(val):
     if val == "P":
@@ -104,13 +126,25 @@ def get_cata_from(val):
     elif len(cata) == 1:
         return cata[0]
 
-probs = open("Packet/ex_problems.txt").read()
-sols = open("Packet/ex_solutions.txt").read()
-misc = open("Packet/ex_UP+AP+S_Criteria+A_Criteria.txt").read()
+probs = open("Code/Project Folder/FPS/Packet/ex_problems.txt").read()
+sols = open("Code/Project Folder/FPS/Packet/ex_solutions.txt").read()
+misc = open("Code/Project Folder/FPS/Packet/ex_UP+AP+S_Criteria+A_Criteria.txt").read()
 
-UP = FPS_data("UP", misc)
-prob_cata = []
-sol_cata = []
-for i in range(1, 17):
-    prob_cata.append(FPS_data("problem", probs, i))
-    sol_cata.append(FPS_data("solution", sols, i))
+prob_cata = [FPS("problem", probs, i) for i in range(1, 17)]
+UP = FPS("UP", misc)
+sol_cata = [FPS("solution", sols, i) for i in range(1, 17)]
+SC = FPS("Criteria", misc)
+AC = FPS("Apply Criteria", misc)
+AP = FPS("AP", misc)
+#
+# for el in prob_cata:
+#     print el.core
+# print UP.core
+# for el in sol_cata:
+#     print el.core
+# print SC.core
+print AC.core
+for item in AC.data:
+    print item
+# print AC.data
+# print AP.core
