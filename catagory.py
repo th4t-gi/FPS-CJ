@@ -46,8 +46,12 @@ class FPS(object):
 
         if self.sect == "problem" or self.sect == "solution":
             self.core = self._findSection(self.core,
-                re.compile(r"%d\. \(cata: (?:\d+|P|D .*?)(?:\, \d+)?\)" % self.num))
-            self.data = self.pos_cata("num")
+                re.compile(r"%d\. \(cata: (?:\d+|P|W|S|D .*?)(?:\, \d+)?(?:\; (Y|Y, O|R|E|R, E))?\)" % self.num))
+            self.data = self.pos_cata()
+
+        if __name__ == '__main__':
+            print self.core
+            print self.data
 
     def _findSection(self, group, name_pat):
         name = name_pat.search(group)
@@ -80,10 +84,13 @@ class FPS(object):
             dup = re.search(r"^{0}\. \(cata: (D) -> (\d+)\.\)".format(self.num), self.core, re.M)
             if dup: return [self.num, {dup.group(1): int(dup.group(2))}]
 
-            pos = re.search(r"\(cata: (\d+|P)(?:\, (\d+))?\)", self.core)
-            if pos.group(2): return [self.num, get_cata_from([pos.group(1), pos.group(2)])]
+            pos = re.search(r"\(cata: (\d+|P|W|S|D .*?)(?:\, (\d+))?(?:\; (Y|Y, O|R|E|R, E))?\)", self.core)
+            pos3 = pos.group(3)
+            if pos3 and len(pos3) > 1:
+                pos3 = pos3.split(', ')
+            if pos.group(2): return [self.num, pos3, get_cata_from([pos.group(1), pos.group(2)])]
+            if pos3: return [self.num, pos3, get_cata_from(pos.group(1))]
             return [self.num, get_cata_from(pos.group(1))]
-
         if mode == "named": #mode for finding keywords from each problem
             paragraphs = re.split(r"\d+\. \(.*?\) ", self.core)
             paragraphs = [item.replace("\n", '') for item in paragraphs
@@ -128,8 +135,8 @@ def get_cata_from(val):
 
 probs = open("Packet/ex_problems.txt").read()
 sols = open("Packet/ex_solutions.txt").read()
-misc = open("Packet/ex_UP+AP+S_Criteria+A_Criteria.txt").read()
-#
+misc = open("Packet/ex_misc.txt").read()
+
 # prob_cata = [FPS("problem", probs, i) for i in range(1, 17)]
 # UP = FPS("UP", misc)
 # sol_cata = [FPS("solution", sols, i) for i in range(1, 17)]
