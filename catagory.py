@@ -27,6 +27,10 @@ catagories = {
 }
 multi_cata = multi_key_dict(catagories)
 
+probs = open("Packet/ex_problems.txt").read()
+sols = open("Packet/ex_solutions.txt").read()
+misc = open("Packet/ex_misc.txt").read()
+
 class FPS(object):
     """Documentation for FPS data object. 'Core' data object used in packet
     analysis"""
@@ -42,26 +46,26 @@ class FPS(object):
         if self.sect in self.misc.keys():
             self.core = self._findSection(self.core,
                 re.compile(r'(\(%s(?:\: \d)?\))' % self.sect, re.I))
-            self.data = self.misc[self.sect](text=self.sect)
+            self.data = self.misc[self.sect]()
 
         if self.sect == "problem" or self.sect == "solution":
             self.core = self._findSection(self.core,
                 re.compile(r"%d\. \(cata: (?:\d+|P|W|S|D .*?)(?:\, \d+)?(?:\; (Y|Y, O|R|E|R, E))?\)" % self.num))
             self.data = self.pos_cata()
 
-        if __name__ == '__main__':
-            print self.core
-            print self.data
+        # if __name__ == '__main__':
+        #     print self.core
+        #     print self.data
 
     def _findSection(self, group, name_pat):
         name = name_pat.search(group)
         sect = re.search(r"%s\s?(?:\n?.+)+" % re.escape(name.group()), group)
         return sect.group()
 
-    def _SCedit(self, text):
+    def _SCedit(self):
         data = re.findall(r"(\d+)\. ([A-Z ]+)", self.core, re.I)
         return [tuple([int(tup[0]), tup[1]]) for tup in data]
-    def _ACedit(self, text):
+    def _ACedit(self):
         core = self.core.split("\n")[1:]
         pattern = re.compile(r"sol: (\d+)\, \"([\w\. ]+)\"\)\[((?:\d: \d\,? ?)+)")
         for i in range(0, len(core)):
@@ -70,15 +74,15 @@ class FPS(object):
             core[i][2] = re.findall(r"\d: (\d)", core[i][2])
             core[i][2] = [dict(((idx + 1, val),)) for idx, val in enumerate(core[i][2])]
         return core
-    def pos_cata(self, mode='num', text=None):
-        if text == "up":
+    def pos_cata(self, mode='num'):
+        if self.sect == "up":
             prob = re.search(r"\(UP: (\d+)\)", self.core).group(1)
             # prob_cata[int(prob) - 1].data.insert(0, 'UP')
-            return prob_cata[int(prob) - 1].data
-        elif text == "ap":
+            return FPS("problem", probs, int(prob)).data
+        elif self.sect == "ap":
             sol = re.search(r"\(AP: (\d+)\)", self.core).group(1)
             # sol_cata[int(sol) - 1].data.insert(0, 'AP')
-            return sol_cata[int(sol) - 1].data
+            return FPS("solution", sols, int(sol)).data
 
         if mode == "num": #mode for finding judges decision
             dup = re.search(r"^{0}\. \(cata: (D) -> (\d+)\.\)".format(self.num), self.core, re.M)
@@ -88,54 +92,48 @@ class FPS(object):
             pos3 = pos.group(3)
             if pos3 and len(pos3) > 1:
                 pos3 = pos3.split(', ')
-            if pos.group(2): return [self.num, pos3, get_cata_from([pos.group(1), pos.group(2)])]
-            if pos3: return [self.num, pos3, get_cata_from(pos.group(1))]
-            return [self.num, get_cata_from(pos.group(1))]
-        if mode == "named": #mode for finding keywords from each problem
-            paragraphs = re.split(r"\d+\. \(.*?\) ", self.core)
-            paragraphs = [item.replace("\n", '') for item in paragraphs
-                        if not item.startswith("#")]
-            analysis = []
-            for idx, p in enumerate(paragraphs):
-                p = p.replace(".", '').replace(",", '').split()
-                keywords = [get_cata_from(word) for word in p if get_cata_from(word)]
-                if keywords and not self.num:
-                    if len(keywords) == 1: keywords = keywords[0]
-                    analysis.append([idx+1, keywords])
+            if pos.group(2): return [self.num, pos3, self.get_cata_from([pos.group(1), pos.group(2)])]
+            if pos3: return [self.num, pos3, self.get_cata_from(pos.group(1))]
+            return [self.num, self.get_cata_from(pos.group(1))]
+        # if mode == "named": #mode for finding keywords from each problem
+        #     paragraphs = re.split(r"\d+\. \(.*?\) ", self.core)
+        #     paragraphs = [item.replace("\n", '') for item in paragraphs
+        #                 if not item.startswith("#")]
+        #     analysis = []
+        #     for idx, p in enumerate(paragraphs):
+        #         p = p.replace(".", '').replace(",", '').split()
+        #         keywords = [self.get_cata_from(word) for word in p if self.get_cata_from(word)]
+        #         if keywords and not self.num:
+        #             if len(keywords) == 1: keywords = keywords[0]
+        #             analysis.append([idx+1, keywords])
+        #
+        #         elif self.num == idx + 1:
+        #             keywords = [self.get_cata_from(word) for word in p if self.get_cata_from(word)]
+        #             if not keywords: return "No keywords found"
+        #             return keywords
+        #     return analysis
 
-                elif self.num == idx + 1:
-                    keywords = [get_cata_from(word) for word in p if get_cata_from(word)]
-                    if not keywords: return "No keywords found"
-                    return keywords
-            return analysis
 
+    def get_cata_from(self, val):
+        if val == "P": return val
 
-def get_cata_from(val):
-    if val == "P":
-        return val
+        if type(val) == str:
+            if re.match(r"\d+", val):
+                cata = [multi_cata.keys()[idx] for idx, key in
+                    enumerate(multi_cata.keys()) if key[1] == int(val)]
+            else:
+                cata = [multi_cata.keys()[multi_cata.values().index(l)]
+                        for l in multi_cata.values() if val in l]
 
-    if type(val) == str:
-        if re.match(r"\d+", val):
-            cata = [multi_cata.keys()[idx] for idx, key in
-                enumerate(multi_cata.keys()) if key[1] == int(val)]
-        else:
-            cata = [multi_cata.keys()[multi_cata.values().index(l)]
-                    for l in multi_cata.values() if val in l]
+        elif type(val) == list:
+            cata = [[multi_cata.keys()[idx] for idx, key in
+                    enumerate(multi_cata.keys()) if key[1] == int(elmt)][0] for elmt in val]
 
-    elif type(val) == list:
-        cata = []
-        for elmt in val:
-            cata.append([multi_cata.keys()[idx] for idx, key in
-                    enumerate(multi_cata.keys()) if key[1] == int(elmt)][0])
+        if len(cata) >= 2:
+            return sorted(cata)
+        elif len(cata) == 1:
+            return cata[0]
 
-    if len(cata) >= 2:
-        return sorted(cata)
-    elif len(cata) == 1:
-        return cata[0]
-
-probs = open("Packet/ex_problems.txt").read()
-sols = open("Packet/ex_solutions.txt").read()
-misc = open("Packet/ex_misc.txt").read()
 
 # prob_cata = [FPS("problem", probs, i) for i in range(1, 17)]
 # UP = FPS("UP", misc)
