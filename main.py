@@ -1,4 +1,5 @@
 from catagory import *
+from nn.CANN import CataNN
 
 prob_cata = [FPS("problem", probs, i) for i in range(1, 17)]
 UP = FPS("UP", misc)
