@@ -9,35 +9,31 @@ Making an analytical program to judge Future Problem Solvers competition packets
 * [Global Issue Problem Solving](http://www.fpspi.org/gips.html)
 * [Scenario Writing](http://www.fpspi.org/sw.html)
 
-##### GIPS
-In *Global Issue Problem Solving* (GIPS), you recieve a Future scene or *Fuzzy* -because this scene could possibly happen. Then you go through a six step process to fix this Fuzzy:
+### GIPS
+In *Global Issue Problem Solving* (GIPS), you and your team of 4 people recieve a Future scene or *Fuzzy* – because this scene could possibly happen. You go through a six step process to fix the Fuzzy:
 
 1. Find 16 **Problems**
 2. Find the **Underlying Problem (UP)** in the 16 problems
 3. Make 16 **Solutions** to the UP
-4. **Select Criteria** - 5
-5. **Apply Criteria** to top 8 solutions
+4. **Select Criteria** (5 criteria)
+5. Grade and **Apply Criteria** to top 8 solutions
 6. Creat an **Action Plan (AP)** for the highest scored solution
 
-A trained judge then grades the packet based on creativity, categories used, and possiblity.
-
-The goal of Packet Analysis is to have a computer grade a packet. Just like an AP is written, benifits of a computer are:
+A trained judge then grades the packet based on creativity, categories used, and possiblity. The goal of Packet Analysis is to have a computer grade a packet. Just like an AP is written, benifits of a computer are:
 A) A computer would grade a packet a lot faster than a Human.
-B) The computer cannot be biased
-C) I just want make this to test my neural network knowledge
+B) The computer cannot be biased.
+C) I just want make this to test my neural network knowledge.
 
-The next part talks about the sections of this project
+## C.A.N.N.
+CANN stands for Categorizing Artificial Neural Network. This is going to be located in `nn/CANN.py` where the neural network class will be but the grading of the packet will be in `main.py`.
 
+
+## Sections of the project
 ### catagory.py
-This file takes the input of a folder in the root directory called Packet and
-outputs data associated with each problem, solution, the UP, etc.
+This file's job is to find the desired output of a neural network – at least for the training data. The `catagory.py` is where the FPS data object is stored which is used for retrieving data to check with the CANN of the problem or solution.
 
 ### main.py
-The main file is going to be the file where it takes the arrays and dictionaries
-from catagory.py and scores the Packet. Main.py possibly may tell the user what
-they did well on and what they need to improve on.
+The main file is going to be the file where it takes the data found from catagory.py and scores the Packet based on the CANN. `Main.py` possibly may tell the user what they did well on and what they need to improve on.
 
-### Packet
-The packet directory contains the data that would be used for the testing and
-training of the CANN (Categorizing Artificial Neural Network). The files in the
-packet directory
+### Packet Directory
+The packet directory contains the data that would be used for the testing and training of the CANN. The files in the packet directory would be typed in
