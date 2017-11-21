@@ -1,6 +1,6 @@
 #qualifying packet
 
-(UP: 8) In what ways might we ensure that nobody takes over this project,
+(UP: 0, 1, 3, 0, 5, 7) In what ways might we ensure that nobody takes over this project,
   including the U.S. and other countries, and that the SDS makes their decisions
   in the best interest of the human race so that the mission can succeed.
 
@@ -22,7 +22,7 @@
 (sol: 7, "agreeing to make the planet a new country")[1: 3, 2: 2, 3: 4, 4: 3, 5: 1]
 (sol: 9, "making a survey")[1: 2, 2: 5, 3: 6, 4: 1, 5: 4]
 
-(AP: 6) In March of 2043, space agencies including NASA and other space agencies
+(AP: 5, 5, 5, 5, 9) In March of 2043, space agencies including NASA and other space agencies
   will each give volunteers and some money to fund and create the Intergalactic
   Travel Agency (ITA). The ITA will only supervise projects like the Athena
   Mission which are missions to explore undiscovered areas of the galaxy. They
