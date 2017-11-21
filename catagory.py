@@ -27,15 +27,15 @@ catagories = {
 }
 multi_cata = multi_key_dict(catagories)
 
-probs = open("Packet/ex_problems.txt").read()
-sols = open("Packet/ex_solutions.txt").read()
-misc = open("Packet/ex_misc.txt").read()
+# probs = open("Q J102 Packet/ex_problems.txt").read()
+# sols = open("Q J102 Packet/ex_solutions.txt").read()
+# misc = open("Q J102 Packet/ex_misc.txt").read()
 
 class FPS(object):
     """Documentation for FPS data object. 'Core' data object used in packet
     analysis"""
 
-    def __init__(self, section, text, num=0):
+    def __init__(self, section, text, num=None):
         super(FPS, self).__init__()
         self.sect = section.lower() #UP, problem, Criteria etc.
         self.core = text
@@ -44,75 +44,50 @@ class FPS(object):
                     "apply criteria": self._ACedit, "ap": self.pos_cata}
 
         if self.sect in self.misc.keys():
-            self.core = self._findSection(self.core,
-                re.compile(r'(\(%s(?:\: \d)?\))' % self.sect, re.I))
-            self.data = self.misc[self.sect]()
+            self.findSection(self.core, re.compile(r'(\(%s(?:\:(?: \d\,?)+)?\))' % self.sect, re.I))
+            self.misc[self.sect]()
 
         if self.sect == "problem" or self.sect == "solution":
-            self.core = self._findSection(self.core,
-                re.compile(r"%d\. \(cata: (?:\d+|P|W|S|D .*?)(?:\, \d+)?(?:\; (Y|Y, O|R|E|R, E))?\)" % self.num))
+            self.findSection(self.core, re.compile(r"%d\. \(cata: (?:\d+|P|W|S|D .*?)(?:\, \d+)?(?:\; (Y|Y, O|R|E|R, E))?\)" % self.num))
             self.data = self.pos_cata()
 
         # if __name__ == '__main__':
         #     print self.core
         #     print self.data
 
-    def _findSection(self, group, name_pat):
-        name = name_pat.search(group)
-        sect = re.search(r"%s\s?(?:\n?.+)+" % re.escape(name.group()), group)
-        return sect.group()
+    def findSection(self, group, name_pat):
+        self.raw = name_pat.search(group).group()
+        text = re.search(r"%s\s?(?:\n?.+)+" % re.escape(self.raw), group)
+        self.core = text.group()
 
     def _SCedit(self):
         data = re.findall(r"(\d+)\. ([A-Z ]+)", self.core, re.I)
-        return [tuple([int(tup[0]), tup[1]]) for tup in data]
+        self.data = [tuple([int(tup[0]), tup[1]]) for tup in data]
     def _ACedit(self):
-        core = self.core.split("\n")[1:]
+        core = self.core.split("\n")[1:self.num]
         pattern = re.compile(r"sol: (\d+)\, \"([\w\. ]+)\"\)\[((?:\d: \d\,? ?)+)")
         for i in range(0, len(core)):
             core[i] = list(pattern.findall(core[i])[0])
             core[i][0] = int(core[i][0])
             core[i][2] = re.findall(r"\d: (\d)", core[i][2])
             core[i][2] = [dict(((idx + 1, val),)) for idx, val in enumerate(core[i][2])]
-        return core
+        self.data = core
     def pos_cata(self, mode='num'):
-        if self.sect == "up":
-            prob = re.search(r"\(UP: (\d+)\)", self.core).group(1)
-            # prob_cata[int(prob) - 1].data.insert(0, 'UP')
-            return FPS("problem", probs, int(prob)).data
-        elif self.sect == "ap":
-            sol = re.search(r"\(AP: (\d+)\)", self.core).group(1)
-            # sol_cata[int(sol) - 1].data.insert(0, 'AP')
-            return FPS("solution", sols, int(sol)).data
+        if self.sect == "up": self.UAP()
+        elif self.sect == "ap": self.UAP()
 
-        if mode == "num": #mode for finding judges decision
+        elif mode == "num": #mode for finding judges decision
             dup = re.search(r"^{0}\. \(cata: (D) -> (\d+)\.\)".format(self.num), self.core, re.M)
             if dup: return [self.num, {dup.group(1): int(dup.group(2))}]
 
             pos = re.search(r"\(cata: (\d+|P|W|S|D .*?)(?:\, (\d+))?(?:\; (Y|Y, O|R|E|R, E))?\)", self.core)
+            self.raw = pos.group()
             pos3 = pos.group(3)
             if pos3 and len(pos3) > 1:
                 pos3 = pos3.split(', ')
             if pos.group(2): return [self.num, pos3, self.get_cata_from([pos.group(1), pos.group(2)])]
             if pos3: return [self.num, pos3, self.get_cata_from(pos.group(1))]
             return [self.num, self.get_cata_from(pos.group(1))]
-        # if mode == "named": #mode for finding keywords from each problem
-        #     paragraphs = re.split(r"\d+\. \(.*?\) ", self.core)
-        #     paragraphs = [item.replace("\n", '') for item in paragraphs
-        #                 if not item.startswith("#")]
-        #     analysis = []
-        #     for idx, p in enumerate(paragraphs):
-        #         p = p.replace(".", '').replace(",", '').split()
-        #         keywords = [self.get_cata_from(word) for word in p if self.get_cata_from(word)]
-        #         if keywords and not self.num:
-        #             if len(keywords) == 1: keywords = keywords[0]
-        #             analysis.append([idx+1, keywords])
-        #
-        #         elif self.num == idx + 1:
-        #             keywords = [self.get_cata_from(word) for word in p if self.get_cata_from(word)]
-        #             if not keywords: return "No keywords found"
-        #             return keywords
-        #     return analysis
-
 
     def get_cata_from(self, val):
         if val == "P": return val
@@ -134,6 +109,9 @@ class FPS(object):
         elif len(cata) == 1:
             return cata[0]
 
+    def UAP(self):
+        process = re.search(r"\((?:UP|AP)\: ((?:\d\,? ?)+)\)", self.raw)
+        self.data = [int(i) for i in process.group(1).split(", ")]
 
 # prob_cata = [FPS("problem", probs, i) for i in range(1, 17)]
 # UP = FPS("UP", misc)
