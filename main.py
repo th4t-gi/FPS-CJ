@@ -2,6 +2,7 @@ from os import listdir
 from catagory import FPS
 from nn.CANN import CataNN
 
+
 packet = "q j102 packet/"#raw_input("path to packet files: ") + '/'
 def find(keyword, array):
     return [i for i in array if keyword in i][0]
@@ -10,7 +11,7 @@ try:
     sols = open(packet + find('sol', listdir(packet))).read()
     misc = open(packet + find('misc', listdir(packet))).read()
 except OSError:
-    print "invalid packet directory"
+    print("invalid packet directory")
     quit()
 
 prob_cata = [FPS("problem", probs, i) for i in range(1, 17)]
@@ -20,7 +21,10 @@ UP = FPS("UP", misc)
 # AC = FPS("Apply Criteria", misc)
 # AP = FPS("AP", misc)
 
-p0 = CataNN([18], prob_cata[0].core, prob_cata[0].data)
+num = 4
+p0 = CataNN([18], prob_cata[num].core, prob_cata[num].data)
+# pnn = [CataNN([18], i.core, i.data) for i in prob_cata]
+
 
 total_points = 0
 
