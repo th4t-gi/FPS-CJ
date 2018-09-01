@@ -3,11 +3,11 @@ import re
 
 catagories = {
     ("Arts & Aesthetics", 1) : ['public', 'art', 'arts', 'aesthetics', 'design', 'picture', 'drawing'],
-    ("Basic Needs", 2) : ['poverty', 'food', 'shelter', 'water', 'basic needs'],
-    ("Business & Commerce", 3) : ['money', 'cash', 'stock', 'business', 'commerce'],
+    ("Basic Needs", 2) : ['poverty', 'food', 'shelter', 'water', 'basic needs', 'eat', 'humans', 'animals'],
+    ("Business & Commerce", 3) : ['money', 'cash', 'stock', 'business', 'commerce', 'pay', 'fund', 'land'],
     ("Communication", 4) : ['information', 'communication', 'talking', 'phones', 'connection', 'discuss',
         'tell'],
-    ("Defense", 5) : ['control', 'country', 'national', 'countries', 'protect', 'military'],
+    ("Defense", 5) : ['control', 'country', 'national', 'countries', 'protect', 'military', 'world', 'war'],
     ("Economics", 6) : ['economics', 'banking', 'bank', 'credit', 'credit card', 'money'],
     ("Education", 7) : ['education', 'educating', 'educate', 'school', 'learn', 'teach', 'math', 'science'],
     ("Environment", 8) : ['environment', 'plants', 'trees', 'animals', 'pollution', ],
@@ -22,8 +22,8 @@ catagories = {
     ("Recreation", 15) : ['enjoyment', 'activity', 'pastime', 'relaxation', 'recreation'],
     ("Social Relationships", 16) : ['social', 'relationship', 'individuals', 'agreement', 'agreeing'],
     ("Technology", 17) : ['technology', 'computers', 'algorithms', 'innovations', 'electricity',
-        'machinery', 'dna', 'future', '3d printing', 'ai', ' alien', 'space travel', 'space'],
-    ("Transportation", 18) : ['transportation', 'cars', 'trains', 'airplanes', 'movement', 'vehicle']
+        'machinery', 'dna', 'future', '3d printing', 'ai', ' alien', 'space travel', 'space', 'materials', 'plastic'],
+    ("Transportation", 18) : ['transportation', 'cars', 'trains', 'airplanes', 'movement', 'vehicle', 'spaceship']
 }
 multi_cata = multi_key_dict(catagories)
 
