@@ -1,18 +1,29 @@
-from os import listdir
+import os, re, subprocess
 from catagory import FPS
 from nn.CANN import CataNN
 
 
-packet = "q j102 packet/"#raw_input("path to packet files: ") + '/'
-def find(keyword, array):
-    return [i for i in array if keyword in i][0]
+packet = raw_input("folder of packet: ").title()
+
 try:
-    probs = open(packet + find('prob', listdir(packet))).read()
-    sols = open(packet + find('sol', listdir(packet))).read()
-    misc = open(packet + find('misc', listdir(packet))).read()
+    packet_path = subprocess.check_output("find ~/Code/Project\ folder/ -type d -name \"{}\" -print".format(packet),shell=True,stderr=subprocess.STDOUT)
+except subprocess.CalledProcessError as e:
+    packet_path = e.output
+
+if not packet_path.endswith("/"):
+    packet_path = packet_path.replace('\n', '') + "/"
+def find(array, keyword):
+    return [i for i in array if keyword in i][0]
+
+try:
+    probs = open(packet_path + find(os.listdir(packet_path), 'prob')).read()
+    sols = open(packet_path + find(os.listdir(packet_path), 'sol')).read()
+    misc = open(packet_path + find(os.listdir(packet_path), 'up')).read()
 except OSError:
-    print("invalid packet directory")
+    print "invalid packet directory"
     quit()
+except IndexError:
+    print "packet file names need to be Uncapitalized"
 
 prob_cata = [FPS("problem", probs, i) for i in range(1, 17)]
 # sol_cata = [FPS("solution", sols, i) for i in range(1, 17)]
