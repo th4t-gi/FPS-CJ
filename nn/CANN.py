@@ -1,7 +1,10 @@
-import numpy as np, pickle, re
+import numpy as np, pickle, re, json
 from nltk import word_tokenize, pos_tag
+from word2vecs import find_packet
+
 from nltk.corpus import stopwords
 np.random.seed(1)
+
 
 class _neuralnet(object):
 
@@ -21,10 +24,11 @@ class _neuralnet(object):
         else:
             weights = np.random.random((self.out, len(l0) - 1))
 
-    def nonlinear(self, x, deriv=False):
-        if deriv:
+    def nonlinear(self, x, d=False):
+        if d:
             return x*(1 - x)
-        return 1 / (1 + np.exp(-x))
+        else:
+            return 1 / (1 + np.exp(-x))
 
     def cost(self, guessed):
         return (guessed - self.result)*(guessed - self.result)
@@ -39,7 +43,7 @@ class CataNN(_neuralnet):
         in a FPS packet"""
 
         if not((isinstance(struct, list) and len(struct) == 2) or isinstance(core, str) or isinstance(data, list)):
-            raise NameError("CataNN.__init__ arguments are of incorrect format")
+            raise NameError("CataNN() arguments are of incorrect format")
 
         contrxs = {"aren't" : "are not", "can't" : "cannot", "couldn't" : "could not", "didn't" : "did not", "doesn't" : "does not", "don't" : "do not", "hadn't" : "had not", "hasn't" : "has not", "haven't" : "have not", "he'd" : "he had", "he'll" : "he will", "he's" : "he is; he has",
                 "I'd" : "I had", "I'll" : "I will", "I'm" : "I am", "I've" : "I have", "isn't" : "is not", "let's" : "let us", "mightn't" : "might not", "mustn't" : "must not", "shan't" : "shall not", "she'd" : "she had", "she'll" : "she will", "she's" : "she is", "shouldn't" : "should not",
