@@ -15,7 +15,7 @@ In *Global Issue Problem Solving* (GIPS), you and your team of up to 4 people re
 1. Find 16 **Problems**
 2. Find the **Underlying Problem (UP)** or biggest problem in those 16 problems
 3. Make 16 **Solutions** to the UP
-4. **Select Criteria**: Create 5 criteria to grade your solutions on
+4. **Select 5 Criteria** to grade your solutions on
 5. Grade and **Apply Criteria** to the top 8 solutions
 6. Creat an **Action Plan (AP)** for the best solution
 
@@ -23,6 +23,7 @@ A judge then grades your packet based on creativity, futuristic thinking, and be
 
 
 ### The Framework of Neural Nets
+
 The FPS judge has to be able to decide which category a problem is, if it is relevent to the future scene - and if it isn't, why? - and, if the problem is a logical cause or effect of the fuzzy.
 Therefore, there are multiple independent ANNs in order to grade a packet.
 
