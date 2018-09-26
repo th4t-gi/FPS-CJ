@@ -22,7 +22,7 @@ In *Global Issue Problem Solving* (GIPS), you and your team of up to 4 people re
 A judge then grades your packet based on creativity, futuristic thinking, and being elaborate. The goal of the FPS Packet Analysis program is to have a comuter grade a packet.
 
 
-### The Framework of Neural Nets
+## The Framework of Neural Nets
 
 The FPS judge has to be able to decide which category a problem is, if it is relevent to the future scene - and if it isn't, why? - and, if the problem is a logical cause or effect of the fuzzy.
 Therefore, there are multiple independent ANNs in order to grade a packet.
@@ -31,7 +31,7 @@ Therefore, there are multiple independent ANNs in order to grade a packet.
 Probably the easiest Neural Network to train, the most straight forward named ANN, probably the easiest Neural Network in general. The CANN will decide why a defense problem and communication solution are categorized the way they are and how to do so.
 
 #### The Yes Challenge/Relevant Solution Neural Network (YC/RSNN)
-No pronouncable name for this ANN. The YR as I've pronounced it, will find what makes good challenges and solutions and grades the packet on what it thinks
+No pronouncable name for this ANN. The YR as I've dubed it, will find what makes good challenges and solutions and grades the packet on what that
 
 #### The Elaboration Neural Network (ENN)
 "The N" for short, this Neural Network will decide if A) a challenge is clear on why it's a problem and B) a relevent solution is elaborated on.
