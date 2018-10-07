@@ -1,8 +1,8 @@
 import numpy as np, pickle, re, json
 from nltk import word_tokenize, pos_tag
+from nltk.corpus import stopwords
 from format import find_packet
 
-from nltk.corpus import stopwords
 np.random.seed(1)
 
 
