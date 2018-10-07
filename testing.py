@@ -7,4 +7,5 @@ from keras.utils import plot_model
 from keras.models import Model
 import matplotlib
 
-model = LSTM(25, return_sequences=True)
+visible = Input(shape=(100,1))
+model = LSTM(25, return_sequences=True)(visible)
