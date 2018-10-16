@@ -1,14 +1,14 @@
-# # import time
-# # t = time.time()
-# # import tensorflow as tf
-# # import keras
-# # from keras.layers import LSTM, Bidirectional, Dense, Input
-# # from keras.utils import plot_model
-# # from keras.models import Model
-# # import matplotlib
-# #
-# # visible = Input(shape=(100,1))
-# # model = LSTM(25, return_sequences=True)(visible)
+import time
+t = time.time()
+import tensorflow as tf
+import keras
+from keras.layers import LSTM, Bidirectional, Dense, Input, Embedding
+from keras.utils import plot_model
+from keras.models import Model
+import matplotlib
+
+main_input = Input(shape=(100,), name="main_input")
+# x = Embedding(output_dim=512, input_dim=10000, input_length=100)(main_input)
 #
 # class color:
 #     PURPLE = '\033[95m'
@@ -27,17 +27,3 @@
 # print color.DARKCYAN + 'Hello World !' + color.END
 # print color.PURPLE + 'Hello World !' + color.END
 # print color.BLUE + 'Hello World !' + color.END
-def flatten(l, iter=float("inf")):
-    result = []
-    for el in l:
-        if iter == 0:
-            result.append(l)
-            break
-        if hasattr(el, "__iter__") and not isinstance(el, basestring):
-            result.extend(flatten(el, iter - 1))
-        else: result.append(el)
-    return result
-
-a = ["I", "am", ["fine", "good", "bad"], ["ok", "OKAY", ["okay"]]]
-print flatten(a)
-print flatten(a, 1)
