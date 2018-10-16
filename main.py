@@ -31,6 +31,7 @@ vecs = vectorize(flatten(tokens, 2), show=False, size=100)
 #tokens and joins data for Categorizing NN
 cdata = [data["challenges"] for data in dadata]
 challenges = [categorizedData(c, vecs) for packet in cdata for c in packet["data"]]
+print challenges
 # Procrastinated
 # Neural
 # Network
