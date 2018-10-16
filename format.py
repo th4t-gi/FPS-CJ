@@ -4,7 +4,7 @@ from nltk.tokenize import word_tokenize
 from gensim.models import Word2Vec
 from sklearn.decomposition import PCA
 from matplotlib import pyplot
-from collections import namedtuple
+from collections import namedtuple, OrderedDict
 import subprocess, re, os, numpy as np, random, string, warnings
 
 #finds the directory path of given folder
@@ -76,21 +76,20 @@ class packet(object):
 
 class categorizedData(object):
 
-    def __init__(self, data):
+    def __init__(self, data, vecs):
         super(categorizedData, self).__init__()
         self.gp = ["categories", "perhaps", "why", "duplicate", "solution"]
         #finds text from data obj
-        text = [list(getData(r".*?text", packet)) for packet in data]
-        self.tokens = token(text)
-        #finds categories for self.tokens
-        self.cats = [[c["scoring"].items() for c in packet["data"]] for packet in data]
-        self.cats = [[[tup for tup in c if tup[0] in self.gp] for c in packet] for packet in self.cats]
-        self.cats = [[i for c in packet for i in c if i[1]] for packet in self.cats]
-        #combines self.tokens and self.cats
-        finaldata = [zip(self.cats[i], packet) for i, packet in enumerate(self.tokens)]
-        #if multiple packets are inputed, it combines packets for training
-        self.data = flatten(finaldata, 2)
-
+        self.tokens = tokenize(data["packet"]["text"], single=True)
+        self.words = " ".join(self.tokens)
+        # #finds categories for the self.tokens
+        self.category = [tup for tup in data["scoring"].items() if tup[0] in self.gp]
+        self.category = [tup for tup in self.category if tup[1]][0]
+        if self.category[0] == "categories": self.category = self.category[1]
+        else: self.category = self.category[0]
+        #combines self.tokens and self.categorys
+        self.vecs = [vecs[token] for token in self.tokens]
+        self.v = OrderedDict(zip(self.tokens, self.vecs))
 
 def getData(key, dictionary, track=False):
     for k, v in dictionary.iteritems():
@@ -131,9 +130,12 @@ def vectorize(l, show=False, size=100, sim=[]):
     return formatted
 
 
-def token(text):
+def tokenize(text, single=False):
+    if single:
+        tokens = word_tokenize(text.replace("/", " ").replace("\"", ""))
+        return [word.lower() for word in tokens if not word.lower() in string.punctuation if not "'" in word]
     if not type(text[0]) == list:
-        raise TypeError
+        raise TypeError("Text must be nested list of strings, not list of type str")
     tokens = [[word_tokenize(i.replace("/", " ").replace("\"", "")) for i in packet] for packet in text]
     return [[[word.lower() for word in i if not word.lower() in string.punctuation if not "'" in word] for i in packet] for packet in tokens]
 
