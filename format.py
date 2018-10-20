@@ -19,10 +19,10 @@ def find_packet(file, rootdir="~/", dir=True):
         _packet_path = _packet_path.replace('\n', '')
     return _packet_path
 
-class packet(object):
+class Getpacket(object):
 
     def __init__(self, *args):
-        super(packet, self).__init__()
+        super(Getpacket, self).__init__()
         self.packets = flatten(args)
         self.packets = list(set(flatten([self.get_packets(i) for i in self.packets])))
         self.paths = [self.get_data(i) for i in self.packets]
@@ -74,15 +74,15 @@ class packet(object):
         else: return True
 
 
-class categorizedData(object):
+class PairedData(object):
 
     def __init__(self, data, vecs):
-        super(categorizedData, self).__init__()
+        super(PairedData, self).__init__()
         self.gp = ["categories", "perhaps", "why", "duplicate", "solution"]
         #finds text from data obj
         self.tokens = tokenize(data["packet"]["text"], single=True)
         self.words = " ".join(self.tokens)
-        # #finds categories for the self.tokens
+        #finds categories for the self.tokens
         self.category = [tup for tup in data["scoring"].items() if tup[0] in self.gp]
         self.category = [tup for tup in self.category if tup[1]][0]
         if self.category[0] == "categories": self.category = self.category[1]
