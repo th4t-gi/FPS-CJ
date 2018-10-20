@@ -7,9 +7,10 @@ from keras.utils import plot_model
 from keras.models import Model
 import matplotlib
 
-main_input = Input(shape=(100,), name="main_input")
-x = Embedding(output_dim=512), input_dim=10000)(main_input)#, input_length=100)(main_input)
-lstm_out = LSTM(32)(x)
+main_input = Input(shape=(100,))
+print main_input    
+# x = Embedding(output_dim=512), input_dim=10000)(main_input)#, input_length=100)(main_input)
+# lstm_out = LSTM(32)(x)
 #
 # class color:
 #     PURPLE = '\033[95m'
