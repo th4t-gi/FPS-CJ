@@ -6,7 +6,7 @@ from format import *
 from nltk.corpus import stopwords
 sw = stopwords.words("english")
 
-p = packet("CO-17-J102-Q")#, list(ask("Directory name of a packet: ")))
+p = Getpacket("ALL")#, list(ask("Directory name of a packet: ")))
 #write the filepath to data
 for i, val in enumerate(p.paths):
     fuzzy = find_packet("fuzzy.txt", re.sub(r"data-\d{3}\.json", "", p.paths[i]).replace(" ", "\\ "), dir=False)
@@ -21,15 +21,19 @@ dtext = [list(getData(r".*?text", data)) for data in dadata]
 #add the fuzzy text to become word vectors
 for i, ptext in enumerate(dtext):
     ptext.append(open(dadata[i]["meta"]["future-scene"]).read())
-#tokens text
-tokens = tokenize(dtext)
-OGtokens = sorted(list(set([word for packet in tokens for token in packet for word in token])))
 #Word2Vec alg applied and creates vecs
+tokens = tokenize(dtext)
 vecs = vectorize(flatten(tokens, 2), show=False, size=100)
+OGtokens = sorted(list(set([word for packet in tokens for token in packet for word in token])))
 
-#tokens and joins data for Categorizing NN
+
+#challenges data
 cdata = [data["challenges"] for data in dadata]
-challenges = [categorizedData(c, vecs) for packet in cdata for c in packet["data"]]
+crdata = [data["criteria"] for data in dadata]
+challenges = [PairedData(c, vecs) for packet in cdata for c in packet["data"]]
+
+# criteria data
+
 # Procrastinated
 # Neural
 # Network
