@@ -1,7 +1,7 @@
 {
   "meta": {
-    "future-scene": "/Users/Judd/Code//Project Folder/FPS/FPS CJ/Training packets/CO-17-J102-S//fuzzy.txt",
-    "data-filepath": "/Users/Judd/Code//Project Folder/FPS/FPS CJ/Training packets/CO-17-J102-S/data-132.json",
+    "future-scene": "/Users/Judd//Desktop/FPS-CJ/Training packets/CO-17-J102-S//fuzzy.txt",
+    "data-filepath": "/Users/Judd//Desktop/FPS-CJ/Training packets/CO-17-J102-S/data-132.json",
     "topic": "Identity Theft",
     "judge": 137,
     "problem": "State",
@@ -692,6 +692,10 @@
       "impact": 5,
       "humaneness": 5,
       "development": 10
+    }
+  }
+}
+  "development": 10
     }
   }
 }

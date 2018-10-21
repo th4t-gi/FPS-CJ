@@ -1,7 +1,7 @@
 {
   "meta": {
-    "future-scene": "/Users/Judd/Code//Project Folder/FPS/FPS CJ/Training packets/CO-18-M205-S//fuzzy.txt",
-    "data-filepath": "/Users/Judd/Code//Project Folder/FPS/FPS CJ/Training packets/CO-18-M205-S/data-130.json",
+    "future-scene": "/Users/Judd//Desktop/FPS-CJ/Training packets/CO-18-M205-S//fuzzy.txt",
+    "data-filepath": "/Users/Judd//Desktop/FPS-CJ/Training packets/CO-18-M205-S/data-130.json",
     "topic": "Cloud Computing",
     "judges": 137,
     "problem": "State",
@@ -692,6 +692,10 @@
       "impact": 4,
       "humaneness": 5,
       "development": 8
+    }
+  }
+}
+   "development": 8
     }
   }
 }

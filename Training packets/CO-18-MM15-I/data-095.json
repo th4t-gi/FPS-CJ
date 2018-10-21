@@ -1,7 +1,7 @@
 {
   "meta": {
-    "future-scene": "/Users/Judd/Code//Project Folder/FPS/FPS CJ/Training packets/CO-18-MM15-I//fuzzy.txt",
-    "data-filepath": "/Users/Judd/Code//Project Folder/FPS/FPS CJ/Training packets/CO-18-MM15-I/data-095.json",
+    "future-scene": "/Users/Judd//Desktop/FPS-CJ/Training packets/CO-18-MM15-I//fuzzy.txt",
+    "data-filepath": "/Users/Judd//Desktop/FPS-CJ/Training packets/CO-18-MM15-I/data-095.json",
     "topic": "Criminal Justice",
     "judge": 580,
     "problem": "International",
@@ -422,6 +422,10 @@
       "impact": 2,
       "humaneness": 3,
       "development": 5
+    }
+  }
+}
+   "development": 5
     }
   }
 }
