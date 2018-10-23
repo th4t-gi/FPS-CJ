@@ -1,0 +1,427 @@
+{
+  "meta": {
+    "future-scene": "/Users/Judd//Desktop/FPS-CJ/Training packets/CO-18-MM15-I//fuzzy.txt",
+    "data-filepath": "/Users/Judd//Desktop/FPS-CJ/Training packets/CO-18-MM15-I/data-095.json",
+    "topic": "Criminal Justice",
+    "judge": 580,
+    "problem": "International",
+    "division": "Middle",
+    "team": ["MAGIC", 15],
+    "team-memebers": ["", "", "", ""],
+    "year": 2018,
+    "state": null
+  },
+  "overall": {
+    "scoring": {
+      "research-applied": 5,
+      "creative-strength": 5,
+      "futuristic-thinking": 5,
+      "total": 95
+    },
+    "comments": "Good start to your booklet. Remember that elaboration is key to help you convey your thoughts completely."
+  },
+  "challenges": {
+    "comments": "Good job on correctly writing your challenges. Elaboration would help your clarity score more.",
+    "fluency": 10,
+    "flexibility": 5,
+    "clarity": 6,
+    "data": [
+      {
+        "comments": "",
+        "packet": {
+          "text": "Because the town hall meetings are all VR and lots of important desisions are made at these meetings, people may not have access to VR, therefor they may not be part of making important decisions. The access issue may be [not sure] by social/economic status. As a result, the oppinions of \"lower class\" citizens may not be heard, which may lead to the SSI not working to it's full potential."
+        },
+        "scoring": {
+          "yes": true,
+          "categories": 12,
+          "original": false,
+          "perhaps": false,
+          "why": false,
+          "duplicate": null,
+          "solution": false
+        }
+      },
+      {
+        "comments": "",
+        "packet": {
+          "text": "Due to the fact that a part of the SSI is focused on increasing surveilance, there might be a problem with basic needs, as this might result in the community losing its basic right of privacy. The citizens may feel vialated by this, not allowing the SSI to function as planned."
+        },
+        "scoring": {
+          "yes": true,
+          "categories": 2,
+          "original": false,
+          "perhaps": false,
+          "why": false,
+          "duplicate": null,
+          "solution": false
+        }
+      },
+      {
+        "comments": "",
+        "packet": {
+          "text": "Because the SSI is able to rewatch a crime from a citizen's point of view, the citizen may be regarded as a casuality because the officers can't do anything to protect the citizen until they know what the criminal has done. This may be a problem becuase the citizens may feel like the officers aren't helping them."
+        },
+        "scoring": {
+          "yes": true,
+          "categories": 5,
+          "original": false,
+          "perhaps": false,
+          "why": false,
+          "duplicate": null,
+          "solution": false
+        }
+      },
+      {
+        "comments": "",
+        "packet": {
+          "text": "Since the SSI is very restricting to the citizens, it may cause more rebellions and crime raher than less crime and a safer community. This is already evident as the 2032 Justice Initiative was not successful. There are also rebellions going on already, starting with JRRNH messsage. As a result crime may increase."
+        },
+        "scoring": {
+          "yes": true,
+          "categories": 11,
+          "original": false,
+          "perhaps": false,
+          "why": false,
+          "duplicate": null,
+          "solution": false
+        }
+      },
+      {
+        "comments": "",
+        "packet": {
+          "text": "Because the SSI sends a strong message of their goal to protect the police officers, citizens in Georgetown may feel like they have to rely on a program that may be more willing to protect the officers rather than the citizens. This may be a problem because citizens may not feel obliged to [not sure] for the SSI if they won't be protected."
+        },
+        "scoring": {
+          "yes": true,
+          "categories": 12,
+          "original": false,
+          "perhaps": false,
+          "why": false,
+          "duplicate": null,
+          "solution": false
+        }
+      },
+      {
+        "comments": "",
+        "packet": {
+          "text": "Since it is planned for tecnology to play such an important role in protecting citizens and helping police, if the technology glitches or is hacked there may be instromental impact on the citizens of Georgetown. As a result, people may be less protected than may were before."
+        },
+        "scoring": {
+          "yes": true,
+          "categories": 17,
+          "original": false,
+          "perhaps": false,
+          "why": false,
+          "duplicate": null,
+          "solution": false
+        }
+      },
+      {
+        "comments": "",
+        "packet": {
+          "text": "The point of the SSI is to have the community, police, and government all working together. If citizens decide to oppose the SSI they may be left with nothing or very low security. As a result there may be conflict between these three groups that leaves the community unprotected."
+        },
+        "scoring": {
+          "yes": true,
+          "categories": 5,
+          "original": false,
+          "perhaps": false,
+          "why": false,
+          "duplicate": null,
+          "solution": false
+        }
+      },
+      {
+        "comments": "",
+        "packet": {
+          "text": "Due to the fact that the courtroom systems of Georgetown are largely run with VR + AI, the level of personal connectivity may decrease among citizens. This may lower empathy, and may not leave a positive impact on them."
+        },
+        "scoring": {
+          "yes": true,
+          "categories": 12,
+          "original": false,
+          "perhaps": false,
+          "why": false,
+          "duplicate": null,
+          "solution": false
+        }
+      }
+    ]
+  },
+  "UP": {
+    "packet": {
+      "challenge": 4,
+      "text": "Due to the fact that the SSI restricts the actions of the citizens because of their advanced technology and their low tolerance for crimes, citizens may be more likely to take part in more rebellions in order to defy the goal of the SSI. How might we, the future problem solvers, implement new solutions for crime so that a positive impact is left on the citizens in Georgetown, in 2039 in the topic of criminal justice systems?"
+    },
+    "comments": "Good job formatting your UP but you are essentially eliminating the SSI which is not what the fuzzy wants you to do. You can improve it but not completely get rid of it.",
+    "scoring": {
+      "cp": {
+        "text": "SSI restricts the actions of the citizens because of their advanced technology and their low tolerance for crimes - citizens may be more likely to take part in more rebellions in order to defy the goal of the SSI",
+        "score": 2
+      },
+      "stem-and-kvp": {
+        "stem-text": "How might we",
+        "kvp-text": "implement new solutions for crime",
+        "score": 3
+      },
+      "purpose": {
+        "text": "so that a positive impact is left on the citizens",
+        "score": 3
+      },
+      "parameters": {
+        "topic": true,
+        "place": true,
+        "time": true,
+        "score": 2
+      },
+      "focus": 1,
+      "adequacy": 1
+    }
+  },
+  "solutions": {
+    "comments": "",
+    "fluency": 5,
+    "elaboration": 5,
+    "flexibility": 3,
+    "data": [
+      {
+        "comments": "",
+        "packet": {
+          "text": "Citizens from Georgetown will go into jail with consultants to speak with Chief Finch and the criminals who have been charged for actions against the citizen going into speak with them. The citizen will be able to tell the criminal how they have been impacted becasue of the criminal's actions and the consultant can tell the criminal about similar cases. This will allow the criminal to understand what he did and the citizen can feel better about the ordeal."
+        },
+        "scoring": {
+          "relevant": false,
+          "elaboration": false,
+          "categories": null,
+          "original": false,
+          "perhaps": true,
+          "why": false,
+          "duplicate": null
+        }
+      },
+      {
+        "comments": "",
+        "packet": {
+          "text": "Law schools close to Georgetown will provide aspiring studnts to become lawyers for the criminals and dfendents in court. This allows criminals to get a cheap lawyer that will try to do whatever they can to protect the criminal becuase they want to do their best as a lawyer. This will allow the criminal to feel more positive about the experience if they know they don't have a biased lawyer."
+        },
+        "scoring": {
+          "relevant": false,
+          "elaboration": false,
+          "categories": null,
+          "original": false,
+          "perhaps": true,
+          "why": false,
+          "duplicate": null
+        }
+      },
+      {
+        "comments": "",
+        "packet": {
+          "text": "Chief Finch will redistribute the budget so that more money will go to the assistance of the criminals rather than excess technologies that take away the rights of the citizens. This will solve the UP by improving the society and the environments of the criminals, in Georgetown in 2039."
+        },
+        "scoring": {
+          "relevant": false,
+          "elaboration": false,
+          "categories": null,
+          "original": false,
+          "perhaps": true,
+          "why": false,
+          "duplicate": null
+        }
+      },
+      {
+        "comments": "",
+        "packet": {
+          "text": "Every citizen in Georgetown will have a chip implanted near their head that monitors things like health and brain activity. Officers like Chief Finch will also be able to see the brainwave activity of criminals from when they were committing a crime. This can be analyzed by doctors who will then be able to tell officers what people were thinking when they committed a crime."
+        },
+        "scoring": {
+          "relevant": false,
+          "elaboration": false,
+          "categories": null,
+          "original": false,
+          "perhaps": true,
+          "why": false,
+          "duplicate": null
+        }
+      },
+      {
+        "comments": "",
+        "packet": {
+          "text": "The creators of Implanted lenses will use some of the expanded budget to buy all citizens implanted lenses. In court the defending side will also have access to video evidence so it is more equal. This will decrease the amount of exonerations and improve the attitodes of citizens because they know they are equal to the prosecutors."
+        },
+        "scoring": {
+          "relevant": false,
+          "elaboration": false,
+          "categories": null,
+          "original": false,
+          "perhaps": true,
+          "why": false,
+          "duplicate": null
+        }
+      },
+      {
+        "comments": "",
+        "packet": {
+          "text": "Most of the time a crime is committed because of the lack of basic needs being provided. For example a bank robber would rob a bank to get money most likely because they don't have enough. The government will create a program called Basik Needs which will provide for struggling families, while they need it. This will help because people will rely on the government, which is legal instead of a crime which isn't legal."
+        },
+        "scoring": {
+          "relevant": true,
+          "elaboration": true,
+          "categories": 2,
+          "original": false,
+          "perhaps": false,
+          "why": false,
+          "duplicate": null
+        }
+      },
+      {
+        "comments": "",
+        "packet": {
+          "text": "Microsoft will create an upgrade of the implanted lenses that combine the views of the criminals with the views of others. This will solve the UP by allowing the criminals to see the other side of what they did and improving the society while reducing crime in the process."
+        },
+        "scoring": {
+          "relevant": true,
+          "elaboration": true,
+          "categories": 17,
+          "original": false,
+          "perhaps": false,
+          "why": false,
+          "duplicate": null
+        }
+      },
+      {
+        "comments": "",
+        "packet": {
+          "text": "In Georgetown in 2039, CHief Finch along with other police Chiefs and prison authorities will impliment a VR \"comunity\" in prisons and jails. It would help introduce inmates almost done with with their sentence into the real world. This will help reduce crime becuase if people in jail are well prepared to be in society, they won't make mistakes that will cause them togo back to jail."
+        },
+        "scoring": {
+          "relevant": true,
+          "elaboration": true,
+          "categories": 16,
+          "original": false,
+          "perhaps": false,
+          "why": false,
+          "duplicate": null
+        }
+      }
+    ]
+  },
+  "criteria": {
+    "comments": "Good job on correctly writing your criteria and doing your grid. Remember to use your UP to generate advanced criteria.",
+    "correctly-written": 5,
+    "applicability-relevance": 9,
+    "1": {
+      "packet": {
+        "text": "Which solution will be the best solution to crime?"
+      },
+      "scoring": {
+        "cw": true,
+        "relevance": ["M", 2]
+      }
+    },
+    "2": {
+      "packet": {
+        "text": "Which soution will leave the most positive impact on the citizens?"
+      },
+      "scoring": {
+        "cw": true,
+        "relevance": ["G", 1]
+      }
+    },
+    "3": {
+      "packet": {
+        "text": "Becuase the crime rate is going up no tdown, wich solution will be implimented the fastest so that crime is stopped?"
+      },
+      "scoring": {
+        "cw": true,
+        "relevance": ["M", 2]
+      }
+    },
+    "4": {
+      "packet": {
+        "text": "Which solution will best improve the lives of the citizens and criminals?"
+      },
+      "scoring": {
+        "cw": true,
+        "relevance": ["M", 2]
+      }
+    },
+    "5": {
+      "packet": {
+        "text": "Becuase crime stoppeing can be complicated, which solution will be the easiest to impliment?"
+      },
+      "scoring": {
+        "cw": true,
+        "relevance": ["M", 2]
+      }
+    }
+  },
+  "grid": {
+    "comments": "Good job on correctly writing your criteria and doing your grid. Remember to use your UP to generate advanced criteria.",
+    "correctly-used": 5,
+    "1": {
+      "packet": {
+        "solution": {
+          "number": 3,
+          "text": "Budget"
+        },
+        "grading": {"1": 4, "2": 3, "3": 5, "4": 4, "5": 5},
+        "total": 21
+      }
+    },
+    "2": {
+      "packet": {
+        "solution": {
+          "number": 7,
+          "text": "Upgrade/seeing otherside"
+        },
+        "grading": {"1": 5, "2": 4, "3": 4, "4": 5, "5": 4},
+        "total": 22
+      }
+    },
+    "3": {
+      "packet": {
+        "solution": {
+          "number": 8,
+          "text": "VR introduction to society"
+        },
+        "grading": {"1": 3, "2": 1, "3": 3, "4": 3, "5": 2},
+        "total": 12
+      }
+    },
+    "4": {
+      "packet": {
+        "solution": {
+          "number": 2,
+          "text": "Student Lawyers for criminals"
+        },
+        "grading": {"1": 1, "2": 2, "3": 1, "4": 2, "5": 1},
+        "total": 7
+      }
+    },
+    "5": {
+      "packet": {
+        "solution": {
+          "number": 1,
+          "text": "Citizens speak to criminals"
+        },
+        "grading": {"1": 2, "2": 5, "3": 2, "4": 1, "5": 3},
+        "total": 13
+      }
+    }
+  },
+  "AP": {
+    "packet": {
+      "solution": 7,
+      "text": "Microsoft along with the help of SSI, courts, and Google will take the implimented lenses and wearable technologies and combine them into some thing called UTSOS which stands for: Use Tech to See the Other Side. This is a technology in the form of a sticker put on the side of your face. This sticker measures your brain waves, throught process, and much more. There will also be retinal lenses inplanted in everybody eyes. Both these technologies will be worn by everyone in Georgetown. When criminals are put in jainl, they will be given a helmet and VR goggles that replicate exactly what was going through their mind when they committed the crime. It will also be used to show them how the victim of their crime felt. This will be very effective because the criminals will now get to see the other side. This will strongly discourage them from commiting further crimes as they have new found empathy.\n Since people may view this as an invasion of privacy, all records will be kept exclusivly to the ctitzens and it will be ilegal for the government to store this data or use it. The victims will also be asked before the video/VR/body experience is given to the criminal.\n There will be meetings twice a week between the creators of UTSOS to develop the prototypes and it will be implimented within the first year of creating the final prototype. There will be informational meetings for all citizens so they know what it is and how it works. UTSOS will decrease crime rate, improve lives and create empathy."
+    },
+    "comments": "Good start to your action plan, but elaboration wold have helped you fully explain how this solves your UP and leads to your purpose.",
+    "scoring": {
+      "relevance": 3,
+      "effectivenes": 2,
+      "impact": 2,
+      "humaneness": 3,
+      "development": 5
+    }
+  }
+}
