@@ -1,7 +1,7 @@
 {
   "meta": {
-    "future-scene": "/Users/Judd/Code//Project Folder/FPS/FPS CJ/Training packets/CO-18-MM1-I//fuzzy.txt",
-    "data-filepath": "/Users/Judd/Code//Project Folder/FPS/FPS CJ/Training packets/CO-18-MM1-I/data-132.json",
+    "future-scene": "Training packets/CO-18-MM1-I//fuzzy.txt",
+    "data-filepath": "Training packets/CO-18-MM1-I/data-132.json",
     "topic": "Criminal Justice",
     "judge": 580,
     "problem": "International",
