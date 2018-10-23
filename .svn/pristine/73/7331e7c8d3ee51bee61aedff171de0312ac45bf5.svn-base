@@ -1,0 +1,697 @@
+{
+  "meta": {
+    "future-scene": "/Users/Judd//Desktop/FPS-CJ/Training packets/CO-17-J102-S//fuzzy.txt",
+    "data-filepath": "/Users/Judd//Desktop/FPS-CJ/Training packets/CO-17-J102-S/data-146.json",
+    "topic": "Identity Theft",
+    "judge": 165,
+    "problem": "State",
+    "division": "Junior",
+    "team": 102,
+    "team-memebers": ["Sofia Bahr", "Matisse Conn-Parent", "Judd Brau", "Ty Leonard"],
+    "year": 2017,
+    "state": "Colorado"
+  },
+  "overall": {
+    "scoring": {
+      "research-applied": 8,
+      "creative-strength": 7,
+      "futuristic-thinking": 6,
+      "total": 146
+    },
+    "comments": ""
+  },
+  "challenges": {
+    "comments": "Well-written challenges with clear relation to the future scene. Good job",
+    "fluency": 10,
+    "flexibility": 10,
+    "clarity": 10,
+    "data": [
+      {
+        "comments": "",
+        "packet": {
+          "text": "In the year 2036, in the world, there may be a problem with protection of hospitals. For example, Mr. and Mrs. Hanson's hospitals' database had a breach. This could be a problem because bad people can have privileges that they would not ordinarily be able to have."
+        },
+        "scoring": {
+          "yes": true,
+          "categories": [13, 14],
+          "original": false,
+          "perhaps": false,
+          "why": false,
+          "duplicate": null,
+          "solution": false
+        }
+      },
+      {
+        "comments": "",
+        "packet": {
+          "text": "In the year 2036, in the world, there may be a problem with people just using names - not even ID cards - to identify people. For example, Adan had to go to jail because someone used his name and they didn't bother checking his ID. This may be a problem because it puts innocent people in jail."
+        },
+        "scoring": {
+          "yes": true,
+          "categories": 11,
+          "original": false,
+          "perhaps": false,
+          "why": false,
+          "duplicate": null,
+          "solution": false
+        }
+      },
+      {
+        "comments": "",
+        "packet": {
+          "text": "In the year 2036, in the world, there may be a problem with control. For example, though the U.S. DNA database was compromised, once you press \"Enter\", data never really goes away. This could be a problem because if a hacker gets into this, it could jeopardize innocent lives."
+        },
+        "scoring": {
+          "yes": true,
+          "categories": 5,
+          "original": false,
+          "perhaps": false,
+          "why": false,
+          "duplicate": null,
+          "solution": false
+        }
+      },
+      {
+        "comments": "national security problem",
+        "packet": {
+          "text": "In the year 2036, in the world, there may be a problem with all the countries not being on the same side. For example, the Russian government may be on the side of hackers that are hacking the U.S. This could be a problem because it would be harder to eliminate hackers."
+        },
+        "scoring": {
+          "yes": true,
+          "categories": 10,
+          "original": false,
+          "perhaps": false,
+          "why": false,
+          "duplicate": null,
+          "solution": false
+        }
+      },
+      {
+        "comments": "",
+        "packet": {
+          "text": "In the year 2036, in the U.S., there may be a problem with people giving out information in public interviews. For example, if people are in the news for any reason, they could give out information about themselves that is valuable to identify thieves. This could be a problem because if thieves have a certain amount of information, then they could use that info to track them down and steal their identity."
+        },
+        "scoring": {
+          "yes": true,
+          "categories": 1,
+          "original": false,
+          "perhaps": false,
+          "why": false,
+          "duplicate": null,
+          "solution": false
+        }
+      },
+      {
+        "comments": "circular reasoning",
+        "packet": {
+          "text": "In the year 2036, in the U.S., there may be a problem with criminals or thieves having access to advanced technology. For example, if hackers can easily use simple technology everybody has and steal their identity. This could be a problem because technology is getting simpler, so it will be simple to hack people's personal information."
+        },
+        "scoring": {
+          "yes": false,
+          "categories": null,
+          "original": false,
+          "perhaps": true,
+          "why": false,
+          "duplicate": null,
+          "solution": false
+        }
+      },
+      {
+        "comments": "",
+        "packet": {
+          "text": "In the year 2036, in the U.S., there may be a problem with security in public places. For example, if people are following others to public places for their DNA, there is no security or protection from the innocent citizen. This could be a problem because innocent people are getting followed and tracked down and they can't help that because there is no security."
+        },
+        "scoring": {
+          "yes": true,
+          "categories": 12,
+          "original": false,
+          "perhaps": false,
+          "why": false,
+          "duplicate": null,
+          "solution": false
+        }
+      },
+      {
+        "comments": "this could also overwhelm the police resources",
+        "packet": {
+          "text": "In the year 2036, in the world, there may be a problem with no one doing anything about ID theft besides the cops. For example, \"More than 20 million people were victims of identity theft in 2035\" and nobody is doing anything about this besides the police and they are just putting people in jail. This could be a problem because the innocent citizens are left to fend for themselves against hackers that aren't in jail."
+        },
+        "scoring": {
+          "yes": true,
+          "categories": 11,
+          "original": false,
+          "perhaps": false,
+          "why": false,
+          "duplicate": null,
+          "solution": false
+        }
+      },
+      {
+        "comments": "",
+        "packet": {
+          "text": "In the year 2036, in the U.S., there may be a problem with digi-cash. For example Brigitte's account was hacked and she had no money in her account. This may be a problem because digi-cash is traceable and could be hacked easier."
+        },
+        "scoring": {
+          "yes": true,
+          "categories": 3,
+          "original": false,
+          "perhaps": false,
+          "why": false,
+          "duplicate": null,
+          "solution": false
+        }
+      },
+      {
+        "comments": "Yes! Good big picture hinking",
+        "packet": {
+          "text": "In the year 2036, in the U.S., there may be a problem with poverty. For example, because Madiline added money to Brigitte's account that got hacked. This may be a problem because if identity thieves attack Madiline's account, she will not have any money."
+        },
+        "scoring": {
+          "yes": true,
+          "categories": 2,
+          "original": false,
+          "perhaps": false,
+          "why": false,
+          "duplicate": null,
+          "solution": false
+        }
+      },
+      {
+        "comments": "This is vague",
+        "packet": {
+          "text": "In the year 2036, in the world, there may be a problem with people not being able to escape identity theft. For example, a hacker in Russia is capable of stealing someone's identity in Puerto Rico. This could be a problem because now anyone can be hacked by anyone else."
+        },
+        "scoring": {
+          "yes": true,
+          "categories": 12,
+          "original": false,
+          "perhaps": false,
+          "why": false,
+          "duplicate": null,
+          "solution": false
+        }
+      },
+      {
+        "comments": "",
+        "packet": {
+          "text": "In the year 2036, in the world, there may be a problem with hackers being able to escape from their tracked location. For example, if someone in the U.S. hacked someone in Russia and the citizen of Russia took a week to find out who it is, the hacker from the U.S. would have time to escape from their tracked location and leave their technology behind. This could be a problem because innocent citizens of the world will not be able to track down the person who hacked them."
+        },
+        "scoring": {
+          "yes": true,
+          "categories": 17,
+          "original": false,
+          "perhaps": false,
+          "why": false,
+          "duplicate": null,
+          "solution": false
+        }
+      },
+      {
+        "comments": "",
+        "packet": {
+          "text": "In the year 2036, in the world, there may be a problem with mistrust among countries. For example, if the U.S. thinks that Russia has hacked into their most secure database and influenced political decisions, they may start a war against them. This could be a problem because if other countries took sides, there could be trouble."
+        },
+        "scoring": {
+          "yes": true,
+          "categories": [5, 10],
+          "original": false,
+          "perhaps": false,
+          "why": false,
+          "duplicate": null,
+          "solution": false
+        }
+      },
+      {
+        "comments": "",
+        "packet": {
+          "text": "In the year 2036, in the world, there may be a problem with the citizens of the world being stressed about their identity being stolen. For example, if everyone is stressed, stress causes people to be unhealthy, therefore everyone will be unhealthy. This could be a problem because the world will be filled with unhealthy citizens so nobody will live a happy life."
+        },
+        "scoring": {
+          "yes": true,
+          "categories": 14,
+          "original": false,
+          "perhaps": false,
+          "why": false,
+          "duplicate": null,
+          "solution": false
+        }
+      },
+      {
+        "comments": "civil war maybe",
+        "packet": {
+          "text": "In the year 2036, in the world, there may be a problem with citizens having distrust in the government. For example, if people don't trust the government, then they will start rebelling against the government and it will start another war. This could be a problem because it could start World War 3."
+        },
+        "scoring": {
+          "yes": true,
+          "categories": [5, 10],
+          "original": false,
+          "perhaps": false,
+          "why": false,
+          "duplicate": null,
+          "solution": false
+        }
+      },
+      {
+        "comments": "",
+        "packet": {
+          "text": "In the year 2036, in the U.S., there may be a problem with the website Mybabybirth.com. For example, the creators of the website could just be hackers wanting to steal personal information from children. This could be a problem because many citizens of the U.S. use the website so they are putting themselves out here for the creator of the website to hack them and they don't know that."
+        },
+        "scoring": {
+          "yes": true,
+          "categories": 17,
+          "original": false,
+          "perhaps": false,
+          "why": false,
+          "duplicate": null,
+          "solution": false
+        }
+      }
+    ]
+  },
+  "UP": {
+    "packet": {
+      "challenge": 8,
+      "text": "In the year 2036, in the world, hackers and other identity thieves are stealing 20 million people's identities. These victims have no support from the government. In what ways might we reduce the number of victims so that there are fewer identity thieves?"
+    },
+    "comments": "your 'so that' doesn't amke sense. What about 'so that they can live safely/healthy lives/country economy is less affected/ national security is less in jeopardy?' Pick one",
+    "scoring": {
+      "cp": {
+        "text": "In the year 2036, in the world, hackers and other identity thievs are stealing 20 million peopl's identities",
+        "score": 2
+      },
+      "stem-and-kvp": {
+        "stem-text": "In what ways might we",
+        "kvp-text": "reduce the number of victims.",
+        "score": 3
+      },
+      "purpose": {
+        "text": "so that there are fewer thieves",
+        "score": 2
+      },
+      "parameters": {
+        "topic": true,
+        "place": true,
+        "time": true,
+        "score": 2
+      },
+      "focus": 6,
+      "adequacy": 9
+    }
+  },
+  "solutions": {
+    "comments": "Great elaboration on your solutions!",
+    "fluency": 9,
+    "elaboration": 9,
+    "flexibility": 9,
+    "data": [
+      {
+        "comments": "",
+        "packet": {
+          "text": "The US. Government will create an agency called the Identity Theft Protection Agency ITPA because 20 million people have had their identity stollen. They will do this by having victims report their identities stollen so that the ITPA could track down thieves."
+        },
+        "scoring": {
+          "relevant": true,
+          "elaboration": true,
+          "categories": 10,
+          "original": false,
+          "perhaps": false,
+          "why": false,
+          "duplicate": null
+        }
+      },
+      {
+        "comments": "This already exists",
+        "packet": {
+          "text": "Tech agencies like Apple will upgrade computers so that i a computer is remotely entered, then it will report the entrance and location to the user. They will do this because identity thieves are difficult to trace"
+        },
+        "scoring": {
+          "relevant": true,
+          "elaboration": true,
+          "categories": 17,
+          "original": false,
+          "perhaps": false,
+          "why": false,
+          "duplicate": null
+        }
+      },
+      {
+        "comments": "Revise how?",
+        "packet": {
+          "text": "The Justice department will raise the penalty for identity thieves. They will do this because this will motivate thieves not to steal identities."
+        },
+        "scoring": {
+          "relevant": false,
+          "elaboration": false,
+          "categories": null,
+          "original": false,
+          "perhaps": true,
+          "why": false,
+          "duplicate": null
+        }
+      },
+      {
+        "comments": "",
+        "packet": {
+          "text": "In order to view any personal files or open a bank or credit account, the Association of Human Welfare will [not sure] that they must meet with the accountant in person, where they will ask them a question that they alone know the answer to. After they have gotten information, the customer erases that memory."
+        },
+        "scoring": {
+          "relevant": true,
+          "elaboration": true,
+          "categories": 6,
+          "original": false,
+          "perhaps": false,
+          "why": false,
+          "duplicate": null
+        }
+      },
+      {
+        "comments": "How does this solve your UP?",
+        "packet": {
+          "text": "Independent companies will work together to form another company that will store citizens' valuables that they don't use [not sure]. They will do this because people can feel secure and they will know their valuables are being guarded by honest citizens who have gone through background checks."
+        },
+        "scoring": {
+          "relevant": false,
+          "elaboration": false,
+          "categories": null,
+          "original": false,
+          "perhaps": false,
+          "why": true,
+          "duplicate": null
+        }
+      },
+      {
+        "comments": "",
+        "packet": {
+          "text": "Undercover government agents will make traps in cities for local crime rings that involve identity thieves by posing as citizens. They will do this because it may lead to capture and conviction of well-known identity thieves."
+        },
+        "scoring": {
+          "relevant": true,
+          "elaboration": true,
+          "categories": 11,
+          "original": false,
+          "perhaps": false,
+          "why": false,
+          "duplicate": null
+        }
+      },
+      {
+        "comments": "This is not a longterm solution",
+        "packet": {
+          "text": "Undercover government agents will spread rumors of the penalties of convicted identity thieves and rumors that the government has knowledge of thieves' hideouts by posing as citizens. They will do this because they can scare the thieves into stopping, at least temporarily."
+        },
+        "scoring": {
+          "relevant": true,
+          "elaboration": true,
+          "categories": 4,
+          "original": false,
+          "perhaps": false,
+          "why": false,
+          "duplicate": null
+        }
+      },
+      {
+        "comments": "",
+        "packet": {
+          "text": "The government will pass a law that each person must have a second full name that they don't learn until they are 18. They will do this because if someone gets their identity stolen, they will be protected by a second given name."
+        },
+        "scoring": {
+          "relevant": true,
+          "elaboration": true,
+          "categories": 12,
+          "original": true,
+          "perhaps": false,
+          "why": false,
+          "duplicate": null
+        }
+      },
+      {
+        "comments": "",
+        "packet": {
+          "text": "Microsoft, Apple, and other electronic companies will create an anti-virus that is installed in every computer. They will do this because it can help prevent hackers from stealing i"
+        },
+        "scoring": {
+          "relevant": true,
+          "elaboration": true,
+          "categories": 17,
+          "original": false,
+          "perhaps": false,
+          "why": false,
+          "duplicate": null
+        }
+      },
+      {
+        "comments": "Privacy concerns??",
+        "packet": {
+          "text": "Snapchat and other companies similar to it will allow a police officer or government agent to watch a live feed of messages so that they can make sure nobody gives out personal information and they can watch for codes or tips about hackers"
+        },
+        "scoring": {
+          "relevant": true,
+          "elaboration": true,
+          "categories": 4,
+          "original": false,
+          "perhaps": false,
+          "why": false,
+          "duplicate": null
+        }
+      },
+      {
+        "comments": "Privacy concerns?? Corruption?",
+        "packet": {
+          "text": "Every authorized E-mail and other communication company will have the \"send\" like on all devices go to a \"Supreme Database\" for approval before being sent and for reference later. They will do this because they can stop people from giving out personal info and monitor suspicious behavior."
+        },
+        "scoring": {
+          "relevant": true,
+          "elaboration": true,
+          "categories": 17,
+          "original": false,
+          "perhaps": false,
+          "why": false,
+          "duplicate": null
+        }
+      },
+      {
+        "comments": "",
+        "packet": {
+          "text": "All companies that need any personal data including addresses will give each customer a personal agent who has been interviewed by that customer in person, as well as background checked. They will do this because it will build trust between the customer and company, and reduces the chance of a security breach."
+        },
+        "scoring": {
+          "relevant": true,
+          "elaboration": true,
+          "categories": 16,
+          "original": false,
+          "perhaps": false,
+          "why": false,
+          "duplicate": null
+        }
+      },
+      {
+        "comments": "",
+        "packet": {
+          "text": "The banks around the world will make a new bank account for each person every $2,500. They will do this because if someone hacks a citizen's bank account, they only get $2,500. The banks will do this by creating a new bank account for each person once their account has $2,500"
+        },
+        "scoring": {
+          "relevant": true,
+          "elaboration": true,
+          "categories": [3, 6],
+          "original": false,
+          "perhaps": false,
+          "why": false,
+          "duplicate": null
+        }
+      },
+      {
+        "comments": "",
+        "packet": {
+          "text": "The people of the world will create a code for each database about them. They will do this so the hacker has to enter a complex passcode for each app/database they own. They will do this by taking their time and setting up good and hard pass codes for their apps."
+        },
+        "scoring": {
+          "relevant": true,
+          "elaboration": true,
+          "categories": 17,
+          "original": false,
+          "perhaps": false,
+          "why": false,
+          "duplicate": null
+        }
+      },
+      {
+        "comments": "Too narrow",
+        "packet": {
+          "text": "Apple will create their passcode setting so the pass code has to be 12 digits/numbers long. They will do this so hackers have a less likely chance to get the code right."
+        },
+        "scoring": {
+          "relevant": false,
+          "elaboration": false,
+          "categories": null,
+          "original": false,
+          "perhaps": true,
+          "why": false,
+          "duplicate": null
+        }
+      },
+      {
+        "comments": "",
+        "packet": {
+          "text": "The cities in the US will offer classes and tips on how to protect your identity by creating a company called \"Help!\". They will do this because they can educate victims of ID theft about how to keep them safe in the future."
+        },
+        "scoring": {
+          "relevant": true,
+          "elaboration": true,
+          "categories": 7,
+          "original": false,
+          "perhaps": false,
+          "why": false,
+          "duplicate": null
+        }
+      }
+    ]
+  },
+  "criteria": {
+    "comments": "",
+    "correctly-written": 3,
+    "applicability-relevance": 3,
+    "1": {
+      "packet": {
+        "text": "Which solution will reduce the most number of identity thieves?"
+      },
+      "scoring": {
+        "cw": true,
+        "relevance": ["G", 1]
+      }
+    },
+    "2": {
+      "packet": {
+        "text": "Which solution will benefit the people of the world?"
+      },
+      "scoring": {
+        "cw": false,
+        "relevance": ["NR", 0]
+      }
+    },
+    "3": {
+      "packet": {
+        "text": "Which solution is the simplest to accomplish and for the citizens of the world to understand?"
+      },
+      "scoring": {
+        "cw": false,
+        "relevance": ["G", 1]
+      }
+    },
+    "4": {
+      "packet": {
+        "text": "Which solution will be the quickest to reduce some identity thieves?"
+      },
+      "scoring": {
+        "cw": true,
+        "relevance": ["D", 0]
+      }
+    },
+    "5": {
+      "packet": {
+        "text": "Which solution will keep all people away from harm the most?"
+      },
+      "scoring": {
+        "cw": true,
+        "relevance": ["G", 1]
+      }
+    }
+  },
+  "grid": {
+    "comments": "",
+    "correctly-used": 5,
+    "1": {
+      "packet": {
+        "solution": {
+          "number": 1,
+          "text": "ITPA"
+        },
+        "grading": {"1": 8, "2": 5, "3": 7, "4": 6, "5": 7},
+        "total": 33
+      }
+    },
+    "2": {
+      "packet": {
+        "solution": {
+          "number": 2,
+          "text": "Upgrade computers to track hackers"
+        },
+        "grading": {"1": 6, "2": 8, "3": 6, "4": 3, "5": 5},
+        "total": 28
+      }
+    },
+    "3": {
+      "packet": {
+        "solution": {
+          "number": 3,
+          "text": "Law; raise penalty for identity theft"
+        },
+        "grading": {"1": 4, "2": 3, "3": 4, "4": 5, "5": 6},
+        "total": 22
+      }
+    },
+    "4": {
+      "packet": {
+        "solution": {
+          "number": 4,
+          "text": "build company to store valuables"
+        },
+        "grading": {"1": 7, "2": 4, "3": 3, "4": 4, "5": 8},
+        "total": 26
+      }
+    },
+    "5": {
+      "packet": {
+        "solution": {
+          "number": 5,
+          "text": "erase memory of accountants"
+        },
+        "grading": {"1": 3, "2": 6, "3": 1, "4": 2, "5": 3},
+        "total": 15
+      }
+    },
+    "6": {
+      "packet": {
+        "solution": {
+          "number": 6,
+          "text": "undercover agents make traps"
+        },
+        "grading": {"1": 5, "2": 7, "3": 8, "4": 1, "5": 4},
+        "total": 25
+      }
+    },
+    "7": {
+      "packet": {
+        "solution": {
+          "number": 7,
+          "text": "spread rumors of thieves"
+        },
+        "grading": {"1": 2, "2": 1, "3": 2, "4": 8, "5": 1},
+        "total": 14
+      }
+    },
+    "8": {
+      "packet": {
+        "solution": {
+          "number": 8,
+          "text": "pass a law for 2nd identity"
+        },
+        "grading": {"1": 1, "2": 2, "3": 5, "4": 7, "5": 2},
+        "total": 17
+      }
+    }
+  },
+  "AP": {
+    "packet": {
+      "solution": 1,
+      "text": "In the year 2036, in the Us, the government will create an agency called the Identity Theft Protection Agency (ITPA). The ITPA will be created because identity theft victims have nowhere to report their cases.\n The jobs of the ITPA are as followed: 1. To have identity victims report to them. 2. To use an algorithm that tries to find identity thieves of reported victims. 3. To supervise businesses that keep personal information.\n They will do these tasks because no other agencies take care of these problems. The people that will be for this change are the victims of ID theft. The ones who will not like this are hackers.\n The ITPA is a brilliant agency that will benefit everybody of the world because they can take over the ID theft that the FBI does and they can take it into their own hands because the agents of the ITPA are experts on ID theft and they know how to help people when they need it"
+    },
+    "comments": "If this is the US government agency, won't the benefit be for US citizens? How are they dealing with thieves they identify? How are they supporting victims who report to them? This is a good start, but needs more details.",
+    "scoring": {
+      "relevance": 5,
+      "effectivenes": 3,
+      "impact": 4,
+      "humaneness": 5,
+      "development": 7
+    }
+  }
+}

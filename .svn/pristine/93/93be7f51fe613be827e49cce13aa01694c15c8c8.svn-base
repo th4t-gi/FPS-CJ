@@ -1,0 +1,697 @@
+{
+  "meta": {
+    "future-scene": "/Users/Judd//Desktop/FPS-CJ/Training packets/CO-17-J102-Q//fuzzy.txt",
+    "data-filepath": "/Users/Judd//Desktop/FPS-CJ/Training packets/CO-17-J102-Q/data-128.json",
+    "topic": "4d-printing",
+    "judge": 137,
+    "problem": "Qualifing",
+    "division": "Junior",
+    "team": 102,
+    "team-memebers": ["Sofia Bahr", "Matisse Conn-Parent", "Judd Brau", "Ty Leonard"],
+    "year": 2017,
+    "state": "Colorado"
+  },
+  "overall": {
+    "scoring": {
+      "research-applied": 5,
+      "creative-strength": 5,
+      "futuristic-thinking": 5,
+      "total": 128
+    },
+    "comments": "Excellent job getting through the packet. Work on your UP and criteria so you shine at the STATE Bowl!"
+  },
+  "challenges": {
+    "comments": "Be sure to tie your challenges to the charge at the bottom of the Future Scene! Nice job generating so many challenges in many categories",
+    "fluency": 8,
+    "flexibility": 8,
+    "clarity": 9,
+    "data": [
+      {
+        "comments": "",
+        "packet": {
+          "text": "In the year 2043, there may be a problem with unstable materials in space. For example, it's never been tested in space. This could be a problem because you cannot rely on 4D-created materials, such as plastic."
+        },
+        "scoring": {
+          "yes": true,
+          "categories": 17,
+          "original": false,
+          "perhaps": false,
+          "why": false,
+          "duplicate": null,
+          "solution": false
+        }
+      },
+      {
+        "comments": "",
+        "packet": {
+          "text": "In the year 2043, there may be a problem with the people in control of this situation being greedy. For example, at some point, everybody is greedy. This could be a problem because all the people would care about money and not the safety of the spaceship."
+        },
+        "scoring": {
+          "yes": true,
+          "categories": [3, 14],
+          "original": false,
+          "perhaps": false,
+          "why": false,
+          "duplicate": null,
+          "solution": false
+        }
+      },
+      {
+        "comments": "Of course, if there is a lost communication with an astronaut, she would die",
+        "packet": {
+          "text": "In the year 2043, there may be a problem with not having an astronaut accompany Athena on the mission to Proxima B. For example, we could lose connection with the spaceship. This could be a problem because if they weren't in connection with the spaceship, they would have to start a new mission."
+        },
+        "scoring": {
+          "yes": true,
+          "categories": 4,
+          "original": false,
+          "perhaps": false,
+          "why": false,
+          "duplicate": null,
+          "solution": false
+        }
+      },
+      {
+        "comments": "",
+        "packet": {
+          "text": "In the year 2043, there may be a problem with other countries wanting to get to Proxima B first. For example, Russia and the U.S. were competing to get to the moon first. This could be a problem because it could begin another world war."
+        },
+        "scoring": {
+          "yes": true,
+          "categories": 5,
+          "original": false,
+          "perhaps": false,
+          "why": false,
+          "duplicate": null,
+          "solution": false
+        }
+      },
+      {
+        "comments": "",
+        "packet": {
+          "text": "In the year 2043, there may be a problem with the mission failing, and the SDS losing money rapidly. For example, this company's only chance my be this spaceship - otherwise they would be broke. This could be a problem because then they would not be able to pay off all their dues or not be able to fund this possibly life-changing mission."
+        },
+        "scoring": {
+          "yes": true,
+          "categories": 3,
+          "original": false,
+          "perhaps": false,
+          "why": false,
+          "duplicate": null,
+          "solution": false
+        }
+      },
+      {
+        "comments": "",
+        "packet": {
+          "text": "In the year 2043, there may be a problem with Proxima B being inhabited already. For example, scientist think that someday, it might be able to support human life, so it might already have another species. This could be a problem because if we didn't get along with them or they messed with our programming."
+        },
+        "scoring": {
+          "yes": true,
+          "categories": 12,
+          "original": false,
+          "perhaps": false,
+          "why": false,
+          "duplicate": null,
+          "solution": false
+        }
+      },
+      {
+        "comments": "A stretch here and in 2043",
+        "packet": {
+          "text": "In the year 2043, there may be a problem with not exporting animals to Proxima B. For example, when humans move to a different planet, they are leaving animals we eat all the time behind. This could be a problem because humans might not have food."
+        },
+        "scoring": {
+          "yes": true,
+          "categories": 2,
+          "original": false,
+          "perhaps": false,
+          "why": false,
+          "duplicate": null,
+          "solution": false
+        }
+      },
+      {
+        "comments": "Your \"world war\" is an exaggeration",
+        "packet": {
+          "text": "In the year 2043, there may be a problem with people arguing over who has [not sure]. For example, the government could [not sure] the Athena mission, or other countries will try to butt in or get land for themselves. This could be a  problem because it could cause another world war."
+        },
+        "scoring": {
+          "yes": true,
+          "categories": 3,
+          "original": false,
+          "perhaps": false,
+          "why": false,
+          "duplicate": null,
+          "solution": false
+        }
+      },
+      {
+        "comments": "",
+        "packet": {
+          "text": "In the year 2043, there may be a problem with the 4D print taking control over the mission and going rogue. For example, since the 4D print adapts to its surroundings, it could think, 'why am I being controlled.' This may be a problem because they're mission could fail."
+        },
+        "scoring": {
+          "yes": true,
+          "categories": 17,
+          "original": false,
+          "perhaps": false,
+          "why": false,
+          "duplicate": null,
+          "solution": false
+        }
+      },
+      {
+        "comments": "Tie to the CHARGE",
+        "packet": {
+          "text": "In the year 2043, there may be a problem with the transition to move. For example, the government might not have enough spaceships to fly everyone to the new planet. This could be a problem because SDS might not have enough spaceships to transport people."
+        },
+        "scoring": {
+          "yes": true,
+          "categories": 17,
+          "original": false,
+          "perhaps": false,
+          "why": false,
+          "duplicate": null,
+          "solution": false
+        }
+      },
+      {
+        "comments": "Tie to the CHARGE",
+        "packet": {
+          "text": "In the year 2043, there may be a problem with the the material of the 4D spaceship being too heavy. For example, if the spaceship is too heavy, it cannot go into space. This cold be a problem because the spaceship would crash and it would waste good material."
+        },
+        "scoring": {
+          "yes": true,
+          "categories": [17, 18],
+          "original": false,
+          "perhaps": false,
+          "why": false,
+          "duplicate": null,
+          "solution": false
+        }
+      },
+      {
+        "comments": "",
+        "packet": {
+          "text": "In the year 2043, there may be a problem with the atmosphere of Proxima B not being safe for humans. For example, since we have not sent anything there, so we can't test it. This may be a problem because we would have to wear spacesuits all the time if we could even land a manned spaceship there."
+        },
+        "scoring": {
+          "yes": false,
+          "categories": null,
+          "original": false,
+          "perhaps": true,
+          "why": false,
+          "duplicate": null,
+          "solution": false
+        }
+      },
+      {
+        "comments": "",
+        "packet": {
+          "text": "In the year 2043, there may be a problem with sending an unmanned spaceship to go to Proxima B. For example, unmanned spaceships may be harder to control than manned ones. This could be a problem because if the SDS lost the spaceship they may not have the support to try it again."
+        },
+        "scoring": {
+          "yes": false,
+          "categories": null,
+          "original": false,
+          "perhaps": false,
+          "why": false,
+          "duplicate": 4,
+          "solution": false
+        }
+      },
+      {
+        "comments": " This is an unmanned probe going out; the charge has to do with 3D/4D printing",
+        "packet": {
+          "text": "In the year 2043, on Proxima B, there may be a problem with not having enough room for all the people of earth on the new planet. For example, if something happen to Earth, we may all have to move to Proxima B. This could be a problem because if there was not enough room on Proxima B, we would have to decide who goes and who dies."
+        },
+        "scoring": {
+          "yes": false,
+          "categories": null,
+          "original": false,
+          "perhaps": true,
+          "why": false,
+          "duplicate": null,
+          "solution": false
+        }
+      },
+      {
+        "comments": " This is an unmanned probe going out; the charge has to do with 3D/4D printing",
+        "packet": {
+          "text": "In the year 2043, on Proxima B, there may be a problem with the citizens who move there being unequipped for life there. For example, the climate may be overly hot or cold. This could be a problem because many people may be killed or get sick."
+        },
+        "scoring": {
+          "yes": false,
+          "categories": null,
+          "original": false,
+          "perhaps": true,
+          "why": false,
+          "duplicate": null,
+          "solution": false
+        }
+      },
+      {
+        "comments": " This is an unmanned probe going out; the charge has to do with 3D/4D printing",
+        "packet": {
+          "text": "In the year 2043, on Proxima B, there may be a problem with people getting new diseases we have never encountered before. For example, many events in history suggest that if people are not exposed to diseases, they get them quickly instead of being immune. This could be a problem because the population could be majorly [not sure] and we would have to devote our time to making antidotes."
+        },
+        "scoring": {
+          "yes": false,
+          "categories": null,
+          "original": false,
+          "perhaps": true,
+          "why": false,
+          "duplicate": null,
+          "solution": false
+        }
+      }
+    ]
+  },
+  "UP": {
+    "packet": {
+      "challenge": 8,
+      "text": "In what ways might we ensure that nobody takes over this project, including the U.S. and other countries, and that the SDS makes their decisions in the best interest of the human race so that the mission can succeed."
+    },
+    "comments": "Start with a condition phrase and DO NOT use \"and\" in your UP! Choose 1 or the other verb and be done.",
+    "scoring": {
+      "cp": {
+        "text": "",
+        "score": 0
+      },
+      "stem-and-kvp": {
+        "stem-text": "In what ways might we",
+        "kvp-text": "ensure nobody takes over and SDS makes decisions in best intrest of human race",
+        "score": 1
+      },
+      "purpose": {
+        "text": "so that the mission can succed",
+        "score": 3
+      },
+      "parameters": {
+        "topic": false,
+        "place": true,
+        "time": false,
+        "score": 0
+      },
+      "focus": 5,
+      "adequacy": 7
+    }
+  },
+  "solutions": {
+    "comments": "interesting humane solutions. Make sure they tie closely to the charge of the future scene",
+    "fluency": 8,
+    "elaboration": 8,
+    "flexibility": 5,
+    "data": [
+      {
+        "comments": "Which government?",
+        "packet": {
+          "text": "The government will buy the SDS so that there is no confusion of who is in control of the spaceships. They will do this because the government will eventually want to take over the mission. They will do this by selling the company to the government."
+        },
+        "scoring": {
+          "relevant": true,
+          "elaboration": true,
+          "categories": [3, 10],
+          "original": false,
+          "perhaps": false,
+          "why": false,
+          "duplicate": null
+        }
+      },
+      {
+        "comments": "",
+        "packet": {
+          "text": "The U.S. government will sign a treaty with any other countries who are possibly looking into going to Proxima B. They will do this because it will establish trust between the different countries and it will give the Athena mission more funding. They will do this by creating and offering a treaty to different countries."
+        },
+        "scoring": {
+          "relevant": true,
+          "elaboration": true,
+          "categories": [4, 5],
+          "original": false,
+          "perhaps": false,
+          "why": false,
+          "duplicate": null
+        }
+      },
+      {
+        "comments": "",
+        "packet": {
+          "text": "The citizens of the world will sign an agreement ensuring that the new planet will be divided among all the countries when it is found. They will do this because it will bring peace among the countries and every country will get their fair share. They will do this by creating an agreement and giving it to all the people in the world and when it is signed, it is agreed that they will share the planet with the rest of the world."
+        },
+        "scoring": {
+          "relevant": true,
+          "elaboration": true,
+          "categories": [4, 10],
+          "original": false,
+          "perhaps": false,
+          "why": false,
+          "duplicate": null
+        }
+      },
+      {
+        "comments": "OUCH!",
+        "packet": {
+          "text": "The U.S. will not tell anybody about the new planet. They will do this because they want to populate their own planet and not have any other countries be apart of it. They will do this by only trusting important, secretive people with their secret."
+        },
+        "scoring": {
+          "relevant": true,
+          "elaboration": true,
+          "categories": 4,
+          "original": false,
+          "perhaps": false,
+          "why": false,
+          "duplicate": null
+        }
+      },
+      {
+        "comments": "",
+        "packet": {
+          "text": "The Central Intelligence Agency will send an agent to Russia and [not sure]. They will do this because that way the U.S. can supervise Russia to make sure that they do not go behind the United States back. They will do this by agreeing to put an agent into each others government."
+        },
+        "scoring": {
+          "relevant": true,
+          "elaboration": true,
+          "categories": 4,
+          "original": false,
+          "perhaps": false,
+          "why": false,
+          "duplicate": null
+        }
+      },
+      {
+        "comments": "",
+        "packet": {
+          "text": "All major space agencies will put in time and effort to create the Intergalactic Travel Agency. The ITA will do this because the entire world needs to unite for the Athena Mission [not sure]. The ITA will do this by giving up their own countries' space agencies and forming one big space agency."
+        },
+        "scoring": {
+          "relevant": true,
+          "elaboration": true,
+          "categories": [9, 10],
+          "original": true,
+          "perhaps": false,
+          "why": false,
+          "duplicate": null
+        }
+      },
+      {
+        "comments": "Doesn't solve your UP",
+        "packet": {
+          "text": "The countries of the world will agree to make the planet a new country with a democracy. They will do this because it will give people more room to spread out, but it will not disrupt the world as it is."
+        },
+        "scoring": {
+          "relevant": false,
+          "elaboration": false,
+          "categories": null,
+          "original": false,
+          "perhaps": true,
+          "why": false,
+          "duplicate": null
+        }
+      },
+      {
+        "comments": "",
+        "packet": {
+          "text": "The countries of the world will agree to send only scientists to Proxima B and otherwise leave it alone. They will do this because it will ensure no world wars while we could still get resources and data from the planet."
+        },
+        "scoring": {
+          "relevant": true,
+          "elaboration": true,
+          "categories": 10,
+          "original": false,
+          "perhaps": false,
+          "why": false,
+          "duplicate": null
+        }
+      },
+      {
+        "comments": "",
+        "packet": {
+          "text": "The SDS will create a survey/test that asks what the purpose and what the people know about space travel before they allow a country to launch a spacecraft to Proxima B. They will do this because they can ensure that no country is being unsafe or taking advantage of the planet."
+        },
+        "scoring": {
+          "relevant": true,
+          "elaboration": true,
+          "categories": 4,
+          "original": false,
+          "perhaps": false,
+          "why": false,
+          "duplicate": null
+        }
+      },
+      {
+        "comments": "How does this solve your UP?",
+        "packet": {
+          "text": "The government will not fund the project, but they will allow it to continue. They will do this because they can prevent the SDS from taking shortcuts."
+        },
+        "scoring": {
+          "relevant": false,
+          "elaboration": false,
+          "categories": null,
+          "original": false,
+          "perhaps": true,
+          "why": false,
+          "duplicate": null
+        }
+      },
+      {
+        "comments": "",
+        "packet": {
+          "text": "The SDS will entrust NASA with the project. They will do this because NASA may get more support and funds to ensure the safety of the project."
+        },
+        "scoring": {
+          "relevant": true,
+          "elaboration": true,
+          "categories": 3,
+          "original": false,
+          "perhaps": false,
+          "why": false,
+          "duplicate": null
+        }
+      },
+      {
+        "comments": "",
+        "packet": {
+          "text": "The SDS will program the 4D printed robots to take only the safest and most humane routes to their goals. They will do this because it will ensure safer living and working spaces."
+        },
+        "scoring": {
+          "relevant": false,
+          "elaboration": false,
+          "categories": null,
+          "original": false,
+          "perhaps": false,
+          "why": true,
+          "duplicate": null
+        }
+      },
+      {
+        "comments": "How does this solve your UP?",
+        "packet": {
+          "text": "The SDS will program the 4D printed robots to set surveillance cameras around the planet that will be available to the public. They will do this because it will ensure trust between the people and the SDS."
+        },
+        "scoring": {
+          "relevant": false,
+          "elaboration": false,
+          "categories": null,
+          "original": false,
+          "perhaps": true,
+          "why": false,
+          "duplicate": null
+        }
+      },
+      {
+        "comments": "[not sure]",
+        "packet": {
+          "text": "The SDS will agree to share the country with everyone, but if a country makes a fuss, they will not get a share. They will do this because they can ensure a happier planet"
+        },
+        "scoring": {
+          "relevant": true,
+          "elaboration": true,
+          "categories": 10,
+          "original": false,
+          "perhaps": false,
+          "why": false,
+          "duplicate": null
+        }
+      },
+      {
+        "comments": "How does this solve your UP?",
+        "packet": {
+          "text": "The countries will make an agreement that says we will only inhabit the planet if there are no life forms there. This will ensure that we do not invade an are not [not sure] with other species."
+        },
+        "scoring": {
+          "relevant": false,
+          "elaboration": false,
+          "categories": null,
+          "original": false,
+          "perhaps": true,
+          "why": false,
+          "duplicate": null
+        }
+      },
+      {
+        "comments": "",
+        "packet": {
+          "text": "The countries will make an agreement that the first country/business to get to Proxima B safley and on the first try will have control over half the planet. They will do this because it will encourage people to make it quick, safe, and effective."
+        },
+        "scoring": {
+          "relevant": true,
+          "elaboration": true,
+          "categories": 10,
+          "original": false,
+          "perhaps": false,
+          "why": false,
+          "duplicate": null
+        }
+      }
+    ]
+  },
+  "criteria": {
+    "comments": "Start criteria with \"Which solution will...\" and be specific in your criteria. Excellent job on the grid",
+    "correctly-written": 0,
+    "applicability-relevance": 4,
+    "1": {
+      "packet": {
+        "text": "Humane"
+      },
+      "scoring": {
+        "cw": false,
+        "relevance": ["G", 1]
+      }
+    },
+    "2": {
+      "packet": {
+        "text": "Economical"
+      },
+      "scoring": {
+        "cw": false,
+        "relevance": ["G", 1]
+      }
+    },
+    "3": {
+      "packet": {
+        "text": "Accepted"
+      },
+      "scoring": {
+        "cw": false,
+        "relevance": ["G", 1]
+      }
+    },
+    "4": {
+      "packet": {
+        "text": "KVP"
+      },
+      "scoring": {
+        "cw": false,
+        "relevance": ["NR", 0]
+      }
+    },
+    "5": {
+      "packet": {
+        "text": "Effective"
+      },
+      "scoring": {
+        "cw": false,
+        "relevance": ["G", 1]
+      }
+    }
+  },
+  "grid": {
+    "comments": "",
+    "correctly-used": 5,
+    "1": {
+      "packet": {
+        "solution": {
+          "number": 1,
+          "text": "gov. buy SDS"
+        },
+        "grading": {"1": 1, "2": 1, "3": 5, "4": 2, "5": 8},
+        "total": 17
+      }
+    },
+    "2": {
+      "packet": {
+        "solution": {
+          "number": 2,
+          "text": "treaty for people interested"
+        },
+        "grading": {"1": 8, "2": 4, "3": 7, "4": 6, "5": 6},
+        "total": 31
+      }
+    },
+    "3": {
+      "packet": {
+        "solution": {
+          "number": 3,
+          "text": "divide among all want"
+        },
+        "grading": {"1": 5, "2": 3, "3": 3, "4": 4, "5": 5},
+        "total": 20
+      }
+    },
+    "4": {
+      "packet": {
+        "solution": {
+          "number": 4,
+          "text": "ITA"
+        },
+        "grading": {"1": 7, "2": 6, "3": 8, "4": 8, "5": 7},
+        "total": 36
+      }
+    },
+    "5": {
+      "packet": {
+        "solution": {
+          "number": 13,
+          "text": "surveillance"
+        },
+        "grading": {"1": 6, "2": 7, "3": 2, "4": 5, "5": 2},
+        "total": 22
+      }
+    },
+    "6": {
+      "packet": {
+        "solution": {
+          "number": 8,
+          "text": "send only scientists"
+        },
+        "grading": {"1": 4, "2": 8, "3": 1, "4": 7, "5": 3},
+        "total": 23
+      }
+    },
+    "7": {
+      "packet": {
+        "solution": {
+          "number": 7,
+          "text": "agreeing to make the planet a new country"
+        },
+        "grading": {"1": 3, "2": 2, "3": 4, "4": 3, "5": 1},
+        "total": 13
+      }
+    },
+    "8": {
+      "packet": {
+        "solution": {
+          "number": 9,
+          "text": "making a survey"
+        },
+        "grading": {"1": 2, "2": 5, "3": 6, "4": 1, "5": 4},
+        "total": 18
+      }
+    }
+  },
+  "AP": {
+    "packet": {
+      "solution": 6,
+      "text": "In March of 2043, space agencies including NASA and other space agencies will each give volunteers and some money to fund and create the Intergalactic Travel Agency (ITA). The ITA will only supervise projects like the Athena Mission which are missions to explore undiscovered areas of the galaxy. They will do this because if any specific country takes control of the Athena Mission, they may be selfish and block other countries out and not allowing them to take part of the new area.\n The ITA will be people from all different countries taking part in this agency so that control will not be an issue. People that support this will be all major countries' citizens. People that oppose this are the other countries that want the planet for themselves. Benefits of this plan are that funding is not an issue, everyone who contributes to the ITA will have land on the newly discovered planet.\n The ITA will be created by any countries who want to be apart of the new planet and who are willing to volunteer members of their space agencies. The ITA will be created so there is no argument on which countries have power in a certain area. The ITA will replace the SDS in the Athena mission so that there is no questioning of control."
+    },
+    "comments": "Nice job on your Action Plan! I like it a lot! Good job [not sure] out the ITA which has pros and cons",
+    "scoring": {
+      "relevance": 5,
+      "effectivenes": 5,
+      "impact": 5,
+      "humaneness": 5,
+      "development": 9
+    }
+  }
+}
