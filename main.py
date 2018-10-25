@@ -3,15 +3,9 @@ t = time.time()
 import os, re, json, subprocess, numpy as np, nltk
 import math, string
 from format import *
+from keras_attention.lstm import *
 
-p = Getpacket("ALL")#, list(ask("Directory name of a packet: ")))
-#write the filepath to data
-for i, val in enumerate(p.paths):
-    fuzzy = find_packet("fuzzy.txt", re.sub(r"data-\d{3}\.json", "", p.paths[i]).replace(" ", "\\ "), dir=False)
-    jeff = open(p.paths[i]).read()
-    with open(val, "r+") as f:
-        f.write(re.sub(r"future-scene\": \".*?\"", "future-scene\": \"{}\"".format(fuzzy),
-                re.sub(r"data-filepath\": \".*?\"", "data-filepath\": \"{}\"".format(val), jeff)))
+p = Getpacket("CO-17-J102-Q")#, list(ask("Directory name of a packet: ")))
 
 #loads found json files and finds all text to be vectorized
 dadata = [json.loads(open(i).read()) for i in p.paths]
