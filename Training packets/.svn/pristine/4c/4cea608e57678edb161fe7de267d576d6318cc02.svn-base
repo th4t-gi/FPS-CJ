@@ -1,9 +1,9 @@
 {
   "meta": {
-    "future-scene": "Training packets/CO-18-MM1-I//fuzzy.txt",
-    "data-filepath": "Training packets/CO-18-MM1-I/data-132.json",
+    "future-scene": "/Users/Judd//Desktop/FPS-CJ/Training packets/CO-18-MM1-I//fuzzy.txt",
+    "data-filepath": "/Users/Judd//Desktop/FPS-CJ/Training packets/CO-18-MM1-I/data-131.json",
     "topic": "Criminal Justice",
-    "judge": 580,
+    "judge": 632,
     "problem": "International",
     "division": "Middle",
     "team": ["MAGIC", 1],
@@ -13,18 +13,18 @@
   },
   "overall": {
     "scoring": {
-      "research-applied": 6,
+      "research-applied": 5,
       "creative-strength": 5,
       "futuristic-thinking": 5,
-      "total": 132
+      "total": 131
     },
-    "comments": "Good job on your booklet. Remember elaboration is key to convey your thoughts properly!"
+    "comments": ""
   },
   "challenges": {
-    "comments": "Good job on your challenges. Try and use more categories for more points.",
+    "comments": "",
     "fluency": 10,
-    "flexibility": 5,
-    "clarity": 7,
+    "flexibility": 6,
+    "clarity": 9,
     "data": [
       {
         "comments": "",
@@ -33,7 +33,7 @@
         },
         "scoring": {
           "yes": true,
-          "categories": 6,
+          "categories": 17,
           "original": false,
           "perhaps": false,
           "why": false,
@@ -48,7 +48,7 @@
         },
         "scoring": {
           "yes": true,
-          "categories": 12,
+          "categories": 16,
           "original": false,
           "perhaps": false,
           "why": false,
@@ -63,7 +63,7 @@
         },
         "scoring": {
           "yes": true,
-          "categories": 7,
+          "categories": 6,
           "original": false,
           "perhaps": false,
           "why": false,
@@ -78,7 +78,7 @@
         },
         "scoring": {
           "yes": true,
-          "categories": 6,
+          "categories": 12,
           "original": false,
           "perhaps": false,
           "why": false,
@@ -93,7 +93,7 @@
         },
         "scoring": {
           "yes": true,
-          "categories": 12,
+          "categories": 2,
           "original": false,
           "perhaps": false,
           "why": false,
@@ -123,7 +123,7 @@
         },
         "scoring": {
           "yes": true,
-          "categories": 11,
+          "categories": 5,
           "original": false,
           "perhaps": false,
           "why": false,
@@ -138,7 +138,7 @@
         },
         "scoring": {
           "yes": true,
-          "categories": 6,
+          "categories": 16,
           "original": false,
           "perhaps": false,
           "why": false,
@@ -153,7 +153,7 @@
       "challenge": 7,
       "text": "Because Georgetown's new Safe Street Initiative (SSI) program puts the majority of power regarding criminal justice systems into the hands of citizens, how might we increase citizen participation in the SSI system so that the safety of the community is not compromised due to the criminal justice in 2039?"
     },
-    "comments": "Good job on correctly formatting your UP but remember to have a KVP and purpose that clearly relate more to each other and to the big issue of the fuzzy",
+    "comments": "",
     "scoring": {
       "cp": {
         "text": "Becuase Georgetown's new Safe Street Initiative (SSI) program puts the majority of power regarding criminal justice systems into the hands of citizens",
@@ -174,15 +174,15 @@
         "time": true,
         "score": 2
       },
-      "focus": 7,
-      "adequacy": 5
+      "focus": 6,
+      "adequacy": 8
     }
   },
   "solutions": {
-    "comments": "Good job on doing your solutions. Remember to elaborate so you can fully explain how it will lead to your purpose.",
-    "fluency": 10,
-    "elaboration": 10,
-    "flexibility": 7,
+    "comments": "",
+    "fluency": 9,
+    "elaboration": 9,
+    "flexibility": 6,
     "data": [
       {
         "comments": "",
@@ -192,7 +192,7 @@
         "scoring": {
           "relevant": true,
           "elaboration": true,
-          "categories": 12,
+          "categories": 11,
           "original": false,
           "perhaps": false,
           "why": false,
@@ -222,7 +222,7 @@
         "scoring": {
           "relevant": true,
           "elaboration": true,
-          "categories": 10,
+          "categories": 4,
           "original": false,
           "perhaps": false,
           "why": false,
@@ -237,7 +237,7 @@
         "scoring": {
           "relevant": true,
           "elaboration": true,
-          "categories": 12,
+          "categories": 10,
           "original": false,
           "perhaps": false,
           "why": false,
@@ -267,7 +267,7 @@
         "scoring": {
           "relevant": true,
           "elaboration": true,
-          "categories": 11,
+          "categories": 12,
           "original": false,
           "perhaps": false,
           "why": false,
@@ -282,7 +282,7 @@
         "scoring": {
           "relevant": true,
           "elaboration": true,
-          "categories": 15,
+          "categories": 17,
           "original": false,
           "perhaps": false,
           "why": false,
@@ -290,33 +290,33 @@
         }
       },
       {
-        "comments": "",
+        "comments": "esp. if you say other incentives, see number 4 and 6",
         "packet": {
           "text": "In 2039, the SSI program will establish an online record system that keeps track of how many crimes you have accuratly reported with SSI. Using this information, citizens would be rewarded with a variety of monetary compensation and other incentives. SSI will do this to increase the the participation in their program. SSI will do this by creating this record system in joint with their other systems"
         },
         "scoring": {
-          "relevant": true,
-          "elaboration": true,
-          "categories": 6,
+          "relevant": false,
+          "elaboration": false,
+          "categories": null,
           "original": false,
           "perhaps": false,
           "why": false,
-          "duplicate": null
+          "duplicate": [4, 6]
         }
       }
     ]
   },
   "criteria": {
-    "comments": "Good job on doing your criteria and grid correctly",
+    "comments": "",
     "correctly-written": 5,
-    "applicability-relevance": 14,
+    "applicability-relevance": 13,
     "1": {
       "packet": {
         "text": "Which solution allow citizens to have the most power in the criminal justice system?"
       },
       "scoring": {
         "cw": true,
-        "relevance": ["A", 3]
+        "relevance": ["M", 2]
       }
     },
     "2": {
@@ -343,7 +343,7 @@
       },
       "scoring": {
         "cw": true,
-        "relevance": ["A", 3]
+        "relevance": ["M", 2]
       }
     },
     "5": {
@@ -352,76 +352,76 @@
       },
       "scoring": {
         "cw": true,
-        "relevance": ["M", 2]
+        "relevance": ["A", 3]
       }
     }
   },
   "grid": {
-    "comments": "Good job on doing your criteria and grid correctly",
+    "comments": "",
     "correctly-used": 5,
-      "1": {
-        "packet": {
-          "solution": {
-            "number": 1,
-            "text": "IR system"
-          },
-          "grading": {"1": 1, "2": 2, "3": 1, "4": 4, "5": 3},
-          "total": 11
-        }
-      },
-      "2": {
-        "packet": {
-          "solution": {
-            "number": 2,
-            "text": "Panic! Button"
-          },
-          "grading": {"1": 4, "2": 1, "3": 4, "4": 3, "5": 2},
-          "total": 14
-        }
-      },
-      "3": {
-        "packet": {
-          "solution": {
-            "number": 5,
-            "text": "classes"
-          },
-          "grading": {"1": 3, "2": 5, "3": 2, "4": 1, "5": 1},
-          "total": 12
-        }
-      },
-      "4": {
-        "packet": {
-          "solution": {
-            "number": 7,
-            "text": "youth games"
-          },
-          "grading": {"1": 2, "2": 3, "3": 5, "4": 2, "5": 5},
-          "total": 17
-        }
-      },
-      "5": {
-        "packet": {
-          "solution": {
-            "number": 8,
-            "text": "record system"
-          },
-          "grading": {"1": 5, "2": 4, "3": 3, "4": 5, "5": 4},
-          "total": 21
-        }
+    "1": {
+      "packet": {
+        "solution": {
+          "number": 1,
+          "text": "IR system"
+        },
+        "grading": {"1": 1, "2": 2, "3": 1, "4": 4, "5": 3},
+        "total": 11
       }
+    },
+    "2": {
+      "packet": {
+        "solution": {
+          "number": 2,
+          "text": "Panic! Button"
+        },
+        "grading": {"1": 4, "2": 1, "3": 4, "4": 3, "5": 2},
+        "total": 14
+      }
+    },
+    "3": {
+      "packet": {
+        "solution": {
+          "number": 5,
+          "text": "classes"
+        },
+        "grading": {"1": 3, "2": 5, "3": 2, "4": 1, "5": 1},
+        "total": 12
+      }
+    },
+    "4": {
+      "packet": {
+        "solution": {
+          "number": 7,
+          "text": "youth games"
+        },
+        "grading": {"1": 2, "2": 3, "3": 5, "4": 2, "5": 5},
+        "total": 17
+      }
+    },
+    "5": {
+      "packet": {
+        "solution": {
+          "number": 8,
+          "text": "record system"
+        },
+        "grading": {"1": 5, "2": 4, "3": 3, "4": 5, "5": 4},
+        "total": 21
+      }
+    }
   },
   "AP": {
     "packet": {
       "solution": 8,
       "text": "The SSI will create a record system that allows you to see how many crimes you've reported and also let you report crimes. You will have your own profile, and you can get rewards for reporting crimes. When you link your personal technology to the system, the rewards will go straight to your account. THe more crimes you report, the safer the community will be. To prove that you have reported a crime, you can hook your personal technology to the system. An obstacle with this system would be peole trying to lie about the number of crimes they've reported. As mentioned earlier though, the evidence will come from personal technology being hooked up to the record system.\n There will be some assistance and resistance for this solution. THe forms of assistance would be from citizens who have experienced a crime. They would help by funding the program. Another form of assistance would be peole who are against crime. They will help the SSI in Georgetown create and fund the record system. One form of resistance would be citizens who don't want to cooperate with the police. To get past this form of resistance, we can convince them that this system will help keep crime rates at bay and keep their community safe. This saves the Underlying Problem becuase if more crimes are reported using the record system, less criminal activity would take place. Also citizens will most likely want to report crimes for the rewards.\n Besides solving the underlying problem, this solution can save other problems. If the SSI adds more uses to this system, one of them could be a place to store medical records. This would make it easier for people working in the medical field to view the records of their patients, because they just need to use the system. Also, becuase everyone has a profile, the police could view this and use it as a way to identify suspects of a crime"
     },
-    "comments": "Good job on your action plan but elaborate to improve development.",
+    "comments": "You could have include details of incentives for different types of crimes and how is the accuracy of the reporting of a crime considered.",
     "scoring": {
-      "relevance": 5,
-      "effectivenes": 4,
+      "relevance": 3,
+      "effectivenes": 3,
       "impact": 4,
-      "humaneness": 3,
-      "development": 5
+      "humaneness": 4,
+      "development": 6
     }
   }
 }

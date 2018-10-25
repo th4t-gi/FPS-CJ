@@ -1,7 +1,7 @@
 {
   "meta": {
-    "future-scene": "/Users/Judd//Desktop/FPS-CJ/Training packets/CO-17-J102-S//fuzzy.txt",
-    "data-filepath": "/Users/Judd//Desktop/FPS-CJ/Training packets/CO-17-J102-S/data-146.json",
+    "future-scene": "Training packets/CO-17-J102-S//fuzzy.txt",
+    "data-filepath": "Training packets/CO-17-J102-S/data-146.json",
     "topic": "Identity Theft",
     "judge": 165,
     "problem": "State",
