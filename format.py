@@ -89,18 +89,34 @@ class PairedData(object):
 
     def __init__(self, data, vecs):
         super(PairedData, self).__init__()
-        self.gp = ["categories", "perhaps", "why", "duplicate", "solution"]
+        gp = ["categories", "perhaps", "why", "duplicate", "solution"]
+        cp = {gp[1]: 19, gp[2]: 20, gp[3]: 21, gp[4]: 22}
         #finds text from data obj
         self.tokens = tokenize(data["packet"]["text"], single=True)
         self.words = " ".join(self.tokens)
         #finds categories for the self.tokens
-        self.category = [tup for tup in data["scoring"].items() if tup[0] in self.gp]
+        self.category = [tup for tup in data["scoring"].items() if tup[0] in gp]
         self.category = [tup for tup in self.category if tup[1]][0]
-        if self.category[0] == "categories": self.category = self.category[1]
-        else: self.category = self.category[0]
+        if self.category[0] == "categories":
+            self.category = self.category[1]
+        if not(type(self.category) in (int, list)):
+            self.category = cp[self.category[0]]
+        self.onehot_category()
+        print self.category
+        # else: self.category = self.category[0]
         #combines self.tokens and self.categorys
         self.vecs = [vecs[token] for token in self.tokens]
         self.v = OrderedDict(zip(self.tokens, self.vecs))
+
+    def onehot_category(self):
+        cat = [0 for _ in range(22)]
+        cat = [0 for i in cat]
+        if type(self.category) == list:
+            cat[self.category[0]] = 1
+            cat[self.category[1]] = 1
+        else:
+            cat[self.category] = 1
+        self.category = cat
 
 def getData(key, dictionary, track=False):
     for k, v in dictionary.iteritems():
