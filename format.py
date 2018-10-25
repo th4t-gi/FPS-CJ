@@ -8,7 +8,7 @@ from collections import namedtuple, OrderedDict
 import subprocess, re, os, numpy as np, random, string, warnings
 
 #finds the directory path of given folder
-def find_packet(file, rootdir="~/", dir=True):
+def find_dir(file, rootdir="~/", dir=True):
     if dir: d = "d"
     else: d = "f"
     try:
@@ -25,8 +25,11 @@ class Getpacket(object):
         super(Getpacket, self).__init__()
         self.packets = flatten(args)
         self.packets = list(set(flatten([self.get_packets(i) for i in self.packets])))
+        if not self.packets:
+            self.isdata(True)
         self.paths = [self.get_data(i) for i in self.packets]
         self.paths = [j for i in self.paths for j in i if not j == "NO PACKET"]
+
 
     def get_data(self, packet):
         self.packet = packet
@@ -40,12 +43,11 @@ class Getpacket(object):
             self.flashdrive = raw_input("What is the name of the USB drive?: ")
             if self.flashdrive.lower() in [item.lower() for item in os.listdir("/Volumes")]:
                 os.chdir("/Volumes/{}".format(self.flashdrive))
-                paths = find_packet(packet, os.getcwd())
+                paths = find_dir(packet, os.getcwd())
         #finds path to given packet, or all packets
         try:
-            self.data = find_packet(self.packet, "~/Code/")
-            isda = self.isdata(self.packet)
-            if not isda:
+            self.data = find_dir(self.packet, "~/Code/")
+            if not self.isdata():
                 return ["NO PACKET"]
             self.data = ''.join(re.split(re.compile(r"({})".format(self.packet)), self.data)[:2]) + "/"
             self.data = [self.data + i for i in os.listdir(self.data) if 'data' in i]
@@ -67,11 +69,20 @@ class Getpacket(object):
             packet = [os.path.basename(os.path.dirname(i)) for i in paths]
         return packet
 
-    def isdata(self, p):
+    def isdata(self, check=False):
+        if check:
+            tp = find_dir("Training packets", rootdir=os.getcwd().replace(" ", "\ "))
+            if not tp:
+                yn = raw_input("No training packets detected, would you like to download? (y/n): ")
+                if yn == "y":
+                    dump_data()
+            return True
         if not self.data:
-            print "\033[91m{}\033[0m is not an FPS packet".format(str(p))
+            print "\033[91m{}\033[0m is not a packet".format(str(self.packet))
             return False
-        else: return True
+        return True
+
+
 
 
 class PairedData(object):
@@ -155,5 +166,15 @@ def ask(ask):
         result = raw_input(ask)
         if result == "" or result == "ALL": yield result; break
         else: yield result; continue
+
+class dump_data(object):
+    def __init__(self):
+        super(dump_data, self).__init__()
+        self.path = os.getcwd() + "/Training packets"
+        pathyn = raw_input("(y/n) save training packets in {}?: ".format(self.path))
+
+        if pathyn == "y":
+            cmd = "svn checkout https://github.com/th4t-gi/FPS-CJ/trunk/Training%20packets {} --force -q".format(self.path.replace(" ", "\ "))
+            os.system(cmd)
 
 # print "time:", round(timeself.time()- t, 3)

@@ -3,7 +3,7 @@ from keras.layers.core import *
 from keras.layers.recurrent import LSTM
 from keras.models import *
 
-from attention_utils import get_activations, get_data_recurrent
+from utils import get_activations, get_data_recurrent
 
 INPUT_DIM = 2
 TIME_STEPS = 20

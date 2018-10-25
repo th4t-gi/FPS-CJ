@@ -1,6 +1,6 @@
 import numpy as np
 
-from attention_utils import get_activations, get_data
+from utils import get_activations, get_data
 
 np.random.seed(1337)  # for reproducibility
 from keras.models import *
