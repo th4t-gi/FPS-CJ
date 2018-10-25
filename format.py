@@ -1,5 +1,5 @@
-import time
-t = time.time()
+from time import time
+t = time()
 from nltk.tokenize import word_tokenize
 from gensim.models import Word2Vec
 from sklearn.decomposition import PCA
@@ -46,7 +46,7 @@ class Getpacket(object):
                 paths = find_dir(packet, os.getcwd())
         #finds path to given packet, or all packets
         try:
-            self.data = find_dir(self.packet, "~/Code/")
+            self.data = find_dir(self.packet, os.getcwd())
             if not self.isdata():
                 return ["NO PACKET"]
             self.data = ''.join(re.split(re.compile(r"({})".format(self.packet)), self.data)[:2]) + "/"
@@ -64,7 +64,7 @@ class Getpacket(object):
 
     def get_packets(self, packet):
         if packet == "ALL":
-            paths = subprocess.check_output("find ~/Code/ -regex \".*/data-[^score].*\.json\" -type f",shell=True,stderr=subprocess.STDOUT)
+            paths = subprocess.check_output("find {} -regex \".*/data-[^score].*\.json\" -type f".format(os.getcwd()),shell=True,stderr=subprocess.STDOUT)
             paths = [i for i in paths.split("\n") if i and os.path.basename(os.path.dirname(i)) not in self.packets]
             packet = [os.path.basename(os.path.dirname(i)) for i in paths]
         return packet
@@ -177,4 +177,16 @@ class dump_data(object):
             cmd = "svn checkout https://github.com/th4t-gi/FPS-CJ/trunk/Training%20packets {} --force -q".format(self.path.replace(" ", "\ "))
             os.system(cmd)
 
-# print "time:", round(timeself.time()- t, 3)
+class gettime(object):
+
+    def __init__(self, t=None):
+        super(gettime, self).__init__()
+        self.time = time()
+        if t:
+            self.time = t
+
+    def final(self):
+        print "time:", round(time()- self.time, 3)
+
+
+# gettime(t).final()

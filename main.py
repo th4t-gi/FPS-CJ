@@ -31,4 +31,4 @@ challenges = [PairedData(c, vecs) for packet in cdata for c in packet["data"]]
 # Network
 # Stuff
 
-print "time:", round(time.time()- t, 3)
+gettime(t).final()
