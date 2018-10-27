@@ -5,6 +5,7 @@ from gensim.models import Word2Vec
 from sklearn.decomposition import PCA
 from matplotlib import pyplot
 from collections import namedtuple, OrderedDict
+from platform import mac_ver
 import subprocess, re, os, numpy as np, random, string, warnings
 
 #finds the directory path of given folder
@@ -25,28 +26,27 @@ class Getpacket(object):
         super(Getpacket, self).__init__()
         self.packets = flatten(args)
         self.packets = list(set(flatten([self.get_packets(i) for i in self.packets])))
-        if not self.packets:
-            self.isdata(True)
         self.paths = [self.get_data(i) for i in self.packets]
         self.paths = [j for i in self.paths for j in i if not j == "NO PACKET"]
+        if not self.paths:
+            self.isdata("packets")
 
 
     def get_data(self, packet):
-        self.packet = packet
-        if not self.packet:
+        if not packet:
             return ["NO PACKET"]
-        self.requested_packet = not(self.packet.lower() == "all")
-        self.packet = self.packet.upper()
-        self.flashdrive = "no" #raw_input("Is the packet {} on a USB drive?(yes/no): ".format(self.packet))
+        self.packet = packet.upper()
+        requested_packet = not(self.packet == "ALL")
+        flashdrive = "no" #raw_input("Is the packet {} on a USB drive?(yes/no): ".format(packet))
 
-        if self.flashdrive == "yes":
-            self.flashdrive = raw_input("What is the name of the USB drive?: ")
-            if self.flashdrive.lower() in [item.lower() for item in os.listdir("/Volumes")]:
-                os.chdir("/Volumes/{}".format(self.flashdrive))
-                paths = find_dir(packet, os.getcwd())
+        if flashdrive == "yes":
+            flashdrive = raw_input("What is the name of the USB drive?: ")
+            if flashdrive.lower() in [item.lower() for item in os.listdir("/Volumes")]:
+                os.chdir("/Volumes/{}".format(flashdrive))
+                paths = find_dir(self.packet, os.getcwd())
         #finds path to given packet, or all packets
         try:
-            self.data = find_dir(self.packet, os.getcwd())
+            self.data = find_dir(self.packet, os.getcwd().replace(" ", "\ "))
             if not self.isdata():
                 return ["NO PACKET"]
             self.data = ''.join(re.split(re.compile(r"({})".format(self.packet)), self.data)[:2]) + "/"
@@ -55,22 +55,20 @@ class Getpacket(object):
         except subprocess.CalledProcessError as e:
             self.data = e.output
         except OSError:
+            print self.packet
             print "invalid packet directory: {}".format(self.packet)
             quit()
-        try:
-            return self.data
-        except IndexError:
-            print "packet file(s) not found"
+        return self.data
 
     def get_packets(self, packet):
         if packet == "ALL":
-            paths = subprocess.check_output("find {} -regex \".*/data-[^score].*\.json\" -type f".format(os.getcwd()),shell=True,stderr=subprocess.STDOUT)
+            paths = subprocess.check_output("find {} -regex \".*/data-[^score].*\.json\" -type f".format(os.getcwd().replace(" ", "\ ")),shell=True,stderr=subprocess.STDOUT)
             paths = [i for i in paths.split("\n") if i and os.path.basename(os.path.dirname(i)) not in self.packets]
             packet = [os.path.basename(os.path.dirname(i)) for i in paths]
         return packet
 
-    def isdata(self, check=False):
-        if check:
+    def isdata(self, check=None):
+        if check == "packets":
             tp = find_dir("Training packets", rootdir=os.getcwd().replace(" ", "\ "))
             if not tp:
                 yn = raw_input("No training packets detected, would you like to download? (y/n): ")
@@ -79,9 +77,8 @@ class Getpacket(object):
             return True
         if not self.data:
             print "\033[91m{}\033[0m is not a packet".format(str(self.packet))
-            return False
+            quit()
         return True
-
 
 
 
@@ -93,24 +90,22 @@ class PairedData(object):
         cp = {gp[1]: 19, gp[2]: 20, gp[3]: 21, gp[4]: 22}
         #finds text from data obj
         self.tokens = tokenize(data["packet"]["text"], single=True)
-        self.words = " ".join(self.tokens)
+        self.words = data["packet"]["text"]
         #finds categories for the self.tokens
         self.category = [tup for tup in data["scoring"].items() if tup[0] in gp]
         self.category = [tup for tup in self.category if tup[1]][0]
         if self.category[0] == "categories":
             self.category = self.category[1]
+        self.c = self.category
         if not(type(self.category) in (int, list)):
             self.category = cp[self.category[0]]
         self.onehot_category()
-        print self.category
-        # else: self.category = self.category[0]
         #combines self.tokens and self.categorys
-        self.vecs = [vecs[token] for token in self.tokens]
+        self.vecs = np.array([vecs[token] for token in self.tokens])
         self.v = OrderedDict(zip(self.tokens, self.vecs))
 
     def onehot_category(self):
         cat = [0 for _ in range(22)]
-        cat = [0 for i in cat]
         if type(self.category) == list:
             cat[self.category[0]] = 1
             cat[self.category[1]] = 1
@@ -118,18 +113,39 @@ class PairedData(object):
             cat[self.category] = 1
         self.category = cat
 
-def getData(key, dictionary, track=False):
+
+class get_time(object):
+
+    def __init__(self, t=None):
+        super(get_time, self).__init__()
+        self.time = time()
+        if t:
+            self.time = t
+
+    def final(self):
+        print "time:", round(time()- self.time, 3)
+
+
+def dump_data():
+    path = os.getcwd() + "/Training packets"
+    pathyn = raw_input("(y/n) save training packets in {}?: ".format(path))
+
+    if pathyn == "y":
+        cmd = "svn checkout https://github.com/th4t-gi/FPS-CJ/trunk/Training%20packets {} --force -q".format(path.replace(" ", "\ "))
+        os.system(cmd)
+
+def get_values(key, dictionary, track=False):
     for k, v in dictionary.iteritems():
         if re.match(key, k): yield v
         elif isinstance(v, dict):
-            for result in getData(key, v):
+            for result in get_values(key, v):
                 yield result
         elif isinstance(v, list):
             for i, d in enumerate(v):
                 if track:
                     yield i
                 if type(d) == dict:
-                    for result in getData(key, d): yield result
+                    for result in get_values(key, d): yield result
 
 def vectorize(l, show=False, size=100, sim=[]):
     warnings.simplefilter(action="ignore", category=FutureWarning)
@@ -180,29 +196,10 @@ def flatten(l, iter=float("inf")):
 def ask(ask):
     while True:
         result = raw_input(ask)
-        if result == "" or result == "ALL": yield result; break
+        if result == "" or result == "ALL" or result.endswith(";"):
+            yield result.replace(";", ""); break
         else: yield result; continue
 
-class dump_data(object):
-    def __init__(self):
-        super(dump_data, self).__init__()
-        self.path = os.getcwd() + "/Training packets"
-        pathyn = raw_input("(y/n) save training packets in {}?: ".format(self.path))
-
-        if pathyn == "y":
-            cmd = "svn checkout https://github.com/th4t-gi/FPS-CJ/trunk/Training%20packets {} --force -q".format(self.path.replace(" ", "\ "))
-            os.system(cmd)
-
-class gettime(object):
-
-    def __init__(self, t=None):
-        super(gettime, self).__init__()
-        self.time = time()
-        if t:
-            self.time = t
-
-    def final(self):
-        print "time:", round(time()- self.time, 3)
-
-
-# gettime(t).final()
+def get_version():
+    return float('.'.join(mac_ver()[0].split(".")[:2]))
+# get_time(t).final()
