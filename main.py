@@ -23,19 +23,17 @@ OGtokens = sorted(set(flatten(tokens)))
 
 #challenges data
 cdata = [[data["challenges"], data["solutions"]] for data in dadata]
+
+temp_data = flatten([i["data"] for i in flatten(cdata)])
+cats = [[CatorableSample(c, vecs).vecs for c in temp_data], [CatorableSample(c, vecs).category for c in data]]
+categorable = Categorizing_model()
+categorable.fit(cats[0], cats[1])
+
+yes = [[CatorableSample(c, vecs).vecs for c in temp_data], [CatorableSample(c, vecs).yes for c in temp_data]]
+relevent = relevent_model()
+relevent.fit(yes[0], yes[1])
+
 crdata = [data["criteria"] for data in dadata]
-# challenges = [PairedData(c, vecs) for packet in cdata for c in packet["data"]]
-# cats = PairedData(cdata, vecs)``
-ddata = flatten([i["data"] for i in flatten(cdata)])
-cats = PairData(ddata, vecs, sorted=True)
-cmodel = Categorizing_model()
-cmodel.fit(cats[0][0], cats[1][0])#, batch_size=len(cats[0]))
-# for c in challenges:
-#     print c.words
-#     print c.vecs
-#     print c.category
-#     print c.c
-#     print "\n"
 
 # criteria data
 
