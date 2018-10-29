@@ -80,25 +80,31 @@ class Getpacket(object):
             quit()
         return True
 
+def PairData(data, vecs, sorted=False):
+    if sorted:
+        return [[CatSample(c, vecs).vecs for c in data], [CatSample(c, vecs).category for c in data]]
+    else:
+        return [CatSample(c, vecs) for c in data]
 
+class CatSample(object):
 
-class PairedData(object):
+    GP = ["categories", "perhaps", "why", "duplicate", "solution"]
+    CP = {GP[1]: 19, GP[2]: 20, GP[3]: 21, GP[4]: 22}
 
     def __init__(self, data, vecs):
-        super(PairedData, self).__init__()
-        gp = ["categories", "perhaps", "why", "duplicate", "solution"]
-        cp = {gp[1]: 19, gp[2]: 20, gp[3]: 21, gp[4]: 22}
-        #finds text from data obj
+        super(CatSample, self).__init__()
+
+        # finds text from data obj
         self.tokens = tokenize(data["packet"]["text"], single=True)
         self.words = data["packet"]["text"]
         #finds categories for the self.tokens
-        self.category = [tup for tup in data["scoring"].items() if tup[0] in gp]
+        self.category = [tup for tup in data["scoring"].items() if tup[0] in self.GP]
         self.category = [tup for tup in self.category if tup[1]][0]
         if self.category[0] == "categories":
             self.category = self.category[1]
         self.c = self.category
         if not(type(self.category) in (int, list)):
-            self.category = cp[self.category[0]]
+            self.category = self.CP[self.category[0]]
         self.onehot_category()
         #combines self.tokens and self.categorys
         self.vecs = np.array([vecs[token] for token in self.tokens])
@@ -188,7 +194,9 @@ def flatten(l, iter=float("inf")):
         if iter == 0:
             result.append(l)
             break
-        if hasattr(el, "__iter__") and not isinstance(el, basestring):
+        if isinstance(el, dict):
+            result.append(el)
+        elif hasattr(el, "__iter__") and not isinstance(el, basestring):
             result.extend(flatten(el, iter - 1))
         else: result.append(el)
     return result

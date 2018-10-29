@@ -5,19 +5,18 @@ from keras.layers import LSTM, Bidirectional, Dense, Input
 from keras.utils import plot_model
 from keras.models import Model
 import matplotlib
-from keras_attention.lstm import *
+from format import get_time
 
 input = Input(shape=(None, 100))
-lstm_out = Bidirectonal(LSTM(32, return_sequences=True)(input))
+lstm_out = Bidirectional(LSTM(32, return_sequences=True))(input)
 output = Dense(22, activation='softmax')(lstm_out)
 
-model = Model(inputs=inputs, outputs=output)
+model = Model(inputs=input, outputs=output)
 model.compile(loss='categorical_crossentropy', optimizer='adadelta', metrics=['accuracy'])
-print model.summary()
-some_data = None
-some_labes = None
-model.fit(some_data, some_labels, epochs=100)
-# model_attention_applied_after_lstm()
+plot_model(model, to_file='categorizing_model.png')
+# some_data = None
+# some_labes = None
+# model.fit(epochs=100)
 
 get_time(t).final()
 
