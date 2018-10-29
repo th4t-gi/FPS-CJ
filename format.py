@@ -80,13 +80,8 @@ class Getpacket(object):
             quit()
         return True
 
-def PairData(data, vecs, sorted=False):
-    if sorted:
-        return [[CatSample(c, vecs).vecs for c in data], [CatSample(c, vecs).category for c in data]]
-    else:
-        return [CatSample(c, vecs) for c in data]
 
-class CatSample(object):
+class CatorableSample(object):
 
     GP = ["categories", "perhaps", "why", "duplicate", "solution"]
     CP = {GP[1]: 19, GP[2]: 20, GP[3]: 21, GP[4]: 22}
@@ -95,6 +90,10 @@ class CatSample(object):
         super(CatSample, self).__init__()
 
         # finds text from data obj
+        if data["elaboration"]:
+            self.type = "solution"
+        else:
+            self.type = "challenge"
         self.tokens = tokenize(data["packet"]["text"], single=True)
         self.words = data["packet"]["text"]
         #finds categories for the self.tokens
@@ -105,19 +104,28 @@ class CatSample(object):
         self.c = self.category
         if not(type(self.category) in (int, list)):
             self.category = self.CP[self.category[0]]
-        self.onehot_category()
+        self.category = self.onehot(self.category)
         #combines self.tokens and self.categorys
         self.vecs = np.array([vecs[token] for token in self.tokens])
         self.v = OrderedDict(zip(self.tokens, self.vecs))
-
-    def onehot_category(self):
-        cat = [0 for _ in range(22)]
-        if type(self.category) == list:
-            cat[self.category[0]] = 1
-            cat[self.category[1]] = 1
+        if self.type == "challenge":
+            self.yes = self.onehot(data["scoring"]["yes"])
         else:
-            cat[self.category] = 1
-        self.category = cat
+            self.yes = self.onehot(data["scoring"]["relevant"])
+
+
+
+    def onehot(self, data):
+        if type(data) == bool:
+            return int(data)
+        else:
+            cat = [0 for _ in range(22)]
+            if type(data) == list:
+                cat[data[0]] = 1
+                cat[data[1]] = 1
+            else:
+                cat[data] = 1
+            return cat
 
 
 class get_time(object):
