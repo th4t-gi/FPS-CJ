@@ -6,7 +6,7 @@ from sklearn.decomposition import PCA
 from matplotlib import pyplot
 from collections import namedtuple, OrderedDict
 from platform import mac_ver
-import subprocess, re, os, numpy as np, random, string, warnings
+import subprocess, re, os, numpy as np, random, string, warnings, pickle
 
 #finds the directory path of given folder
 def find_dir(file, rootdir="~/", dir=True):
@@ -86,14 +86,11 @@ class CatorableSample(object):
     GP = ["categories", "perhaps", "why", "duplicate", "solution"]
     CP = {GP[1]: 19, GP[2]: 20, GP[3]: 21, GP[4]: 22}
 
-    def __init__(self, data, vecs):
-        super(CatSample, self).__init__()
-
+    def __init__(self, data):
+        super(CatorableSample, self).__init__()
+        vecs = pickle.load(open("vecs.p", "rb"))
         # finds text from data obj
-        if data["elaboration"]:
-            self.type = "solution"
-        else:
-            self.type = "challenge"
+        self.type = find_type(data)
         self.tokens = tokenize(data["packet"]["text"], single=True)
         self.words = data["packet"]["text"]
         #finds categories for the self.tokens
@@ -218,4 +215,11 @@ def ask(ask):
 
 def get_version():
     return float('.'.join(mac_ver()[0].split(".")[:2]))
+
+def find_type(data):
+    try:
+        something = data["scoring"]["solution"]
+        return "challenge"
+    except:
+        return "solution"
 # get_time(t).final()

@@ -1,12 +1,9 @@
 import time
 t = time.time()
-import os, re, json, subprocess, numpy as np, nltk
+import os, re, json, subprocess, pickle, numpy as np, nltk
 import math, string
 from format import *
-from models import *
-
-if get_version() > 10.11:
-    from keras_attention.lstm import *
+# from models import *
 
 p = Getpacket("CO-18-M205-S")
 
@@ -19,19 +16,33 @@ for i, ptext in enumerate(dtext):
 #Word2Vec alg applied and creates vecs
 tokens = tokenize(dtext)
 vecs = vectorize(flatten(tokens, 2), show=False, size=100)
+if not os.path.isfile("vecs.p"):
+    pickle.dump(vecs, open("vecs.p", "wb"))
+
+v = pickle.load(open("vecs.p", "rb"))
+try:
+    np.testing.assert_equal(vecs, v)
+except AssertionError:
+    pickle.dump(vecs, open("vecs.p", "wb"))
+
 OGtokens = sorted(set(flatten(tokens)))
 
 #challenges data
 cdata = [[data["challenges"], data["solutions"]] for data in dadata]
 
-temp_data = flatten([i["data"] for i in flatten(cdata)])
-cats = [[CatorableSample(c, vecs).vecs for c in temp_data], [CatorableSample(c, vecs).category for c in data]]
-categorable = Categorizing_model()
-categorable.fit(cats[0], cats[1])
+# temp_data = flatten([i["data"] for i in flatten(cdata)])
+# cats = [[CatorableSample(c).vecs for c in temp_data], [CatorableSample(c).category for c in data]]
+# categorable = Categorizing_model()
+# categorable.fit(cats[0], cats[1])
+#
+# yes = [[CatorableSample(c).vecs for c in temp_data], [CatorableSample(c).yes for c in temp_data]]
+# rel_model = relevent_model()
+# rel_model.fit(yes[0], yes[1])
 
-yes = [[CatorableSample(c, vecs).vecs for c in temp_data], [CatorableSample(c, vecs).yes for c in temp_data]]
-relevent = relevent_model()
-relevent.fit(yes[0], yes[1])
+
+for i in cdata[0]:
+    for c in i["data"]:
+        CatorableSample(c)
 
 crdata = [data["criteria"] for data in dadata]
 
