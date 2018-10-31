@@ -6,7 +6,7 @@ from format import *
 if get_version() > 10.11:
     from models import *
 
-p = Getpacket("CO-18-M205-S")
+p = Getpacket("ALL")
 
 #loads found json files and finds all text to be vectorized
 dadata = [json.loads(open(i).read()) for i in p.paths]
@@ -14,6 +14,7 @@ dtext = [list(get_values(r".*?text", data)) for data in dadata]
 #add the fuzzy text to become word vectors
 for i, ptext in enumerate(dtext):
     ptext.append(open(dadata[i]["meta"]["future-scene"]).read())
+
 #Word2Vec alg applied and creates vecs
 tokens = tokenize(dtext)
 vecs = vectorize(flatten(tokens, 2), show=False, size=100)
