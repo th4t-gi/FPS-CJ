@@ -3,7 +3,8 @@ t = time.time()
 import os, re, json, subprocess, pickle, numpy as np, nltk
 import math, string
 from format import *
-# from models import *
+if get_version() > 10.11:
+    from models import *
 
 p = Getpacket("CO-18-M205-S")
 
@@ -30,9 +31,9 @@ OGtokens = sorted(set(flatten(tokens)))
 #challenges data
 cdata = [[data["challenges"], data["solutions"]] for data in dadata]
 
-# temp_data = flatten([i["data"] for i in flatten(cdata)])
-# cats = [[CatorableSample(c).vecs for c in temp_data], [CatorableSample(c).category for c in data]]
-# categorable = Categorizing_model()
+temp_data = flatten([i["data"] for i in flatten(cdata)])
+cats = [[CatorableSample(c).vecs for c in temp_data], [CatorableSample(c).category for c in temp_data]]
+categorable = Categorizing_model()
 # categorable.fit(cats[0], cats[1])
 #
 # yes = [[CatorableSample(c).vecs for c in temp_data], [CatorableSample(c).yes for c in temp_data]]
@@ -40,9 +41,9 @@ cdata = [[data["challenges"], data["solutions"]] for data in dadata]
 # rel_model.fit(yes[0], yes[1])
 
 
-for i in cdata[0]:
-    for c in i["data"]:
-        CatorableSample(c)
+# for i in cdata[0]:
+#     for c in i["data"]:
+#         CatorableSample(c)
 
 crdata = [data["criteria"] for data in dadata]
 
