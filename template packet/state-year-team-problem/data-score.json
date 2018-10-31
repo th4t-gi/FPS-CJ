@@ -1,0 +1,696 @@
+{
+  "meta": {
+    "topic": "",
+    "future-scene": "leave blank",
+    "judge": 0,
+    "problem": "",
+    "division": "",
+    "team": 0,
+    "team-memebers": ["", "", "", ""],
+    "year": 0,
+    "state": ""
+  },
+  "overall": {
+    "scoring": {
+      "research-applied": 10,
+      "creative-strength": 10,
+      "futuristic-thinking": 10,
+      "total-points": 271
+    },
+    "comments": ""
+  },
+  "challenges": {
+    "comments": "",
+    "fluency": 10,
+    "flexibility": 10,
+    "clarity": 10,
+    "data": [
+      {
+        "comments": "",
+        "packet": {
+          "text": ""
+        },
+        "scoring": {
+          "yes": true,
+          "categories": 0,
+          "original": false,
+          "perhaps": false,
+          "why": false,
+          "duplicate": null,
+          "solution": false
+        }
+      },
+      {
+        "comments": "",
+        "packet": {
+          "text": ""
+        },
+        "scoring": {
+          "yes": true,
+          "categories": 0,
+          "original": false,
+          "perhaps": false,
+          "why": false,
+          "duplicate": null,
+          "solution": false
+        }
+      },
+      {
+        "comments": "",
+        "packet": {
+          "text": ""
+        },
+        "scoring": {
+          "yes": true,
+          "categories": 0,
+          "original": false,
+          "perhaps": false,
+          "why": false,
+          "duplicate": null,
+          "solution": false
+        }
+      },
+      {
+        "comments": "",
+        "packet": {
+          "text": ""
+        },
+        "scoring": {
+          "yes": true,
+          "categories": 0,
+          "original": false,
+          "perhaps": false,
+          "why": false,
+          "duplicate": null,
+          "solution": false
+        }
+      },
+      {
+        "comments": "",
+        "packet": {
+          "text": ""
+        },
+        "scoring": {
+          "yes": true,
+          "categories": 0,
+          "original": false,
+          "perhaps": false,
+          "why": false,
+          "duplicate": null,
+          "solution": false
+        }
+      },
+      {
+        "comments": "",
+        "packet": {
+          "text": ""
+        },
+        "scoring": {
+          "yes": true,
+          "categories": 0,
+          "original": false,
+          "perhaps": false,
+          "why": false,
+          "duplicate": null,
+          "solution": false
+        }
+      },
+      {
+        "comments": "",
+        "packet": {
+          "text": ""
+        },
+        "scoring": {
+          "yes": true,
+          "categories": 0,
+          "original": false,
+          "perhaps": false,
+          "why": false,
+          "duplicate": null,
+          "solution": false
+        }
+      },
+      {
+        "comments": "",
+        "packet": {
+          "text": ""
+        },
+        "scoring": {
+          "yes": true,
+          "categories": 0,
+          "original": false,
+          "perhaps": false,
+          "why": false,
+          "duplicate": null,
+          "solution": false
+        }
+      },
+      {
+        "comments": "",
+        "packet": {
+          "text": ""
+        },
+        "scoring": {
+          "yes": true,
+          "categories": 0,
+          "original": false,
+          "perhaps": false,
+          "why": false,
+          "duplicate": null,
+          "solution": false
+        }
+      },
+      {
+        "comments": "",
+        "packet": {
+          "text": ""
+        },
+        "scoring": {
+          "yes": true,
+          "categories": 0,
+          "original": false,
+          "perhaps": false,
+          "why": false,
+          "duplicate": null,
+          "solution": false
+        }
+      },
+      {
+        "comments": "",
+        "packet": {
+          "text": ""
+        },
+        "scoring": {
+          "yes": true,
+          "categories": 0,
+          "original": false,
+          "perhaps": false,
+          "why": false,
+          "duplicate": null,
+          "solution": false
+        }
+      },
+      {
+        "comments": "",
+        "packet": {
+          "text": ""
+        },
+        "scoring": {
+          "yes": true,
+          "categories": 0,
+          "original": false,
+          "perhaps": false,
+          "why": false,
+          "duplicate": null,
+          "solution": false
+        }
+      },
+      {
+        "comments": "",
+        "packet": {
+          "text": ""
+        },
+        "scoring": {
+          "yes": true,
+          "categories": 0,
+          "original": false,
+          "perhaps": false,
+          "why": false,
+          "duplicate": null,
+          "solution": false
+        }
+      },
+      {
+        "comments": "",
+        "packet": {
+          "text": ""
+        },
+        "scoring": {
+          "yes": true,
+          "categories": 0,
+          "original": false,
+          "perhaps": false,
+          "why": false,
+          "duplicate": null,
+          "solution": false
+        }
+      },
+      {
+        "comments": "",
+        "packet": {
+          "text": ""
+        },
+        "scoring": {
+          "yes": true,
+          "categories": 0,
+          "original": false,
+          "perhaps": false,
+          "why": false,
+          "duplicate": null,
+          "solution": false
+        }
+      },
+      {
+        "comments": "",
+        "packet": {
+          "text": ""
+        },
+        "scoring": {
+          "yes": true,
+          "categories": 0,
+          "original": false,
+          "perhaps": false,
+          "why": false,
+          "duplicate": null,
+          "solution": false
+        }
+      }
+    ]
+  },
+  "UP": {
+    "packet": {
+      "challenge": 0,
+      "text": ""
+    },
+    "comments": "",
+    "scoring": {
+      "cp": {
+        "text": "",
+        "score": 2
+      },
+      "stem-and-kvp": {
+        "stem-text": "",
+        "kvp-text": "",
+        "score": 3
+      },
+      "purpose": {
+        "text": "",
+        "score": 3
+      },
+      "parameters": {
+        "topic": true,
+        "place": true,
+        "time": true,
+        "score": 2
+      },
+      "focus": 10,
+      "adequacy": 10
+    }
+  },
+  "solutions": {
+    "comments": "",
+    "fluency": 10,
+    "elaboration": 10,
+    "flexibility": 10,
+    "data": [
+      {
+          "comments": "",
+          "packet": {
+            "text": ""
+          },
+          "scoring": {
+            "relevant": true,
+            "elaboration": true,
+            "categories": 0,
+            "original": false,
+            "perhaps": false,
+            "why": false,
+            "duplicate": null
+          }
+      },
+      {
+        "comments": "",
+        "packet": {
+          "text": ""
+        },
+        "scoring": {
+          "relevant": true,
+          "elaboration": true,
+          "categories": 0,
+          "original": false,
+          "perhaps": false,
+          "why": false,
+          "duplicate": null
+        }
+      },
+      {
+        "comments": "",
+        "packet": {
+          "text": ""
+        },
+        "scoring": {
+          "relevant": true,
+          "elaboration": true,
+          "categories": 0,
+          "original": false,
+          "perhaps": false,
+          "why": false,
+          "duplicate": null
+        }
+      },
+      {
+        "comments": "",
+        "packet": {
+          "text": ""
+        },
+        "scoring": {
+          "relevant": true,
+          "elaboration": true,
+          "categories": 0,
+          "original": false,
+          "perhaps": false,
+          "why": false,
+          "duplicate": null
+        }
+      },
+      {
+        "comments": "",
+        "packet": {
+          "text": ""
+        },
+        "scoring": {
+          "relevant": true,
+          "elaboration": true,
+          "categories": 0,
+          "original": false,
+          "perhaps": false,
+          "why": false,
+          "duplicate": null
+        }
+      },
+      {
+        "comments": "",
+        "packet": {
+          "text": ""
+        },
+        "scoring": {
+          "relevant": true,
+          "elaboration": true,
+          "categories": 0,
+          "original": false,
+          "perhaps": false,
+          "why": false,
+          "duplicate": null
+        }
+      },
+      {
+        "comments": "",
+        "packet": {
+          "text": ""
+        },
+        "scoring": {
+          "relevant": true,
+          "elaboration": true,
+          "categories": 0,
+          "original": false,
+          "perhaps": false,
+          "why": false,
+          "duplicate": null
+        }
+      },
+      {
+        "comments": "",
+        "packet": {
+          "text": ""
+        },
+        "scoring": {
+          "relevant": true,
+          "elaboration": true,
+          "categories": 0,
+          "original": false,
+          "perhaps": false,
+          "why": false,
+          "duplicate": null
+        }
+      },
+      {
+        "comments": "",
+        "packet": {
+          "text": ""
+        },
+        "scoring": {
+          "relevant": true,
+          "elaboration": true,
+          "categories": 0,
+          "original": false,
+          "perhaps": false,
+          "why": false,
+          "duplicate": null
+        }
+      },
+      {
+        "comments": "",
+        "packet": {
+          "text": ""
+        },
+        "scoring": {
+          "relevant": true,
+          "elaboration": true,
+          "categories": 0,
+          "original": false,
+          "perhaps": false,
+          "why": false,
+          "duplicate": null
+        }
+      },
+      {
+        "comments": "",
+        "packet": {
+          "text": ""
+        },
+        "scoring": {
+          "relevant": true,
+          "elaboration": true,
+          "categories": 0,
+          "original": false,
+          "perhaps": false,
+          "why": false,
+          "duplicate": null
+        }
+      },
+      {
+        "comments": "",
+        "packet": {
+          "text": ""
+        },
+        "scoring": {
+          "relevant": true,
+          "elaboration": true,
+          "categories": 0,
+          "original": false,
+          "perhaps": false,
+          "why": false,
+          "duplicate": null
+        }
+      },
+      {
+        "comments": "",
+        "packet": {
+          "text": ""
+        },
+        "scoring": {
+          "relevant": true,
+          "elaboration": true,
+          "categories": 0,
+          "original": false,
+          "perhaps": false,
+          "why": false,
+          "duplicate": null
+        }
+      },
+      {
+        "comments": "",
+        "packet": {
+          "text": ""
+        },
+        "scoring": {
+          "relevant": true,
+          "elaboration": true,
+          "categories": 0,
+          "original": false,
+          "perhaps": false,
+          "why": false,
+          "duplicate": null
+        }
+      },
+      {
+        "comments": "",
+        "packet": {
+          "text": ""
+        },
+        "scoring": {
+          "relevant": true,
+          "elaboration": true,
+          "categories": 0,
+          "original": false,
+          "perhaps": false,
+          "why": false,
+          "duplicate": null
+        }
+      },
+      {
+        "comments": "",
+        "packet": {
+          "text": ""
+        },
+        "scoring": {
+          "relevant": true,
+          "elaboration": true,
+          "categories": 0,
+          "original": false,
+          "perhaps": false,
+          "why": false,
+          "duplicate": null
+        }
+      }
+    ]
+  },
+  "criteria": {
+    "comments": "",
+    "correctly-written": 5,
+    "applicability-relevance": 15,
+    "1": {
+      "packet": {
+        "text": ""
+      },
+      "scoring": {
+        "cw": true,
+        "relevance": ["A", 3]
+      }
+    },
+    "2": {
+      "packet": {
+        "text": ""
+      },
+      "scoring": {
+        "cw": true,
+        "relevance": ["A", 3]
+      }
+    },
+    "3": {
+      "packet": {
+        "text": ""
+      },
+      "scoring": {
+        "cw": true,
+        "relevance": ["A", 3]
+      }
+    },
+    "4": {
+      "packet": {
+        "text": ""
+      },
+      "scoring": {
+        "cw": true,
+        "relevance": ["A", 3]
+      }
+    },
+    "5": {
+      "packet": {
+        "text": ""
+      },
+      "scoring": {
+        "cw": true,
+        "relevance": ["A", 3]
+      }
+    }
+  },
+  "grid": {
+    "comments": "",
+    "correctly-used": 5,
+    "1": {
+      "packet": {
+        "solution": {
+          "number": 0,
+          "text": ""
+        },
+        "grading": {"1": 8, "2": 8, "3": 8, "4": 8, "5": 8},
+        "total": 40
+      }
+    },
+    "2": {
+      "packet": {
+        "solution": {
+          "number": 0,
+          "text": ""
+        },
+        "grading": {"1": 8, "2": 8, "3": 8, "4": 8, "5": 8},
+        "total": 40
+      }
+    },
+    "3": {
+      "packet": {
+        "solution": {
+          "number": 0,
+          "text": ""
+        },
+        "grading": {"1": 8, "2": 8, "3": 8, "4": 8, "5": 8},
+        "total": 40
+      }
+    },
+    "4": {
+      "packet": {
+        "solution": {
+          "number": 0,
+          "text": ""
+        },
+        "grading": {"1": 8, "2": 8, "3": 8, "4": 8, "5": 8},
+        "total": 40
+      }
+    },
+    "5": {
+      "packet": {
+        "solution": {
+          "number": 0,
+          "text": ""
+        },
+        "grading": {"1": 8, "2": 8, "3": 8, "4": 8, "5": 8},
+        "total": 40
+      }
+    },
+    "6": {
+      "packet": {
+        "solution": {
+          "number": 0,
+          "text": ""
+        },
+        "grading": {"1": 8, "2": 8, "3": 8, "4": 8, "5": 8},
+        "total": 40
+      }
+    },
+    "7": {
+      "packet": {
+        "solution": {
+          "number": 0,
+          "text": ""
+        },
+        "grading": {"1": 8, "2": 8, "3": 8, "4": 8, "5": 8},
+        "total": 40
+      }
+    },
+    "8": {
+      "packet": {
+        "solution": {
+          "number": 0,
+          "text": ""
+        },
+        "grading": {"1": 8, "2": 8, "3": 8, "4": 8, "5": 8},
+        "total": 40
+      }
+    }
+  },
+  "AP": {
+    "packet": {
+      "solution": 0,
+      "text": ""
+    },
+    "comments": "",
+    "scoring": {
+      "relevance": 5,
+      "effectivenes": 5,
+      "impact": 5,
+      "humaneness": 5,
+      "development": 10
+    }
+  }
+}
