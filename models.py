@@ -1,7 +1,9 @@
 from keras.layers import LSTM, Bidirectional, Dense, Input, Flatten
 from keras.utils import plot_model
-from keras.models import Model, load_model, save_model, load_weights, save_weights
+from keras.models import Model, load_model, save_model#, load_weights, save_weights
 from attention_decoder import AttentionDecoder
+
+from format import flatten
 
 
 # class base_model(object):
@@ -9,7 +11,7 @@ from attention_decoder import AttentionDecoder
 #     def __init__(self):
 #         super(base_model, self).__init__()
 def get_context_vector(features=100, *metrics):
-    metrics = flatten([list(things), "accuracy"])
+    metrics = flatten([list(metrics), "accuracy"])
 
     input = Input(shape=(None, features))
     lstm_out = Bidirectional(LSTM(50, return_sequences=True))(input)
