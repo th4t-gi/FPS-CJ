@@ -62,7 +62,7 @@ class Getpacket(object):
 
     def get_packets(self, packet):
         if packet == "ALL":
-            paths = subprocess.check_output("find {} -regex \".*/data-[^score].*\.json\" -type f".format(os.getcwd().replace(" ", "\ ")),shell=True,stderr=subprocess.STDOUT)
+            paths = subprocess.check_output("find {} -regex \".*/data-[^\[score\]].*\.json\" -type f".format(os.getcwd().replace(" ", "\ ")),shell=True,stderr=subprocess.STDOUT)
             paths = [i for i in paths.split("\n") if i and os.path.basename(os.path.dirname(i)) not in self.packets]
             packet = [os.path.basename(os.path.dirname(i)) for i in paths]
         return packet
