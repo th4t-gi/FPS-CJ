@@ -10,10 +10,10 @@ from format import flatten
 #
 #     def __init__(self):
 #         super(base_model, self).__init__()
-def get_context_vector(features=100, *metrics):
+def get_context_vector(features=100, units=None, *metrics):
     metrics = flatten([list(metrics), "accuracy"])
 
-    input = Input(shape=(None, features))
+    input = Input(shape=(units, features))
     lstm_out = Bidirectional(LSTM(50, return_sequences=True))(input)
     attended = AttentionDecoder(1, features, name="Attention")(lstm_out)
     return Flatten()(attended)
@@ -41,14 +41,14 @@ def plain_coder(featues=100, *metrics):
     model.fit([encoder_input_data, decoder_input_data], decoder_target_data)
 
 
-def Categorizing_model(features=100, *metrics):
+def Categorizing_model(features=100, units=None, *metrics):
     # metrics = flatten([list(things), "accuracy"])
     #
     # input = Input(shape=(None, features))
     # lstm_out = Bidirectional(LSTM(50, return_sequences=True))(input)
     # attended = AttentionDecoder(1, features, name="Attention")(lstm_out)
     # context_vector = Flatten()(attended)
-    context_vector = get_context_vector(features, metrics)
+    context_vector = get_context_vector(features, units, metrics)
     output = Dense(22, activation='softmax')(context_vector)
 
     model = Model(inputs=input, outputs=output)
