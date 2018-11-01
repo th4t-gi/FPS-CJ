@@ -6,6 +6,7 @@ from format import *
 if get_version() > 10.11:
     from models import *
 
+# LOAD DATA
 p = Getpacket("ALL")
 
 #loads found json files and finds all text to be vectorized
@@ -34,6 +35,7 @@ cdata = [[data["challenges"], data["solutions"]] for data in dadata]
 
 temp_data = flatten([i["data"] for i in flatten(cdata)])
 cats = [[CatorableSample(c).vecs for c in temp_data], [CatorableSample(c).category for c in temp_data]]
+# APPLY MODELS
 categorable = Categorizing_model()
 # categorable.fit(cats[0], cats[1])
 #
