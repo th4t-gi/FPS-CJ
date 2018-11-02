@@ -1,7 +1,8 @@
 {
   "meta": {
-    "topic": "",
     "future-scene": "leave blank",
+    "data-filepath": "leave blank",
+    "topic": "",
     "judge": 0,
     "problem": "",
     "division": "",
