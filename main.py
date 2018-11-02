@@ -14,19 +14,12 @@ dadata = [json.loads(open(i).read()) for i in p.paths]
 dtext = [list(get_values(r".*?text", data)) for data in dadata]
 #add the fuzzy text to become word vectors
 for i, ptext in enumerate(dtext):
-    ptext.append(open(dadata[i]["meta"]["future-scene"]).read())
+    ptext.append(open(os.getcwd() + dadata[i]["meta"]["future-scene"]).read())
 
 #Word2Vec alg applied and creates vecs
 tokens = tokenize(dtext)
 vecs = vectorize(flatten(tokens, 2), show=False, size=100)
-if not os.path.isfile("vecs.p"):
-    pickle.dump(vecs, open("vecs.p", "wb"))
-
-v = pickle.load(open("vecs.p", "rb"))
-try:
-    np.testing.assert_equal(vecs, v)
-except AssertionError:
-    pickle.dump(vecs, open("vecs.p", "wb"))
+dump_vectors(vecs)
 
 OGtokens = sorted(set(flatten(tokens)))
 
