@@ -27,9 +27,9 @@ OGtokens = sorted(set(flatten(tokens)))
 cdata = [[data["challenges"], data["solutions"]] for data in dadata]
 
 temp_data = flatten([i["data"] for i in flatten(cdata)])
-cats = [[CatorableSample(c).vecs for c in temp_data], [CatorableSample(c).category for c in temp_data]]
+cats = [[CatorableSample(c, vecs).vecs for c in temp_data], [CatorableSample(c, vecs).category for c in temp_data]]
 # APPLY MODELS
-categorable = Categorizing_model()
+# categorable = Categorizing_model()
 # categorable.fit(cats[0], cats[1])
 #
 # yes = [[CatorableSample(c).vecs for c in temp_data], [CatorableSample(c).yes for c in temp_data]]

@@ -43,7 +43,7 @@ class Getpacket(object):
             flashdrive = raw_input("What is the name of the USB drive?: ")
             if flashdrive.lower() in [item.lower() for item in os.listdir("/Volumes")]:
                 os.chdir("/Volumes/{}".format(flashdrive))
-                paths = find_dir(self.packet, os.getcwd())
+                paths = find_dir(self.packet, os.getcwd().replace(" ", "\ "))
         #finds path to given packet, or all packets
         try:
             self.data = find_dir(self.packet, os.getcwd().replace(" ", "\ "))
@@ -86,9 +86,9 @@ class CatorableSample(object):
     GP = ["categories", "perhaps", "why", "duplicate", "solution"]
     CP = {GP[1]: 19, GP[2]: 20, GP[3]: 21, GP[4]: 22}
 
-    def __init__(self, data):
+    def __init__(self, data, vecs):
         super(CatorableSample, self).__init__()
-        vecs = pickle.load(open("vecs.p", "rb"))
+
         # finds text from data obj
         self.type = find_type(data)
         self.tokens = tokenize(data["packet"]["text"], single=True)
@@ -146,15 +146,14 @@ def dump_data():
         os.system(cmd)
 
 def dump_vectors(vecs):
-    if False
-        if not os.path.isfile("vecs.p"):
-            pickle.dump(vecs, open("vecs.p", "wb"))
+    if not os.path.isfile("vecs.p"):
+        pickle.dump(vecs, open("vecs.p", "wb"))
 
-        v = pickle.load(open("vecs.p", "rb"))
-        try:
-            np.testing.assert_equal(vecs, v)
-        except AssertionError:
-            pickle.dump(vecs, open("vecs.p", "wb"))
+    v = pickle.load(open("vecs.p", "rb"))
+    try:
+        np.testing.assert_equal(vecs, v)
+    except AssertionError:
+        pickle.dump(vecs, open("vecs.p", "wb"))
 
 def get_values(key, dictionary, track=False):
     for k, v in dictionary.iteritems():
