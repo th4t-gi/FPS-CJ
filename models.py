@@ -1,7 +1,7 @@
 from keras.layers import LSTM, Bidirectional, Dense, Input, Flatten
 from keras.utils import plot_model
 from keras.models import Model, load_model, save_model#, load_weights, save_weights
-from attention_decoder import AttentionDecoder
+from keras-attention.models.custom_recurrent import AttentionDecoder
 
 from format import flatten
 
@@ -15,7 +15,7 @@ def get_context_vector(features=100, units=None, *metrics):
 
     input = Input(shape=(units, features))
     lstm_out = Bidirectional(LSTM(50, return_sequences=True))(input)
-    attended = AttentionDecoder(1, features, name="Attention")(lstm_out)
+    attended = AttentionDecoder(features, 1, name="Attention")(lstm_out)
     return Flatten()(attended)
 
 def plain_coder(featues=100, *metrics):
