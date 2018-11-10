@@ -1,6 +1,7 @@
 # FPS Computer Judge
 A Machine Learning algorithm that grades Future Problem Solvers competition packets.
 
+
 ## The Basis of My Project: [FPSPI](https://www.fpspi.org)
 
 FPSPI (*Future Problem Solvers Program International*) is a non-profit program with 3 competitions:
@@ -52,6 +53,10 @@ The UP Neural Network will find the different sections the Underlying Problem is
 The Ann will grade the Action plan on it's Relevance, Effectiveness, Impact, Humaness, and Development. This Network will definitly be influenced by the UPNN
 and it's Adequacy.
 -->
+
+## FAQ
+   #### Where's all the Training Data?
+   Well, first of all, great question. Second of all, FPSPI says that no one can post the Future scene of any packet until 4 years after it was used... so let me know when it's 2023, the training data could be open source then. If you want to help me, and you need the training data, the best I can do is show you the format that I use. It is located under the [template packet](https://github.com/th4t-gi/FPS-CJ/tree/master/template%20packet) directory. 
 
 ## Acknowledgements
 Thank you to FPSPI for making it possible for inspiration, training data, and the reason I get up on friday mornings.
