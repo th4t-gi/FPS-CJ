@@ -1,15 +1,15 @@
 # FPS Computer Judge
+A Machine Learning algorithm that grades Future Problem Solvers competition packets.
 
 ## The Basis of My Project: [FPSPI](https://www.fpspi.org)
 
-Making a Machine Learning algorithm to grade Future Problem Solvers competition packets.
 FPSPI (*Future Problem Solvers Program International*) is a non-profit program with 3 competitions:
 
 * [Global Issue Problem Solving](http://www.fpspi.org/gips.html)
 * [Scenario Writing](http://www.fpspi.org/sw.html)
 * [Community Problem Solving](http://www.fpspi.org/cmps.html)
 
-This program just focuses on GIPS
+This program just focuses on grading GIPS
 
 ### GIPS
 In *Global Issue Problem Solving* (GIPS), you and your team of up to 4 people recieve a Future scene or *Fuzzy*. You go through a six step process to find the best solution to the Fuzzy:
