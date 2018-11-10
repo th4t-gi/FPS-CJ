@@ -1,6 +1,7 @@
 # FPS Computer Judge
 A Machine Learning algorithm that grades Future Problem Solvers competition packets.
 
+
 ## The Basis of My Project: [FPSPI](https://www.fpspi.org)
 
 FPSPI (*Future Problem Solvers Program International*) is a non-profit program with 3 competitions:
@@ -53,8 +54,12 @@ The Ann will grade the Action plan on it's Relevance, Effectiveness, Impact, Hum
 and it's Adequacy.
 -->
 
-## Acknowledgements
-Thank you to FPSPI for making it possible for inspiration, training data, and the reason I get up on friday mornings.
+## FAQ
+   #### Where's all the Training Data?
+   Well, FPSPI says that no one can post the Future scene of any packet until 4 years after the fuzzy was used... so let me know when it's 2023, the training data could be open source then. If you want to help, and you need the training data, the best I can do is show you the format that I use. It is located under the [template packet](https://github.com/th4t-gi/FPS-CJ/tree/master/template%20packet) directory.
 
-Thank you to datalogue and their repository [keras-attention](https://github.com/datalogue/keras-attention) for building a model that I didn't need to build myself
+## Acknowledgements
+Thank you to FPSPI for inspiration and training data for this prodject. Not to mention its the reason I get up on friday mornings.
+
+Thank you to datalogue and their repository [keras-attention](https://github.com/datalogue/keras-attention) for building a model that I didn't need to build.
 
