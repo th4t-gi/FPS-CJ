@@ -24,6 +24,9 @@ class Getpacket(object):
 
     def __init__(self, *args):
         super(Getpacket, self).__init__()
+        self.root = os.path.abspath(os.path.join(os.getcwd(), os.pardir)).replace(" ", "\ ")
+        self.tp = subprocess.check_output("find {} -name Training\ packets  -type d -maxdepth 1".format(self.root),shell=True,stderr=subprocess.STDOUT)
+        self.tp =  self.tp.replace(" ", "\ ").replace("\n", " ")
         self.packets = flatten(args)
         self.packets = list(set(flatten([self.get_packets(i) for i in self.packets])))
         self.paths = [self.get_data(i) for i in self.packets]
@@ -46,7 +49,7 @@ class Getpacket(object):
                 paths = find_dir(self.packet, os.getcwd().replace(" ", "\ "))
         #finds path to given packet, or all packets
         try:
-            self.data = find_dir(self.packet, os.getcwd().replace(" ", "\ "))
+            self.data = find_dir(self.packet, self.root)
             if not self.isdata():
                 return ["NO PACKET"]
             self.data = ''.join(re.split(re.compile(r"({})".format(self.packet)), self.data)[:2]) + "/"
@@ -55,25 +58,22 @@ class Getpacket(object):
         except subprocess.CalledProcessError as e:
             self.data = e.output
         except OSError:
-            print self.packet
             print "invalid packet directory: {}".format(self.packet)
             quit()
         return self.data
 
     def get_packets(self, packet):
         if packet == "ALL":
-            paths = subprocess.check_output("find -E . -regex '.*/data-[0-9]{3}\.json' -type f",shell=True,stderr=subprocess.STDOUT)
+            paths = subprocess.check_output("find -E {} -regex '.*/data-[0-9]{{3}}\.json' -type f".format(self.tp),shell=True,stderr=subprocess.STDOUT)
             paths = [i for i in paths.split("\n") if i and os.path.basename(os.path.dirname(i)) not in self.packets]
             packet = [os.path.basename(os.path.dirname(i)) for i in paths]
         return packet
 
     def isdata(self, check=None):
-        if check == "packets":
-            tp = find_dir("Training packets", rootdir=os.getcwd().replace(" ", "\ "))
-            if not tp:
-                yn = raw_input("No training packets detected, would you like to download? (y/n): ")
-                if yn == "y":
-                    dump_data()
+        if check == "packets" and not self.tp:
+            yn = raw_input("No training packets detected, would you like to download? (y/n): ")
+            if yn == "y":
+                dump_data()
             return True
         if not self.data:
             print "\033[91m{}\033[0m is not a packet".format(str(self.packet))
@@ -146,14 +146,15 @@ def dump_data():
         os.system(cmd)
 
 def dump_vectors(vecs):
+    os.chdir(vecs[0])
     if not os.path.isfile("vecs.p"):
-        pickle.dump(vecs, open("vecs.p", "wb"))
+        pickle.dump(vecs[1], open("vecs.p", "wb"))
 
     v = pickle.load(open("vecs.p", "rb"))
     try:
         np.testing.assert_equal(vecs, v)
     except AssertionError:
-        pickle.dump(vecs, open("vecs.p", "wb"))
+        pickle.dump(vecs[1], open("vecs.p", "wb"))
 
 def get_values(key, dictionary, track=False):
     for k, v in dictionary.iteritems():
@@ -232,4 +233,4 @@ def find_type(data):
         return "challenge"
     except:
         return "solution"
-# get_time(t).final()
+get_time(t).final()
