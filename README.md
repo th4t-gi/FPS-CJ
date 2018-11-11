@@ -56,7 +56,7 @@ and it's Adequacy.
 
 ## FAQ
    #### Where's all the Training Data?
-   Well, FPSPI says that no one can post the Future scene of any packet until 4 years after the fuzzy was used... so let me know when it's 2023, the training data could be open source then. If you want to help, and you need the training data, the best I can do is show you the format that I use. It is located under the [template packet](https://github.com/th4t-gi/FPS-CJ/tree/master/template%20packet) directory.
+   Well, FPSPI says that no one can post the Future scene of any packet online until 4 years after the packet was used... so let me know when it's 2023, the training data from 2018 will be open source then. If you want to help, and you need the training data, the best I can do is show you the JSON format that I use. It is located under the [template packet](https://github.com/th4t-gi/FPS-CJ/tree/master/template%20packet) directory.
 
 ## Acknowledgements
 Thank you to FPSPI for inspiration and training data for this prodject. Not to mention its the reason I get up on friday mornings.
