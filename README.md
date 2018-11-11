@@ -10,25 +10,25 @@ FPSPI (*Future Problem Solvers Program International*) is a non-profit program w
 * [Scenario Writing](http://www.fpspi.org/sw.html)
 * [Community Problem Solving](http://www.fpspi.org/cmps.html)
 
-This program just focuses on grading GIPS
+This program just focuses on grading GIPS.
 
 ### GIPS
 In *Global Issue Problem Solving* (GIPS), you and your team of up to 4 people recieve a Future scene or *Fuzzy*. You go through a six step process to find the best solution to the Fuzzy:
 
-1. **Problems:** Find 16 problems that are from the fuzzy 
-2. **Underlying Problem (UP):** Find the biggest problem in the 16 problems that you created
+1. **Problems:** Find 16 problems from the fuzzy 
+2. **Underlying Problem (UP):** Find the biggest problem out of the 16 problems that you created
 3. **Solutions:** Make 16 solutions to the UP
 4. **Select Criteria:** Pick the 5 best ways to grade your solutions
 5. **Apply Criteria:** Grade the top 8 solutions (that you've chosen) based on your 5 selected Criteria
 6. **Action Plan (AP):** Create a more in-detail passage about the best solution
 
-A judge then grades your packet based on creativity, futuristic thinking, and elaboration. The goal of the FPS Computer Judge is to have a comuter be able to do the exact same thing.
+A judge then grades your packet based on creativity, futuristic thinking, and elaboration. The goal of the FPS Computer Judge is to have a comuter that is able to do the same thing.
 
 ## The program
 
 ### The Framework of Neural Nets
 
-To grade a challenge, the Computer Judge (CJ) has to be able to decide which category the challenge is. If it is relevent to the fuzzy - if it isn't relevent, why? And if the challenge is a logical cause or effect of the fuzzy. Therefore, there are multiple independent networks to grade **just** a challenge.
+To grade a challenge, the Computer Judge (CJ) has to be able to decide which category the challenge is in. If it is relevent to the fuzzy - if it isn't relevent, why? And if the challenge is a logical cause or effect of the fuzzy. Therefore, there are multiple independent networks to grade **just** a challenge.
 
 So far, I have developed (or am developing) the folowing Neural Networks:
 
@@ -56,10 +56,10 @@ and it's Adequacy.
 
 ## FAQ
    #### Where's all the Training Data?
-   Well, FPSPI says that no one can post the Future scene of any packet until 4 years after the fuzzy was used... so let me know when it's 2023, the training data could be open source then. If you want to help, and you need the training data, the best I can do is show you the format that I use. It is located under the [template packet](https://github.com/th4t-gi/FPS-CJ/tree/master/template%20packet) directory.
+   Well, FPSPI says that no one can post the Future scene of any packet online until 4 years after the packet was used... so let me know when it's 2023, the training data from 2018 will be open source then. If you want to help, and you need the training data, the best I can do is show you the JSON format that I use. It is located under the [template packet](https://github.com/th4t-gi/FPS-CJ/tree/master/template%20packet) directory.
 
 ## Acknowledgements
-Thank you to FPSPI for inspiration and training data for this prodject. Not to mention its the reason I get up on friday mornings.
+Thank you to FPSPI for inspiration and training data for this prodject. Not to mention, it's the reason I get up on Friday mornings.
 
-Thank you to datalogue and their repository [keras-attention](https://github.com/datalogue/keras-attention) for building a model that I didn't need to build.
+I'd also like to thank datalogue and their repository [keras-attention](https://github.com/datalogue/keras-attention) for building a model that I didn't need to build.
 
