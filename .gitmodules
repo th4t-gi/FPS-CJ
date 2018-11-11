@@ -1,3 +1,6 @@
 [submodule "keras-attention"]
 	path = keras-attention
 	url = https://github.com/datalogue/keras-attention.git
+[submodule "Training-packets"]
+	path = Training-packets
+	url = https://github.com/th4t-gi/Training-packets.git
