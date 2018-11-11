@@ -1,7 +1,7 @@
 from keras.layers import LSTM, Bidirectional, Dense, Input, Flatten
 from keras.utils import plot_model
 from keras.models import Model, load_model, save_model#, load_weights, save_weights
-from keras-attention.models.custom_recurrent import AttentionDecoder
+from keras_proxy.models.custom_recurrents import AttentionDecoder
 
 from format import flatten
 
