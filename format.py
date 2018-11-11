@@ -145,16 +145,16 @@ def dump_data():
         cmd = "svn checkout https://github.com/th4t-gi/FPS-CJ/trunk/Training%20packets {} --force -q".format(path.replace(" ", "\ "))
         os.system(cmd)
 
-def dump_vectors(vecs):
-    os.chdir(vecs[0])
+def dump_vectors(vecs, root):
+    os.chdir(root)
     if not os.path.isfile("vecs.p"):
-        pickle.dump(vecs[1], open("vecs.p", "wb"))
+        pickle.dump(vecs, open("vecs.p", "wb"))
 
     v = pickle.load(open("vecs.p", "rb"))
     try:
         np.testing.assert_equal(vecs, v)
     except AssertionError:
-        pickle.dump(vecs[1], open("vecs.p", "wb"))
+        pickle.dump(vecs, open("vecs.p", "wb"))
 
 def get_values(key, dictionary, track=False):
     for k, v in dictionary.iteritems():
