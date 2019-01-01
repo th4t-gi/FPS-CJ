@@ -2,6 +2,8 @@
 __pycache__/
 *.py[cod]
 *.p
+*.h5
+testing.py
 *$py.class
 
 # C extensions
