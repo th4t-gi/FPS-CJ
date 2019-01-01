@@ -6,6 +6,7 @@ from sklearn.decomposition import PCA
 from matplotlib import pyplot
 from collections import namedtuple, OrderedDict
 from platform import mac_ver
+from keras.utils import to_categorical
 import subprocess, re, os, numpy as np, random, string, warnings, pickle
 
 #finds the directory path of given folder
@@ -27,8 +28,8 @@ class Getpacket(object):
         self.root = os.path.abspath(os.path.join(os.getcwd(), os.pardir)).replace(" ", "\ ")
         self.tp = subprocess.check_output("find {} -name Training\ packets  -type d -maxdepth 1".format(self.root),shell=True,stderr=subprocess.STDOUT)
         self.tp =  self.tp.replace(" ", "\ ").replace("\n", " ")
-        self.packets = flatten(args)
-        self.packets = list(set(flatten([self.get_packets(i) for i in self.packets])))
+        self.packets = flat(args)
+        self.packets = list(set(flat([self.get_packets(i) for i in self.packets])))
         self.paths = [self.get_data(i) for i in self.packets]
         self.paths = [j for i in self.paths for j in i if not j == "NO PACKET"]
         if not self.paths:
@@ -84,7 +85,7 @@ class Getpacket(object):
 class CatorableSample(object):
 
     GP = ["categories", "perhaps", "why", "duplicate", "solution"]
-    CP = {GP[1]: 19, GP[2]: 20, GP[3]: 21, GP[4]: 22}
+    CP = {GP[1]: 18, GP[2]: 19, GP[3]: 20, GP[4]: 21}
 
     def __init__(self, data, vecs):
         super(CatorableSample, self).__init__()
@@ -94,36 +95,24 @@ class CatorableSample(object):
         self.tokens = tokenize(data["packet"]["text"], single=True)
         self.words = data["packet"]["text"]
         #finds categories for the self.tokens
-        self.category = [tup for tup in data["scoring"].items() if tup[0] in self.GP]
-        self.category = [tup for tup in self.category if tup[1]][0]
-        if self.category[0] == "categories":
-            self.category = self.category[1]
-        self.c = self.category
-        if not(type(self.category) in (int, list)):
-            self.category = self.CP[self.category[0]]
-        self.category = self.onehot(self.category)
-        #combines self.tokens and self.categorys
+        self.c = [list(tup) for tup in data["scoring"].items() if tup[0] in self.GP and tup[1]][0]
+        if self.c[0] in self.GP[1:]:
+            self.c = [self.c[0], self.CP[self.c[0]]]
+        self.c = self.c[1]
+        self.onehot()
+        #combines self.tokens and self.categories
         self.vecs = np.array([vecs[token] for token in self.tokens])
         self.v = OrderedDict(zip(self.tokens, self.vecs))
-        if self.type == "challenge":
-            self.yes = self.onehot(data["scoring"]["yes"])
+        # if self.type == "challenge":
+        #     self.yes = self.onehot(data["scoring"]["yes"])
+        # else:
+        #     self.yes = self.onehot(data["scoring"]["relevant"])
+
+    def onehot(self):
+        if type(self.c) == list:
+            self.c = to_categorical(self.c[0], 22) + to_categorical(self.c[1], 22)
         else:
-            self.yes = self.onehot(data["scoring"]["relevant"])
-
-
-
-    def onehot(self, data):
-        if type(data) == bool:
-            return int(data)
-        else:
-            cat = [0 for _ in range(22)]
-            if type(data) == list:
-                cat[data[0]] = 1
-                cat[data[1]] = 1
-            else:
-                cat[data] = 1
-            return cat
-
+            self.c = to_categorical(self.c, 22)
 
 class get_time(object):
 
@@ -169,6 +158,12 @@ def get_values(key, dictionary, track=False):
                 if type(d) == dict:
                     for result in get_values(key, d): yield result
 
+def sub_one(val):
+    if type(val) == list:
+        return [x-1 for x in val]
+    else:
+        return val - 1
+
 def vectorize(l, show=False, size=100, sim=[]):
     warnings.simplefilter(action="ignore", category=FutureWarning)
     # train model
@@ -204,7 +199,7 @@ def tokenize(text, single=False):
     tokens = [[word_tokenize(i.replace("/", " ").replace("\"", "")) for i in packet] for packet in text]
     return [[[word.lower() for word in i if not word.lower() in string.punctuation if not "'" in word] for i in packet] for packet in tokens]
 
-def flatten(l, iter=float("inf")):
+def flat(l, iter=float("inf")):
     result = []
     for el in l:
         if iter == 0:
@@ -213,7 +208,7 @@ def flatten(l, iter=float("inf")):
         if isinstance(el, dict):
             result.append(el)
         elif hasattr(el, "__iter__") and not isinstance(el, basestring):
-            result.extend(flatten(el, iter - 1))
+            result.extend(flat(el, iter - 1))
         else: result.append(el)
     return result
 
@@ -233,4 +228,5 @@ def find_type(data):
         return "challenge"
     except:
         return "solution"
-get_time(t).final()
+
+# get_time(t).final()
