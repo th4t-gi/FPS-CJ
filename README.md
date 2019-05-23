@@ -2,7 +2,7 @@
 A Machine Learning algorithm that grades Future Problem Solvers competition packets.
 
 
-## The Basis of My Project: [FPSPI](https://www.fpspi.org)
+## The Basis of this Project: [FPSPI](https://www.fpspi.org)
 
 FPSPI (*Future Problem Solvers Program International*) is a non-profit program with 3 competitions:
 
@@ -55,11 +55,14 @@ and it's Adequacy.
 -->
 
 ## FAQ
-   #### Where's all the Training Data?
-   Well, FPSPI says that no one can post the Future scene of any packet online until 4 years after the packet was used... so let me know when it's 2023, the training data from 2018 will be open source then. If you want to help, and you need the training data, the best I can do is show you the JSON format that I use. It is located under the [template packet](https://github.com/th4t-gi/FPS-CJ/tree/master/template%20packet) directory.
+   #### Where's all the Training data?
+   Well, FPSPI says that no one can post the Future scene of any packet online until 4 years after the packet was graded/used/completed... so let me know when it's 2023, the training data from 2018 will be open source then. If you want to help, and you need the training data, the best I can do is show you the JSON format that I use. It is located under the [template packet](https://github.com/th4t-gi/FPS-CJ/tree/master/template%20packet) directory. 
+   #### How can I give you Training data?
+   At the moment, I'm developing a data entry app with the [Ionic Framework](https://ionicframework.com/) for this purpose exactly. If you know Angular by any chance and want to help develop this app, [here's the repo for it](https://github.com/th4t-gi/FPS-data-entry).
+
 
 ## Acknowledgements
-Thank you to FPSPI for inspiration and training data for this prodject. Not to mention, it's the reason I get up on Friday mornings.
+Thank you to FPSPI for inspiration and training data for this project. Not to mention, it's the reason I get up at 6 am on Friday mornings.
 
-I'd also like to thank datalogue and their repository [keras-attention](https://github.com/datalogue/keras-attention) for building a model that I didn't need to build.
+I'd also like to thank datalogue and their repository [keras-attention](https://github.com/datalogue/keras-attention) for building a model that I am attempting to implement in my ML algs.
 
