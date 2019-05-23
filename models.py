@@ -1,13 +1,10 @@
-from keras.layers import LSTM, Bidirectional, Dense, Input, Flatten
+from keras.layers import LSTM, Bidirectional, Dense, Input, Flatten, Masking
 from keras.utils import plot_model
 from keras.models import Model, load_model, save_model, Sequential#, load_weights, save_weights
 # from keras_proxy.models.custom_recurrents import AttentionDecoder
 
 from format import flat
 
-
-def print_pred(y_true, y_pred):
-    return y_true
 
 def get_context_vector(features=100, units=None, *metrics):
     metrics = flatten([list(metrics), "accuracy"])
@@ -41,23 +38,25 @@ def plain_coder(featues=100, *metrics):
     model.fit([encoder_input_data, decoder_input_data], decoder_target_data)
 
 
-def Categorizing_model(features=100, units=None, *metrics):
+def Categorizing_model(batches=None, features=100, units=None, *metrics):
     metrics = flat([list(metrics), "accuracy"])
-
-    input = Input(batch_shape=(1, units, features))
-    # lstm_out = Bidirectional(LSTM(50, return_sequences=True))(input)
-    # attended = AttentionDecoder(1, features, name="Attention")(lstm_out)
-    # context_vector = Flatten()(attended)
-    # context_vector = get_context_vector(features, units, metrics)
-    lstm_out = Bidirectional(LSTM(50))(input)#, return_sequences=True))(input)
-    # something = Flatten()(lstm_out)
-    output = Dense(22, activation='softmax')(lstm_out)
-
-    model = Model(inputs=input, outputs=output)
-    # model = Sequential()
-    # model.add(Bidirectional(LSTM(50)))
-    # model.add(Dense(22, activation='softmax'))
-    model.compile(loss='categorical_crossentropy', optimizer='adadelta', metrics=["categorical_accuracy", print_pred])
+    #
+    #
+    # input = Input(shape=(units, features))
+    # mask = Masking(mask_value=0.0)(input)
+    # # lstm_out = Bidirectional(LSTM(50, return_sequences=True))(input)
+    # # attended = AttentionDecoder(1, features, name="Attention")(lstm_out)
+    # # context_vector = get_context_vector(features, units, metrics)
+    # lstm_out = Bidirectional(LSTM(50))(input)
+    # output = Dense(22, activation='softmax')(lstm_out)
+    #
+    # model = Model(inputs=input, outputs=output)
+    model = Sequential()
+    model.add(Masking(mask_value=0.0, input_shape=(units, features)))
+    model.add(Bidirectional(LSTM(50, return_sequences=True)))
+    # model.add(Flatten())
+    model.add(Dense(22, activation='softmax'))
+    model.compile(loss='categorical_crossentropy', optimizer='adadelta', metrics=metrics)
 
     return model
 

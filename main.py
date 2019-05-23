@@ -2,12 +2,14 @@ import time
 t = time.time()
 import os, re, json, subprocess, pickle, numpy as np, nltk
 import math, string
-from format import *
+from keras.preprocessing.sequence import pad_sequences
 from sys import argv
 from models import *
+from format import *
 
+np.set_printoptions(threshold=np.inf)
 # LOAD DATA
-p = Getpacket("CO-17-J102-Q")
+p = Getpacket("ALL")
 root = p.root.replace("\ ", " ")
 #loads found json files and finds all text to be vectorized
 
@@ -15,9 +17,10 @@ dadata = [json.loads(open(i).read()) for i in p.paths]
 dtext = [list(get_values(r".*?text", data)) for data in dadata]
 #add the fuzzy text to become word vectors
 for i, ptext in enumerate(dtext):
-    ptext.append(open(root + dadata[i]["meta"]["future-scene"]).read())
+    ptext.append(open(root + dadata[i]["meta"]["computer"]["future-scene-filepath"]).read())
 
 #Word2Vec alg applied and creates vecs
+print(dtext)
 tokens = tokenize(dtext)
 vecs = vectorize(flat(tokens, 2), show=False, size=100)
 dump_vectors(vecs, os.getcwd())
@@ -29,33 +32,26 @@ cdata = [[data["challenges"], data["solutions"]] for data in dadata]
 
 temp_data = flat([i["data"] for i in flat(cdata)])
 
-x, y = [], []
-training_cent = int(math.ceil(len(temp_data) * 0.95))
+x, y, = [], []
+
+# training_cent = int(math.ceil(len(temp_data) * .9375))
 for i, c in enumerate(temp_data):
     s = CatorableSample(c, vecs)
-    x.append(np.reshape(s.vecs, (1, ) + s.vecs.shape))
+    x.append(s.vecs)
     y.append(np.reshape(s.c, (1, 22)))
 
-batched = sorted([i.shape for i in x])
-
+batched = sorted([i.shape[0] for i in x])
 pickle.dump(batched, open('batches.p', 'wb'))
+
+x = pad_sequences(x, maxlen=batched[-1], padding='post', dtype='float32')
+y = np.asarray(y, dtype=np.float32)
 
 if 'train' in argv:
     # APPLY MODELS
-    categorable = Categorizing_model()
+    model = Categorizing_model()
+    model.fit(x, y, epochs=10, batch_size=8, validation_split=0.125)
 
-    for i, input in enumerate(x[:training_cent]):
-        categorable.fit(input, y[i], epochs=50, verbose=2)
-    for i, input in enumerate(x[training_cent:]):
-        categorable.evaluate(input, y[i])
-    categorable.save('categorizing_model.h5')
-
-    # y_prob = categorable.predict( )
-    # print y_prob
-    # y_classes = y_prob.argmax(axis=-1)
-    # print y_classes
-
-
+    # model.predict(x[-1])
 # yes = [[CatorableSample(c).vecs for c in temp_data], [CatorableSample(c).yes for c in temp_data]]
 # rel_model = relevent_model()
 # rel_model.fit(yes[0], yes[1])

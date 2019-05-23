@@ -7,7 +7,7 @@ from matplotlib import pyplot
 from collections import namedtuple, OrderedDict
 from platform import mac_ver
 from keras.utils import to_categorical
-import subprocess, re, os, numpy as np, random, string, warnings, pickle
+import subprocess, re, os, numpy as np, random, string, warnings, pickle, json
 
 #finds the directory path of given folder
 def find_dir(file, rootdir="~/", dir=True):
@@ -25,11 +25,13 @@ class Getpacket(object):
 
     def __init__(self, *args):
         super(Getpacket, self).__init__()
+        #where the FPS folder is
         self.root = os.path.abspath(os.path.join(os.getcwd(), os.pardir)).replace(" ", "\ ")
+        #finds Training packets
         self.tp = subprocess.check_output("find {} -name Training\ packets  -type d -maxdepth 1".format(self.root),shell=True,stderr=subprocess.STDOUT)
         self.tp =  self.tp.replace(" ", "\ ").replace("\n", " ")
-        self.packets = flat(args)
-        self.packets = list(set(flat([self.get_packets(i) for i in self.packets])))
+        self.packets = list(set(flat([self.get_packets(i) for i in flat(args)])))
+        print(self.packets)
         self.paths = [self.get_data(i) for i in self.packets]
         self.paths = [j for i in self.paths for j in i if not j == "NO PACKET"]
         if not self.paths:
@@ -55,18 +57,19 @@ class Getpacket(object):
                 return ["NO PACKET"]
             self.data = ''.join(re.split(re.compile(r"({})".format(self.packet)), self.data)[:2]) + "/"
             self.data = [self.data + i for i in os.listdir(self.data) if 'data' in i]
-            print "\033[1mFound Packet:\033[0m", self.packet
+            print("\033[1mFound Packet:\033[0m", self.packet)
         except subprocess.CalledProcessError as e:
             self.data = e.output
         except OSError:
-            print "invalid packet directory: {}".format(self.packet)
+            print("invalid packet directory: {}".format(self.packet))
             quit()
         return self.data
 
     def get_packets(self, packet):
         if packet == "ALL":
             paths = subprocess.check_output("find -E {} -regex '.*/data-[0-9]{{3}}\.json' -type f".format(self.tp),shell=True,stderr=subprocess.STDOUT)
-            paths = [i for i in paths.split("\n") if i and os.path.basename(os.path.dirname(i)) not in self.packets]
+            paths = [i for i in paths.split("\n") if i]# and os.path.basename(os.path.dirname(i)) not in self.packets]
+            paths = [i for i in paths if json.loads(open(i).read())['meta']['computer']['completed']]
             packet = [os.path.basename(os.path.dirname(i)) for i in paths]
         return packet
 
@@ -77,7 +80,7 @@ class Getpacket(object):
                 dump_data()
             return True
         if not self.data:
-            print "\033[91m{}\033[0m is not a packet".format(str(self.packet))
+            print("\033[91m{}\033[0m is not a packet".format(str(self.packet)))
             quit()
         return True
 
@@ -123,7 +126,7 @@ class get_time(object):
             self.time = t
 
     def final(self):
-        print "time:", round(time()- self.time, 3)
+        print("time:", round(time()- self.time, 3))
 
 
 def dump_data():
@@ -176,7 +179,7 @@ def vectorize(l, show=False, size=100, sim=[]):
             result = model.most_similar(positive=[sim[0]], negative=[sim[1]], topn=5)
         else:
             result = model.most_similar(positive=[sim[0], sim[2]], negative=[sim[1]], topn=5)
-        print result
+        print(result)
     if show:
         # create a scatter plot of the projection
         pca = PCA(n_components=2)

@@ -1,7 +1,11 @@
 {
   "meta": {
-    "future-scene": "leave blank",
-    "data-filepath": "leave blank",
+    "computer": {
+      "completed": false,
+      "future-scene-filepath": "",
+      "data-filepath": "",
+      "graphics-filepath": "",
+    },
     "topic": "",
     "judge": 0,
     "problem": "",
@@ -9,7 +13,7 @@
     "team": 0,
     "team-memebers": ["", "", "", ""],
     "year": 0,
-    "state": ""
+    "state-country-province": ""
   },
   "overall": {
     "scoring": {
