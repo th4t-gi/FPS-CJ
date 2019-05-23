@@ -1,6 +1,7 @@
+__FOR THE LATEST VERSION OF THIS PROJECT, GO TO THE [V2 Computer Judge](https://github.com/th4t-gi/CJ2)__
+
 # FPS Computer Judge
 A Machine Learning algorithm that grades Future Problem Solvers competition packets.
-
 
 ## The Basis of this Project: [FPSPI](https://www.fpspi.org)
 
